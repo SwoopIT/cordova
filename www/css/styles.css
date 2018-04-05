@@ -1,0 +1,66 @@
+.sidenav .divider {
+    margin: 0 0 0 0 !important;
+}
+
+.secondary {
+    padding: 0 20px !important;
+}
+.blue {
+    background-color: #1cafef !important;
+}
+
+.blue-text {
+    color: #1cafef !important;
+}
+
+.shop {
+    width: 100%;
+    height: 120px;
+    margin: -7px 0 0 0;
+    padding: 0 0 0 0;
+    position: relative;
+    opacity: 0.95;
+    object-fit: cover;
+}
+.cont-shop:hover {
+    opacity: 0.6;
+}
+
+.shop-container {
+}
+.shop-name {
+    position: absolute;
+}
+
+
+.shop-block {
+    height: 140px;
+    background-size: cover !important;
+    background-position: center !important;
+    text-align: center;
+}
+
+.shop-block h4 {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 140px;
+    margin: 0;
+    padding: 0;
+}
+
+/* label focus color */
+.input-field input:focus + label {
+    color: #1cafef !important;
+}
+
+nav ul a:hover {
+    background-color: rgba(0,0,0,0.0) !important;
+}
+
+
+
+/* label underline focus color */
+.row .input-field input:focus {
+    border-bottom: 1px solid #1cafef !important;
+    box-shadow: 0 1px 0 0 #1cafef !important
+}

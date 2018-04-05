@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SwoopIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
+    <meta name="google-signin-client_id"
+          content="396697495271-s0ktqgutar94qm63311uev77vkjbipnq.apps.googleusercontent.com">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="css/icons.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="grey lighten-4">
+<ul id="slide-out" class="sidenav" style="width: 75%;">
+    <li>
+        <div class="background blue" style="height: 90px; margin-top: -27px; padding-top: 10px;">
+            <div class="blue center">
+                <h3 class="white-text">SwoopIt</h3>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a><i class="material-icons">shopping_cart</i>Shop</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="shops();">By Shop</a>
+        <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="category()">By Category</a>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li><a id="account"><i class="material-icons">person</i>Account</a></li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="cart();">My Cart</a>
+        <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="orders()">My Orders</a>
+        <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="settings()">Settings</a>
+
+    </li>
+</ul>
+<nav class="white z-depth-0">
+    <div class="nav-wrapper" id="nav">
+        <a id="header" class="brand-logo blue-text">SwoopIt</a>
+        <ul class="left">
+            <li>
+                <a href="#" data-target="slide-out"
+                   class="sidenav-trigger blue-text"><i
+                        class="material-icons">menu</i></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="container" style="padding-top: 5px">
+    <div class="row center">
+        <!-- todo: replace with loading animation -->
+        <h2 class="blue-text">Logging in...</h2>
+    </div>
+</div>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/jq.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
