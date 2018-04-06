@@ -9,6 +9,14 @@
   "installed_plugins": {
     "cordova-plugin-googleplus": {
       "PACKAGE_NAME": "com.swoopit.android"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.swoopit.android"
+    },
+    "phonegap-plugin-push": {
+      "ANDROID_SUPPORT_V13_VERSION": "27.+",
+      "FCM_VERSION": "11.8.0",
+      "PACKAGE_NAME": "com.swoopit.android"
     }
   },
   "dependent_plugins": {}

@@ -1,0 +1,3 @@
+# Referenced at /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:56
+-keep class android.support.multidex.MultiDexApplication { <init>(...); }
+

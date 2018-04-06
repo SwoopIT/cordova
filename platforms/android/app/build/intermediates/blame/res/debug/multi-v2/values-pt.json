@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt/values-pt.xml",
+            "map": [
+                {
+                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b20f61666f651872b1a30479c0723e41/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

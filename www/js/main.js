@@ -157,6 +157,7 @@ var ordersHTML = '<div class="collection black-text" style="margin-top: -5px">\n
 
 var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
 	'        <a href="#" onclick="logout()" class="collection-item black-text">Logout</a>\n' +
+	'        <a href="#" onclick="getTestMessage()" class="collection-item black-text">Logout</a>\n' +
 	'    </div>';
 
 
@@ -259,3 +260,17 @@ function logout() {
 window.onerror = function (what, line, file) {
 	alert(what + '; ' + line + '; ' + file);
 };
+
+function regDevice(registrationID, oldRegId) {
+	$.ajax({
+		method: 'post',
+		url: 'http://swoop-it.herokuapp.com/api/reg-android',
+		data: {
+			id: registrationID,
+			oldIdL: oldRegId
+		},
+		success: function (res) {
+			console.log(res);
+		}
+	})
+}

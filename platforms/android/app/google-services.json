@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "396697495271",
+    "firebase_url": "https://swoopit-193622.firebaseio.com",
+    "project_id": "swoopit-193622",
+    "storage_bucket": "swoopit-193622.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396697495271:android:eccfd733943d49a9",
+        "android_client_info": {
+          "package_name": "com.swoopit.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "396697495271-47a8nkp1p6u8e05q7fl4badjtnvmhvn0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swoopit.android",
+            "certificate_hash": "bbe1ed38100e486b084b650d7b73463a7455ff0f"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIyiQhDKZAGh-QrYbyQBQ980UwvQhEvIQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "396697495271-m0cuca0hh453varh25v0l7712ccuo6s0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.swoopit.swoopit"
+              }
+            },
+            {
+              "client_id": "396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

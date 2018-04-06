@@ -4,7 +4,7 @@
             "outputFile": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-my/values-my.xml",
             "map": [
                 {
-                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/feed516f3d727b2c8bb34cbdc639b0e9/res/values-my/values.xml",
+                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/res/values-my/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/bfbd66e52b51670c4c71a4d1cd57187d/res/values-my/values.xml",
+                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/res/values-my/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -35,6 +35,40 @@
                         "startOffsets": "1291",
                         "endColumns": "212",
                         "endOffsets": "1499"
+                    }
+                },
+                {
+                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/res/values-my/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "241",
+                        "endColumns": "101",
+                        "endOffsets": "342"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2948",
+                        "endColumns": "105",
+                        "endOffsets": "3049"
+                    }
+                },
+                {
+                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b20f61666f651872b1a30479c0723e41/res/values-my/values-my.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "21",
+                        "startColumns": "4",
+                        "startOffsets": "3054",
+                        "endColumns": "100",
+                        "endOffsets": "3150"
                     }
                 }
             ]
