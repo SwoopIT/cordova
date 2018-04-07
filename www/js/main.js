@@ -20,7 +20,7 @@ function shops(name) {
 		$('#button').remove()
 	} else {
 		$('#header').html(name).addClass('black-text').removeClass('blue-text');
-		$('#container').html(name);
+		$('#container').html(shopPageHTML);
 	}
 	$('.cont-shop').click(function (data) {
 		console.log(data.currentTarget.id);
@@ -108,7 +108,39 @@ function confirmOrder() {
 }
 
 
-var loginHTML = ''
+var shopPageHTML = '<form style="height: 85px;" onsubmit="searchShop()" class="col s12">\n' +
+	'            <div class="row">\n' +
+	'                <div class="input-field col s12">\n' +
+	'                    <i class="material-icons prefix blue-text">search</i>\n' +
+	'                    <input id="shop-search" type="text" class="validate">\n' +
+	'                    <label for="shop-search">Search</label>\n' +
+	'                </div>\n' +
+	'            </div>\n' +
+	'        </form>\n' +
+	'        <div class="collection black-text">\n' +
+	'            <a class="collection-item avatar black-text" id="mcburger" onclick="selectFood(this)">\n' +
+	'                <img src="img/burger.png" alt="CheeseBurger" style="margin-top:10px" class="circle">\n' +
+	'\n' +
+	'                <span class="title black-text">McBurger Double x2</span>\n' +
+	'                <p>\n' +
+	'                    <text>$2.40</text>\n' +
+	'                    <i class="material-icons right blue-text" id="icon-mcburger">add</i>\n' +
+	'                    <br>\n' +
+	'                    <text style="font-weight: lighter;">McDonald\'s</text>\n' +
+	'                </p>\n' +
+	'            </a>\n' +
+	'            <a class="collection-item avatar black-text" id="fries" onclick="selectFood(this)">\n' +
+	'                <img src="img/fries.png" alt="CheeseBurger" style="margin-top:10px" class="circle">\n' +
+	'\n' +
+	'                <span class="title black-text" style="font-weight: bold;">Fries</span>\n' +
+	'                <p>\n' +
+	'                    <text>$2.40</text>\n' +
+	'                    <i class="material-icons right blue-text" id="icon-fries">add</i>\n' +
+	'                    <br>\n' +
+	'                    <text style="font-weight: lighter;">Burger King</text>\n' +
+	'                </p>\n' +
+	'            </a>\n' +
+	'        </div>'
 
 var confirmHTML = '    <div class="container">\n' +
 	'        <div class="container"><br>\n' +
@@ -273,4 +305,15 @@ function regDevice(registrationID, oldRegId) {
 			console.log(res);
 		}
 	})
+}
+
+function selectFood(element) {
+	var icon = $('#icon-' + element.id);
+	if (icon.html() === 'add') {
+		icon.html('check');
+		$(element).css("background-color", "#e5e5e5");
+	} else {
+		icon.html('add');
+		$(element).css("background-color", "#");
+	}
 }
