@@ -1,7 +1,6 @@
 .sidenav .divider {
     margin: 0 0 0 0 !important;
 }
-
 .secondary {
     padding: 0 20px !important;
 }
@@ -11,6 +10,13 @@
 
 .blue-text {
     color: #1cafef !important;
+}
+
+.hover:hover {
+    background-color: rgba(190, 190, 190, 0.45);
+}
+.hover:focus {
+    background-color: rgba(190, 190, 190, 0.45);
 }
 
 .shop {
@@ -57,6 +63,13 @@ nav ul a:hover {
     background-color: rgba(0,0,0,0.0) !important;
 }
 
+.nohover:focus {
+    background-color: #fff !important;
+}
+
+.nohover:hover {
+    background-color: #fff !important;
+}
 
 
 /* label underline focus color */

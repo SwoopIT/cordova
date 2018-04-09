@@ -20,7 +20,7 @@ function shops(name) {
 		$('#button').remove()
 	} else {
 		$('#header').html(name).addClass('black-text').removeClass('blue-text');
-		$('#container').html(name);
+		$('#container').html(shopPageHTML);
 	}
 	$('.cont-shop').click(function (data) {
 		console.log(data.currentTarget.id);
@@ -108,9 +108,65 @@ function confirmOrder() {
 }
 
 
-var loginHTML = ''
+function selectFood(element) {
+	var parent = $(element).closest("a");
+	var iconPlus = $('#add-' + parent.prop('id'));
+	var iconRemove = $('#remove-' + parent.prop('id'));
+	var quantityElement = $('#' + parent.prop('id') + '-quantity');
+	var quantity = parseInt(quantityElement.attr('data-item-count'));
+	if ($(element).prop('id') === 'add-' + parent.prop('id'))
+		quantity++;
+	else
+		quantity--;
+	if (quantity <= 0) {
+		quantity = 0;
+		iconRemove.css('color', '#b8b8b8')
+	} else {
+		iconRemove.css('color', '#1cafef')
+	}
+	quantityElement.attr('data-item-count', quantity);
+	quantityElement.html("Quantity: " + quantityElement.attr('data-item-count'))
+}
 
-var confirmHTML = '    <div class="container">\n' +
+var shopPageHTML = '<div class="row">\n' +
+	'        <form onsubmit="searchShops()" class="col s12" style="height: 76px;">\n' +
+	'            <div class="row">\n' +
+	'                <div class="input-field col s12">\n' +
+	'                    <i class="material-icons prefix blue-text">search</i>\n' +
+	'                    <input id="shop-search" type="text" class="validate">\n' +
+	'                    <label for="shop-search">Search</label>\n' +
+	'                </div>\n' +
+	'            </div>\n' +
+	'        </form>\n' +
+	'    </div>' +
+	'        <div class="collection black-text">\n' +
+	'            <a class="collection-item avatar black-text nohover" id="burger">\n' +
+	'                <img src="img/burger.png" alt="CheeseBurger" style="margin-top:10px" class="circle">\n' +
+	'\n' +
+	'                <span class="title black-text" style="font-weight: bold;">Burger</span>\n' +
+	'                <p>\n' +
+	'                    <text>$2.40</text>\n' +
+	'                     <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="remove-burger" onclick="selectFood(this, false)">remove</i></text> ' +
+	'					  <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="add-burger" onclick="selectFood(this, true)">add</i></text>\n' +
+	'                    <br>\n' +
+	'                    <text style="font-weight: lighter;">Burger King</text><text class="right blue-text" data-item-count="0" id="burger-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>\n' +
+	'                </p>\n' +
+	'            </a>\n' +
+	'            <a class="collection-item avatar black-text nohover" id="fries">\n' +
+	'                <img src="img/fries.png" alt="CheeseBurger" style="margin-top:10px" class="circle">\n' +
+	'\n' +
+	'                <span class="title black-text" style="font-weight: bold;">Fries</span>\n' +
+	'                <p>\n' +
+	'                    <text>$2.40</text>\n' +
+	'                     <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="remove-fries" onclick="selectFood(this, false)">remove</i></text> ' +
+	'					  <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="add-fries" onclick="selectFood(this, true)">add</i></text>\n' +
+	'                    <br>\n' +
+	'                    <text style="font-weight: lighter;">Burger King</text><text class="right blue-text" data-item-count="0" id="fries-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>\n' +
+	'                </p>\n' +
+	'            </a>\n' +
+	'        </div>'
+
+var confirmHTML = '<div class="container">\n' +
 	'        <div class="container"><br>\n' +
 	'            <div class="collection black-text" style="margin-top: -5px">\n' +
 	'                <a href="#" class="collection-item black-text">Mac Big</a>\n' +
