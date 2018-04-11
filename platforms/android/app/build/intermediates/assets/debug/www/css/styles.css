@@ -12,6 +12,12 @@
     color: #1cafef !important;
 }
 
+.hover:hover {
+    background-color: rgba(190, 190, 190, 0.45);
+}
+.collection {
+    overflow: visible;
+}
 .shop {
     width: 100%;
     height: 120px;

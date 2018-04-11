@@ -7,8 +7,9 @@
     <meta name="google-signin-client_id"
           content="396697495271-s0ktqgutar94qm63311uev77vkjbipnq.apps.googleusercontent.com">
     <link rel="stylesheet" href="css/materialize.min.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
     <meta http-equiv="Content-Security-Policy"
-          content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'"/>
+          content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:"/>
     <link href="css/icons.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
@@ -50,7 +51,7 @@
     <div class="nav-wrapper" id="nav">
         <a id="header" class="brand-logo blue-text">SwoopIt</a>
         <ul class="left">
-            <li>
+            <li id="menu">
                 <a href="#" data-target="slide-out"
                    class="sidenav-trigger blue-text"><i
                         class="material-icons">menu</i></a>
@@ -65,6 +66,24 @@
     </div>
 
 </div>
+
+<ul id='cart-drop' class='dropdown-content'>
+    <li><a class="collection-item avatar black-text nohover" id="burger">
+        <img src="img/burger.png" alt="CheeseBurger" style="margin-top:10px" class="circle">
+
+        <span class="title black-text" style="font-weight: bold;">Burger</span>
+        <p>
+            <text>$2.40</text>
+            <text><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover"
+                     id="remove-burger" onclick="selectFood(this, false)">close</i></text>
+            <br>
+            <text style="font-weight: lighter;">Burger King</text>
+        </p>
+    </a></li>
+    <li class="divider"></li>
+    <li><a href="#" class="black-text">Remove <i class="material-icons right">delete</i> </a></li>
+</ul>
+
 <script src="cordova.js"></script>
 <script src="js/index.js"></script>
 <script src="js/materialize.min.js"></script>

@@ -1,5 +1,7 @@
 var instance;
+var dropInstance;
 var elem;
+var drop;
 $(document).ready(function () {
 	elem = document.querySelector('.sidenav');
 	instance = M.Sidenav.init(elem, {draggable: true});
@@ -7,6 +9,7 @@ $(document).ready(function () {
 		console.log(data.currentTarget.id);
 		shops(data.currentTarget.id)
 	});
+
 });
 
 function sideClose() {
@@ -21,6 +24,30 @@ function shops(name) {
 	} else {
 		$('#header').html(name).addClass('black-text').removeClass('blue-text');
 		$('#container').html(shopPageHTML);
+		$.ajax({
+			method: 'post',
+			url: 'https://swoop-it.herokuapp.com/api/store',
+			data: {
+				code: name
+			},
+			success: function (data) {
+				$('#header').html(data.name);
+				for (var i = 0; i < data.items.length; i++) {
+					console.log(data.items[i]);
+					$('#shop-items').append('<a class="collection-item avatar black-text nohover" id="' + data.items.indexOf(i) + '"' +
+						'               <img src="' + data.items[i].img + '" alt="' + data.items[i].name + '" style="margin-top:10px" class="circle">' +
+						'                <span class="title black-text" style="font-weight: bold;">' + data.items[i].name + '</span>' +
+						'            <p>' +
+						'               <text>' + data.items[i].price + '</text>' +
+						'                   <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="remove-burger" onclick="selectFood(this, false)">remove</i></text>' +
+						'  <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="add-burger" onclick="selectFood(this, true)">add</i></text>' +
+						'                  <br>' +
+						'                 <text style="font-weight: lighter;">' + data.name + '</text><text class="right blue-text" data-item-count="0" id="burger-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>' +
+						'              </p>' +
+						'          </a>')
+				}
+			}
+		});
 	}
 	$('.cont-shop').click(function (data) {
 		console.log(data.currentTarget.id);
@@ -37,12 +64,14 @@ function category() {
 }
 
 function cart() {
+	drop = null;
+	dropInstance = null;
 	$('#container').html(cartHTML);
 	$('#button').remove();
 	$('#header').html('Cart').addClass('black-text').removeClass('blue-text');
 	$('#nav').append('<ul class="right" id="button">\n' +
 		'            <li>\n' +
-		'                <a href="#" onclick="checkout()"\n' +
+		'                <a href="#" onclick="payment()"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">shopping_basket</i></a>\n' +
 		'            </li>\n' +
@@ -50,6 +79,8 @@ function cart() {
 	$('#menu').html('<a href="#" data-target="slide-out"\n' +
 		'                   class="sidenav-trigger blue-text"><i\n' +
 		'                        class="material-icons">menu</i></a>');
+	$('.dropdown-trigger').dropdown();
+
 	sideClose();
 }
 
@@ -74,8 +105,8 @@ function settings() {
 	sideClose();
 }
 
-function checkout() {
-	$('#container').html(checkoutHTML);
+function payment() {
+	$('#container').html(paymentHTML);
 	$('#button').remove();
 	$('#header').html('Payment').addClass('black-text').removeClass('blue-text');
 	$('#nav').append('<ul class="right" id="button">\n' +
@@ -102,7 +133,7 @@ function confirmOrder() {
 		'                        class="material-icons">check</i></a>\n' +
 		'            </li>\n' +
 		'        </ul>');
-	$('#menu').html('<a href="#" onclick="checkout()" \n' +
+	$('#menu').html('<a href="#" onclick="payment()" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_backwards</i></a>');
 }
@@ -128,6 +159,7 @@ function selectFood(element) {
 	quantityElement.html("Quantity: " + quantityElement.attr('data-item-count'))
 }
 
+
 var shopPageHTML = '<div class="row">\n' +
 	'        <form onsubmit="searchShops()" class="col s12" style="height: 76px;">\n' +
 	'            <div class="row">\n' +
@@ -139,32 +171,7 @@ var shopPageHTML = '<div class="row">\n' +
 	'            </div>\n' +
 	'        </form>\n' +
 	'    </div>' +
-	'        <div class="collection black-text">\n' +
-	'            <a class="collection-item avatar black-text nohover" id="burger">\n' +
-	'                <img src="img/burger.png" alt="CheeseBurger" style="margin-top:10px" class="circle">\n' +
-	'\n' +
-	'                <span class="title black-text" style="font-weight: bold;">Burger</span>\n' +
-	'                <p>\n' +
-	'                    <text>$2.40</text>\n' +
-	'                     <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="remove-burger" onclick="selectFood(this, false)">remove</i></text> ' +
-	'					  <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="add-burger" onclick="selectFood(this, true)">add</i></text>\n' +
-	'                    <br>\n' +
-	'                    <text style="font-weight: lighter;">Burger King</text><text class="right blue-text" data-item-count="0" id="burger-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>\n' +
-	'                </p>\n' +
-	'            </a>\n' +
-	'            <a class="collection-item avatar black-text nohover" id="fries">\n' +
-	'                <img src="img/fries.png" alt="CheeseBurger" style="margin-top:10px" class="circle">\n' +
-	'\n' +
-	'                <span class="title black-text" style="font-weight: bold;">Fries</span>\n' +
-	'                <p>\n' +
-	'                    <text>$2.40</text>\n' +
-	'                     <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="remove-fries" onclick="selectFood(this, false)">remove</i></text> ' +
-	'					  <text ><i style="margin-top: -10px" class="material-icons right blue-text" id="add-fries" onclick="selectFood(this, true)">add</i></text>\n' +
-	'                    <br>\n' +
-	'                    <text style="font-weight: lighter;">Burger King</text><text class="right blue-text" data-item-count="0" id="fries-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>\n' +
-	'                </p>\n' +
-	'            </a>\n' +
-	'        </div>'
+	'<div class="collection black-text" id="shop-items"></div> ';
 
 var confirmHTML = '<div class="container">\n' +
 	'        <div class="container"><br>\n' +
@@ -195,7 +202,7 @@ var confirmHTML = '<div class="container">\n' +
 	'        </div>\n' +
 	'    </div>';
 
-var checkoutHTML = '<div class="container">' +
+var paymentHTML = '<div class="container">' +
 	'  <label>Payment Method</label>\n' +
 	'  <select class="browser-default">\n' +
 	'    <option value="0">Cash on Pickup (17% fee)</option>\n' +
@@ -213,15 +220,14 @@ var ordersHTML = '<div class="collection black-text" style="margin-top: -5px">\n
 
 var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
 	'        <a href="#" onclick="logout()" class="collection-item black-text">Logout</a>\n' +
-	'        <a href="#" onclick="getTestMessage()" class="collection-item black-text">Logout</a>\n' +
 	'    </div>';
 
 
 var cartHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
-	'        <a href="#" class="collection-item black-text">Mac Big<i class="material-icons right">arrow_drop_down</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">Fireworks - Blue Fire<i class="material-icons right">arrow_drop_down</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">Mint Oreo\'s<i class="material-icons right">arrow_drop_down</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">Gordon Ramsey\'s Rat Poison<i class="material-icons right">arrow_drop_down</i></a>\n' +
+	'        <a href="#" data-target="cart-drop" class="collection-item black-text dropdown-trigger">Mac Big<i class="material-icons right">arrow_drop_down</i></a>\n' +
+	'        <a href="#" data-target="cart-drop2" class="collection-item black-text dropdown-trigger">Fireworks - Blue Fire<i class="material-icons right">arrow_drop_down</i></a>\n' +
+	'        <a href="#" data-target="cart-drop3" class="collection-item black-text dropdown-trigger">Mint Oreo\'s<i class="material-icons right">arrow_drop_down</i></a>\n' +
+	'        <a href="#" data-target="cart-drop4" class="collection-item black-text dropdown-trigger">Gordon Ramsey\'s Rat Poison<i class="material-icons right">arrow_drop_down</i></a>\n' +
 	'    </div>';
 
 var categoryHTML = '<div class="row">\n' +
@@ -312,11 +318,6 @@ function logout() {
 	);
 	//todo: go to loginHTML
 }
-
-window.onerror = function (what, line, file) {
-	alert(what + '; ' + line + '; ' + file);
-};
-
 function regDevice(registrationID, oldRegId) {
 	$.ajax({
 		method: 'post',
