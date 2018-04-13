@@ -1,71 +1,80 @@
-var instance;
-var dropInstance;
-var elem;
-var drop;
+// Globals
+var instance, elem, deviceId;
+var storeNames = {
+	mcd: 'McDonald\'s',
+	fdl: 'Foodland',
+	kta: 'KTA',
+	lnl: 'L&L Barbecue',
+	bk: 'Burger King',
+	longs: 'Longs Drugs'
+};
+var thing = 'bk'
+console.log(storeNames[thing]);
+// Cache
+var storesDB, itemsDB, categoriesDB;
+
 $(document).ready(function () {
 	elem = document.querySelector('.sidenav');
 	instance = M.Sidenav.init(elem, {draggable: true});
-	$('.cont-shop').click(function (data) {
+	$('.cont-store').click(function (data) {
 		console.log(data.currentTarget.id);
-		shops(data.currentTarget.id)
+		stores(data.currentTarget.id)
 	});
-
+	cache();
 });
 
 function sideClose() {
 	instance.close();
 }
 
-function shops(name) {
-	if (!name) {
-		$('#container').html(shopsHTML);
+function stores(id) {
+	if (!id) {
+		$('#container').html(storesHTML);
 		$('#header').html('SwoopIt').addClass('blue-text').removeClass('black-text');
 		$('#button').remove()
-	} else {
-		$('#header').html(name).addClass('black-text').removeClass('blue-text');
-		$('#container').html(shopPageHTML);
-		$.ajax({
-			method: 'post',
-			url: 'https://swoop-it.herokuapp.com/api/store',
-			data: {
-				code: name
-			},
-			success: function (data) {
-				$('#header').html(data.name);
-				for (var i = 0; i < data.items.length; i++) {
-					console.log(data.items[i]);
-					$('#shop-items').append('<a class="collection-item avatar black-text nohover" id="' + data.items.indexOf(i) + '"' +
-						'               <img src="' + data.items[i].img + '" alt="' + data.items[i].name + '" style="margin-top:10px" class="circle">' +
-						'                <span class="title black-text" style="font-weight: bold;">' + data.items[i].name + '</span>' +
-						'            <p>' +
-						'               <text>' + data.items[i].price + '</text>' +
-						'                   <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="remove-burger" onclick="selectFood(this, false)">remove</i></text>' +
-						'  <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="add-burger" onclick="selectFood(this, true)">add</i></text>' +
-						'                  <br>' +
-						'                 <text style="font-weight: lighter;">' + data.name + '</text><text class="right blue-text" data-item-count="0" id="burger-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>' +
-						'              </p>' +
-						'          </a>')
-				}
-			}
+		$('.cont-store').click(function (data) {
+			console.log(data.currentTarget.id);
+			stores(data.currentTarget.id)
 		});
+
+	} else {
+		$('#header').html(storeNames[id]).addClass('black-text').removeClass('blue-text');
+		category(id);
 	}
-	$('.cont-shop').click(function (data) {
-		console.log(data.currentTarget.id);
-		shops(data.currentTarget.id)
-	});
 	sideClose();
 }
 
-function category() {
+
+function category(id) {
 	$('#container').html(categoryHTML);
-	$('#header').html('Categories').addClass('black-text').removeClass('blue-text');
-	$('#button').remove();
-	sideClose();
+	for (var i = 0; i < categoriesDB.length; i++) {
+		if (categoriesDB[i].store === id) {
+			$('#categories').append('<a onclick="loadItems(\'' + categoriesDB[i].id + '\', \'' + id + '\')" class="collection-item black-text">' + categoriesDB[i].name + '<i class="material-icons right">arrow_forward</i></a>');
+		}
+	}
+}
+
+function loadItems(categoryName, storeId) {
+	$('#container').html(storePageHTML);
+	var storeName = storeNames[storeId];
+	for (var i = 0; i < itemsDB.length; i++) {
+		if (itemsDB[i].category === categoryName) {
+			$('#store-items').append('<a class="collection-item avatar black-text nohover" id="' + itemsDB[i].id + '">' +
+				'               <img src="' + itemsDB[i].img + '" alt="' + itemsDB[i].name + '" style="margin-top:10px" class="circle">' +
+				'                <span class="title black-text" style="font-weight: bold;">' + itemsDB[i].name + '</span>' +
+				'            <p>' +
+				'               <text>$' + itemsDB[i].price + '</text>' +
+				'                   <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="remove-' + itemsDB[i].id + '" onclick="selectFood(this, false)">remove</i></text>' +
+				'  <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="add-' + itemsDB[i].id + '" onclick="selectFood(this, true)">add</i></text>' +
+				'                  <br>' +
+				'                 <text style="font-weight: lighter;">' + storeName + '</text><text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>' +
+				'              </p>' +
+				'          </a>')
+		}
+	}
 }
 
 function cart() {
-	drop = null;
-	dropInstance = null;
 	$('#container').html(cartHTML);
 	$('#button').remove();
 	$('#header').html('Cart').addClass('black-text').removeClass('blue-text');
@@ -73,7 +82,7 @@ function cart() {
 		'            <li>\n' +
 		'                <a href="#" onclick="payment()"\n' +
 		'                   class="blue-text"><i\n' +
-		'                        class="material-icons">shopping_basket</i></a>\n' +
+		'                        class="material-icons">storeping_basket</i></a>\n' +
 		'            </li>\n' +
 		'        </ul>');
 	$('#menu').html('<a href="#" data-target="slide-out"\n' +
@@ -160,18 +169,18 @@ function selectFood(element) {
 }
 
 
-var shopPageHTML = '<div class="row">\n' +
-	'        <form onsubmit="searchShops()" class="col s12" style="height: 76px;">\n' +
+var storePageHTML = '<div class="row">\n' +
+	'        <form onsubmit="searchStores()" class="col s12" style="height: 76px;">\n' +
 	'            <div class="row">\n' +
 	'                <div class="input-field col s12">\n' +
 	'                    <i class="material-icons prefix blue-text">search</i>\n' +
-	'                    <input id="shop-search" type="text" class="validate">\n' +
-	'                    <label for="shop-search">Search</label>\n' +
+	'                    <input id="store-search" type="text" class="validate">\n' +
+	'                    <label for="store-search">Search</label>\n' +
 	'                </div>\n' +
 	'            </div>\n' +
 	'        </form>\n' +
 	'    </div>' +
-	'<div class="collection black-text" id="shop-items"></div> ';
+	'<div class="collection black-text" id="store-items"></div> ';
 
 var confirmHTML = '<div class="container">\n' +
 	'        <div class="container"><br>\n' +
@@ -220,6 +229,7 @@ var ordersHTML = '<div class="collection black-text" style="margin-top: -5px">\n
 
 var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
 	'        <a href="#" onclick="logout()" class="collection-item black-text">Logout</a>\n' +
+	'       <a href="#" onclick="cache()" class="collection-item black-text">Refresh Cache</a>\n' +
 	'    </div>';
 
 
@@ -231,51 +241,45 @@ var cartHTML = '<div class="collection black-text" style="margin-top: -5px">\n' 
 	'    </div>';
 
 var categoryHTML = '<div class="row">\n' +
-	'        <form style="height: 85px;" onsubmit="searchShops()" class="col s12">\n' +
+	'        <form style="height: 85px;" onsubmit="searchCateogries()" class="col s12">\n' +
 	'            <div class="row">\n' +
 	'                <div class="input-field col s12">\n' +
 	'                    <i class="material-icons prefix blue-text">search</i>\n' +
-	'                    <input id="shop-search" type="text" class="validate">\n' +
-	'                    <label for="shop-search">Search</label>\n' +
+	'                    <input id="store-search" type="text" class="validate">\n' +
+	'                    <label for="store-search">Search</label>\n' +
 	'                </div>\n' +
 	'            </div>\n' +
 	'        </form>\n' +
 	'    </div>\n' +
-	'    <div class="collection black-text" style="margin: -20px 0 0 0;">\n' +
-	'        <a href="#" class="collection-item black-text">Burgers<i class="material-icons right">arrow_forward</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">Indoor Food Supplies<i\n' +
-	'                class="material-icons right">arrow_forward</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">Nerf Launch Codes<i\n' +
-	'                class="material-icons right">arrow_forward</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">Rat Poison<i class="material-icons right">arrow_forward</i></a>\n' +
+	'    <div class="collection black-text" id="categories" style="margin: -20px 0 0 0;">\n' +
 	'    </div>';
 
 
-var shopsHTML = ' <div class="row">\n' +
-	'        <form onsubmit="searchShops()" class="col s12" style="height: 76px;">\n' +
+var storesHTML = ' <div class="row">\n' +
+	'        <form onsubmit="searchStores()" class="col s12" style="height: 76px;">\n' +
 	'            <div class="row">\n' +
 	'                <div class="input-field col s12">\n' +
 	'                    <i class="material-icons prefix blue-text">search</i>\n' +
-	'                    <input id="shop-search" type="text" class="validate">\n' +
-	'                    <label for="shop-search">Search</label>\n' +
+	'                    <input id="store-search" type="text" class="validate">\n' +
+	'                    <label for="store-search">Search</label>\n' +
 	'                </div>\n' +
 	'            </div>\n' +
 	'        </form>\n' +
 	'    </div>\n' +
-	'    <div class="shop-container white white-text">\n' +
-	'        <div class="center cont-shop shop-block" id="mcd" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/mcd.jpg)">\n' +
+	'    <div class="store-container white white-text">\n' +
+	'        <div class="center cont-store store-block" id="mcd" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/mcd.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1">McDonald\'s</h4>\n' +
 	'        </div>\n' +
-	'        <div class="center cont-shop shop-block" id="kta" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/kta.jpg)">\n' +
+	'        <div class="center cont-store store-block" id="kta" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/kta.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1">KTA</h4>\n' +
 	'        </div>\n' +
-	'        <div class="center cont-shop shop-block" id="bk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
+	'        <div class="center cont-store store-block" id="bk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1">Burger King</h4>\n' +
 	'        </div>\n' +
-	'        <div class="center cont-shop shop-block" id="food" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/food.jpg)">\n' +
+	'        <div class="center cont-store store-block" id="fdl" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/food.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1">Foodland</h4>\n' +
 	'        </div>\n' +
-	'        <div class="center cont-shop shop-block" id="longs" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/longs.jpg)">\n' +
+	'        <div class="center cont-store store-block" id="longs" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/longs.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1">Longs Drugs</h4>\n' +
 	'        </div>\n' +
 	'    </div>';
@@ -294,12 +298,28 @@ function isAvailable() {
 
 function login() {
 	window.plugins.googleplus.login(
-		{}, function (user) {
-			//todo: login stuff
+		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'}, function (user) {
+			$.ajaxSetup({
+				beforeSend: function (xhr) {
+					xhr.setRequestHeader("authentication", user.accessToken);
+				}
+			});
+			$.ajax({
+				method: 'post',
+				url: 'https://swoop-it.herokuapp.com/api/auth',
+				data: {
+					googleAuthToken: user.idToken,
+					androidId: deviceId,
+					iosId: null
+				},
+				success: function (data) {
+					console.log(data);
+				}
+			});
+			console.log(user);
 			M.toast({html: 'User ' + user.displayName + ' has logged in.'});
 			$('#account').html('<i class="material-icons">person</i>' + user.displayName);
-			shops();
-			console.log(user);
+			stores();
 		},
 		function (err) {
 			M.toast({html: "There was an error logging in. Code: " + err});
@@ -318,6 +338,7 @@ function logout() {
 	);
 	//todo: go to loginHTML
 }
+
 function regDevice(registrationID, oldRegId) {
 	$.ajax({
 		method: 'post',
@@ -330,4 +351,27 @@ function regDevice(registrationID, oldRegId) {
 			console.log(res);
 		}
 	})
+}
+
+function cache() {
+	// Get Everything for cache
+	$.ajax({
+		method: 'get',
+		url: 'http://swoop-it.herokuapp.com/api/everything',
+		success: function (res) {
+			storesDB = res.stores;
+			itemsDB = res.items;
+			categoriesDB = res.categories;
+
+		}
+	})
+}
+
+function findObjectByKey(array, key, value) {
+	for (var i = 0; i < array.length; i++) {
+		if (array[i][key] === value) {
+			return array[i];
+		}
+	}
+	return null;
 }

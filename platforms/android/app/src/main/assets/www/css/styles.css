@@ -18,7 +18,7 @@
 .collection {
     overflow: visible;
 }
-.shop {
+.store {
     width: 100%;
     height: 120px;
     margin: -7px 0 0 0;
@@ -27,25 +27,25 @@
     opacity: 0.95;
     object-fit: cover;
 }
-.cont-shop:hover {
+.cont-store:hover {
     opacity: 0.6;
 }
 
-.shop-container {
+.store-container {
 }
-.shop-name {
+.store-name {
     position: absolute;
 }
 
 
-.shop-block {
+.store-block {
     height: 140px;
     background-size: cover !important;
     background-position: center !important;
     text-align: center;
 }
 
-.shop-block h4 {
+.store-block h4 {
     display: inline-block;
     vertical-align: middle;
     line-height: 140px;
