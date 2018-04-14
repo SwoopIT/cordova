@@ -318,19 +318,19 @@ var storesHTML = ' <div class="row">\n' +
 	'    </div>\n' +
 	'    <div class="store-container white white-text">\n' +
 	'        <div class="center cont-store store-block" id="mcd" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/mcd.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">McDonald\'s</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">McDonald\'s</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="bk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">Burger King</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Burger King</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="fdl" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/food.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">Foodland</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Foodland</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="lnl" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/lnl.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">L&L Barbecue</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">L&L Barbecue</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="dom" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/dom.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">Dominoes</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Dominoes</h4>\n' +
 	'        </div>\n' +
 	'    </div>';
 
