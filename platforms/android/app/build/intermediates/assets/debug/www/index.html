@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="css/materialize.min.css">
     <meta http-equiv="Content-Security-Policy"
           content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
+    <link href="http://allfont.net/allfont.css?fonts=futura-bold" rel="stylesheet" type="text/css" />
     <link href="css/icons.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 </head>
-<body class="grey lighten-4 no-select">
+<body class="blue no-select">
 <ul id="slide-out" class="sidenav" style="width: 75%;">
     <li>
         <div class="background blue" style="height: 90px; margin-top: -27px; padding-top: 10px;">
             <div class="blue center">
-                <h3 class="white-text">SwoopIt</h3>
+                <h3 class="white-text" style="font-family: 'Futura-Bold', sans-serif;">SwoopIt</h3>
             </div>
         </div>
     </li>
@@ -30,7 +31,7 @@
     </li>
     <li>
         <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="stores();">By Store</a>
-        <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="category()">By Category</a>
+        <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="window.search();">By Search</a>
     </li>
     <li>
         <div class="divider"></div>
@@ -46,9 +47,9 @@
 
     </li>
 </ul>
-<nav class="white z-depth-0">
+<nav id="navbar" style="display: none;" class="white z-depth-0">
     <div class="nav-wrapper" id="nav">
-        <a id="header" class="brand-logo blue-text">SwoopIt</a>
+        <a id="header" class="brand-logo blue-text" style="font-family: 'Futura-Bold', sans-serif;">SwoopIt</a>
         <ul class="left">
             <li id="menu">
                 <a href="#" data-target="slide-out"
@@ -59,11 +60,10 @@
     </div>
 </nav>
 <div id="container" style="padding-top: 5px">
-    <div class="row center">
-        <!-- todo: replace with loading animation -->
-        <h2 class="blue-text">Logging in...</h2>
+    <div class="center" style="display: inline-block; vertical-align: middle;">
+        <img style="width: 100%;display: inline-block; vertical-align: middle; position: relative;" src="img/swoop_trans.png">
+        <h1 class="white-text" style="font-weight: bold;   font-family: 'Futura-Bold', sans-serif;">SwoopIt</h1>
     </div>
-
 </div>
 
 <ul id='cart-drop' class='dropdown-content'>
