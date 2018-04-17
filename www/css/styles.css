@@ -69,7 +69,15 @@ nav ul a:hover {
 .nohover:hover {
     background-color: #fff !important;
 }
+.input {
+    text-align: center;
+    border: #9e9e9e 1px solid;
+    border-radius: 15%;
+}
 
+.input:focus {
+    outline-width: 0;
+}
 
 /* label underline focus color */
 .row .input-field input:focus {
