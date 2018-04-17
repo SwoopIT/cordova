@@ -1,5 +1,5 @@
 // Globals
-var instance, elem, deviceId;
+var instance, elem, deviceId, shoppingCart = [];
 var storeNames = {
 	mcd: 'McDonald\'s',
 	fdl: 'Foodland',
@@ -86,6 +86,15 @@ function cart() {
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
 	$('#container').html(cartHTML);
+	var shoppingElement = $('#shopping-cart');
+	if (shoppingCart[0]) {
+		for (var i = 0; i < shoppingCart.length; i++) {
+			shoppingElement.append('<a class="collection-item black-text nohover" style="height: 60px">' + shoppingCart[i].name +'<p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + shoppingCart[i].price + '</p></a>');
+		}
+	} else {
+		shoppingElement.html('<div class="center"><h6 style="font-weight: 300">You have nothing in your Cart.</h6></div>')
+	}
+	$('#container').append('<br><div class="center"><a onclick="payment()" style="font-weight: bold; font-size: large" class="center center-align blue-text">Checkout</a></div>');
 	$('#button').remove();
 	$('#header').html('Cart').addClass('black-text').removeClass('blue-text');
 	$('#nav').append('<ul class="right" id="button">\n' +
@@ -171,12 +180,13 @@ function search() {
 	$('#container').html(searchHTML);
 	$('#header').html('Search').addClass('black-text').removeClass('blue-text');
 	var auto = document.querySelector('.autocomplete');
+	searchItems('');
+	var data = {};
+	for (var i = 0; i < itemsDB.length; i++) {
+		data[itemsDB[i].name] = itemsDB[i].img;
+	}
 	var complete = M.Autocomplete.init(auto, {
-		data: {
-			"Arizona": "https://www.mcdonalds.com/is/image/content/dam/usa/nutrition/items/regular/desktop/t-mcdonalds-Fries-Small-Medium.png",
-			"Big Mac": "https://www.mcdonalds.com/is/image/content/dam/usa/nutrition/items/regular/desktop/t-mcdonalds-Fries-Small-Medium.png",
-			"Fries": "https://www.mcdonalds.com/is/image/content/dam/usa/nutrition/items/regular/desktop/t-mcdonalds-Fries-Small-Medium.png"
-		},
+		data: data,
 		onAutocomplete: function () {
 			$('#search-form').submit();
 		}
@@ -191,38 +201,48 @@ function searchItems(query) {
 			$('#search-coll').append('<a class="collection-item avatar black-text nohover" id="' + itemsDB[i].id + '">' +
 				'               <img src="' + itemsDB[i].img + '" alt="' + itemsDB[i].name + '" style="margin-top:10px" class="circle">' +
 				'                <span class="title black-text" style="font-weight: bold;">' + itemsDB[i].name + '</span>' +
-				'            <p>' +
+				'            <p id="' + itemsDB[i].id + '-data">' +
 				'               <text>$' + itemsDB[i].price + '</text>' +
-				'                   <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="remove-' + itemsDB[i].id + '" onclick="selectFood(this, false)">remove</i></text>' +
-				'  <text ><i style="margin-top: -10px; border-radius: 50%" class="material-icons right blue-text hover" id="add-' + itemsDB[i].id + '" onclick="selectFood(this, true)">add</i></text>' +
 				'                  <br>' +
-				'                 <text style="font-weight: lighter;">' + 'Put something here' + '</text><text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px);">Quantity: 0</text>' +
+				'                 <text style="font-weight: lighter;">' + 'Put something here' + '</text>' +
+				'				  <text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this)">Add to Cart</text>' +
 				'              </p>' +
 				'          </a>')
 		}
 	}
 }
 
-function selectFood(element) {
+function addItem(element) {
 	var parent = $(element).closest("a");
-	var iconPlus = $('#add-' + parent.prop('id'));
-	var iconRemove = $('#remove-' + parent.prop('id'));
-	var quantityElement = $('#' + parent.prop('id') + '-quantity');
+	var parentId = parent.prop('id');
+	var quantityElement = $('#' + parentId + '-quantity');
 	var quantity = parseInt(quantityElement.attr('data-item-count'));
-	if ($(element).prop('id') === 'add-' + parent.prop('id'))
-		quantity++;
-	else
-		quantity--;
-	if (quantity <= 0) {
-		quantity = 0;
-		iconRemove.css('color', '#b8b8b8')
-	} else {
-		iconRemove.css('color', '#1cafef')
-	}
+	quantityElement.remove();
+	$('#' + parentId + '-data').append('<text class="right blue-text" data-item-count="0" id="' + parentId + '-quantity" style="position: relative;transform: translateX(-3px); margin-top: 3px" onclick="removeItem(this)">Remove</text>');
+	$('#' + parent.prop('id') + '-data').prepend('<input id="input-' + parentId + '" oninput="addItemToCart(' + parentId + ', $(this).val()); $(\'#' + parentId + '-quantity\').attr(\'data-item-count\', $(this).val());" class="browser-default input right" style= "width: 55px;" type="number">');
 	quantityElement.attr('data-item-count', quantity);
-	quantityElement.html("Quantity: " + quantityElement.attr('data-item-count'))
+	$('#' + parentId + '-quantity').focus();
 }
 
+function addItemToCart(id, amount) {
+	for (var i = 0; i < itemsDB.length; i++) {
+		if (itemsDB[i].id === id) {
+			for (var k = 0; k < amount; k++) {
+				shoppingCart.push(itemsDB[i])
+			}
+		}
+	}
+}
+
+function removeItem(element) {
+	var parent = $(element).closest("a");
+	var parentId = parent.prop('id');
+	var quantityElement = $('#' + parentId + '-quantity');
+	quantityElement.remove();
+	$('#input-' + parentId).remove();
+	$('#' + parent.prop('id') + '-data').append('<text class="right blue-text" data-item-count="0" id="' + parentId + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this)">Add to Cart</text>');
+	quantityElement.attr('data-item-count', 0);
+}
 
 var storePageHTML = '<div class="row">\n' +
 	'        <form onsubmit="searchStoreItems(); return false" class="col s12" style="height: 76px;">\n' +
@@ -240,7 +260,7 @@ var storePageHTML = '<div class="row">\n' +
 var confirmHTML = '<div class="container">\n' +
 	'        <div class="container"><br>\n' +
 	'            <div class="collection black-text" style="margin-top: -5px; overflow: scroll; height: 319px">\n' +
-	'                <a class="collection-item black-text">Mac Big<i onclick="removeItem(\'this\')" class="material-icons right grey-text">delete</i></a>\n' +
+	'                <a class="collection-item black-text">Mac Big<i class="material-icons right grey-text">delete</i></a>\n' +
 	'                <a class="collection-item black-text">Fireworks - Blue Fire</a>\n' +
 	'                <a class="collection-item black-text">Mint Oreo\'s</a>\n' +
 	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison</a>\n' +
@@ -305,12 +325,7 @@ var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">
 	'    </div>';
 
 
-var cartHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
-'        <a href="#" onclick="dropdown(this)" class="collection-item black-text">Today<i class="material-icons right">arrow_drop_down</i></a>\n' +
-'        <a href="#" class="collection-item black-text">2 Hours Ago<i class="material-icons right">arrow_drop_down</i></a>\n' +
-'        <a href="#" class="collection-item black-text">11/11/11<i class="material-icons right">arrow_drop_down</i></a>\n' +
-'        <a href="#" class="collection-item black-text">01/33/07<i class="material-icons right">arrow_drop_down</i></a>\n' +
-'    </div>';
+var cartHTML = '<div class="container" style="border: none"><h6 style="font-weight: bold">Items</h6><br><div class="collection black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: scroll; max-height: 250px;"></div></div> ';
 
 var categoryHTML = '<div class="row">\n' +
 	'        <form style="height: 85px;" onsubmit="searchStoreItems(); return false" class="col s12">\n' +
@@ -381,9 +396,7 @@ function isAvailable() {
 	});
 }
 
-function removeItem(element) {
-	$(element).firstElementChild
-}
+
 function login() {
 	window.plugins.googleplus.login(
 		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'}, function (user) {
