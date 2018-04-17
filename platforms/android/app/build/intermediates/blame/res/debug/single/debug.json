@@ -368,12 +368,12 @@
         "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/res/drawable/common_google_signin_btn_icon_light.xml"
     },
     {
-        "merged": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/res/merged/debug/layout_notification_template_media.xml.flat",
-        "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0baf433b4d0cf7cee6df0ffa8e14b526/res/layout/notification_template_media.xml"
-    },
-    {
         "merged": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/res/merged/debug/drawable-land-xxhdpi_screen.png.flat",
         "source": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/res/drawable-land-xxhdpi/screen.png"
+    },
+    {
+        "merged": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/res/merged/debug/layout_notification_template_media.xml.flat",
+        "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0baf433b4d0cf7cee6df0ffa8e14b526/res/layout/notification_template_media.xml"
     },
     {
         "merged": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",

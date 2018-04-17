@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Apr 13 17:54:47 HST 2018
+#Mon Apr 16 08:33:24 HST 2018
 17.baseType=DIRECTORY
 4.path=www/index.html
 25.base=/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/assets/debug
@@ -105,7 +105,7 @@ count=34
 29.set=ASSET
 23.base=/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/assets/debug
 22.baseType=DIRECTORY
-22.path=www/img/food.jpg
+22.path=www/img/dom.jpg
 18.set=ASSET
 33.path=www/img/burger.png
 19.base=/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/assets/debug
@@ -123,7 +123,7 @@ count=34
 24.baseType=DIRECTORY
 12.set=ASSET
 28.set=ASSET
-23.path=www/img/dom.jpg
+23.path=www/img/food.jpg
 11.baseType=DIRECTORY
 26.baseType=DIRECTORY
 0.baseType=DIRECTORY

@@ -35,7 +35,7 @@ function stores(id) {
 	if (!id) {
 		$('#container').html(storesHTML);
 		$('#header').html('SwoopIt').addClass('blue-text').removeClass('black-text');
-		$('#button').remove()
+		$('#button').remove();
 		$('.cont-store').click(function (data) {
 			console.log(data.currentTarget.id);
 			stores(data.currentTarget.id)
@@ -50,6 +50,9 @@ function stores(id) {
 
 
 function category(id) {
+	$('#menu').html('<a href="#" data-target="slide-out"\n' +
+		'                   class="blue-text"><i\n' +
+		'                        class="material-icons">back_arrow</i></a>');
 	$('#container').html(categoryHTML);
 	for (var i = 0; i < categoriesDB.length; i++) {
 		if (categoriesDB[i].store === id) {
@@ -105,6 +108,8 @@ function orders() {
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
 	$('#container').html(ordersHTML);
+	var elemy = document.querySelector('.collapsible');
+	var collapse = new M.Collapsible(elemy, {})
 	$('#button').remove();
 	$('#header').html('Orders').addClass('black-text').removeClass('blue-text');
 	$('#nav').append('<ul class="right" id="button">\n' +
@@ -234,11 +239,16 @@ var storePageHTML = '<div class="row">\n' +
 
 var confirmHTML = '<div class="container">\n' +
 	'        <div class="container"><br>\n' +
-	'            <div class="collection black-text" style="margin-top: -5px">\n' +
-	'                <a href="#" class="collection-item black-text">Mac Big</a>\n' +
-	'                <a href="#" class="collection-item black-text">Fireworks - Blue Fire</a>\n' +
-	'                <a href="#" class="collection-item black-text">Mint Oreo\'s</a>\n' +
-	'                <a href="#" class="collection-item black-text">Gordon Ramsey\'s Rat Poison</a>\n' +
+	'            <div class="collection black-text" style="margin-top: -5px; overflow: scroll; height: 319px">\n' +
+	'                <a class="collection-item black-text">Mac Big<i onclick="removeItem(\'this\')" class="material-icons right grey-text">delete</i></a>\n' +
+	'                <a class="collection-item black-text">Fireworks - Blue Fire</a>\n' +
+	'                <a class="collection-item black-text">Mint Oreo\'s</a>\n' +
+	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison</a>\n' +
+	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
+	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
+	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
+	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
+
 	'            </div>\n' +
 	'        </div>\n' +
 	'        <div class="row center">\n' +
@@ -270,12 +280,24 @@ var paymentHTML = '<div class="container">' +
 	'</div>' +
 	'            ';
 
-var ordersHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
-	'        <a href="#" onclick="dropdown(this)" class="collection-item black-text">Today<i class="material-icons right">arrow_drop_down</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">2 Hours Ago<i class="material-icons right">arrow_drop_down</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">11/11/11<i class="material-icons right">arrow_drop_down</i></a>\n' +
-	'        <a href="#" class="collection-item black-text">01/33/07<i class="material-icons right">arrow_drop_down</i></a>\n' +
-	'    </div>';
+var ordersHTML = ' <ul class="collapsible">\n' +
+	'    <li>\n' +
+	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Today<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;"> Lost</span></div>\n' +
+	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'    </li>' +
+	'    <li>\n' +
+	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>5 hours Ago<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;"> Delivered</span></div>\n' +
+	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'    </li>' +
+	'    <li>\n' +
+	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>1-1-11<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;">Found</span></div>\n' +
+	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'    </li>' +
+	'    <li>\n' +
+	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Tomorrow<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;"> In the Future</span></div>\n' +
+	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'    </li>' +
+	'</ul>';
 
 var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
 	'        <a href="#" onclick="logout()" class="collection-item black-text">Logout</a>\n' +
@@ -318,19 +340,19 @@ var storesHTML = ' <div class="row">\n' +
 	'    </div>\n' +
 	'    <div class="store-container white white-text">\n' +
 	'        <div class="center cont-store store-block" id="mcd" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/mcd.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">McDonald\'s</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">McDonald\'s</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="bk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">Burger King</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Burger King</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="fdl" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/food.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">Foodland</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Foodland</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="lnl" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/lnl.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">L&L Barbecue</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">L&L Barbecue</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="dom" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/dom.jpg)">\n' +
-	'            <h4 class="" style="z-index: 2; opacity: 1">Dominoes</h4>\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Dominoes</h4>\n' +
 	'        </div>\n' +
 	'    </div>';
 
@@ -359,7 +381,9 @@ function isAvailable() {
 	});
 }
 
-
+function removeItem(element) {
+	$(element).firstElementChild
+}
 function login() {
 	window.plugins.googleplus.login(
 		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'}, function (user) {
