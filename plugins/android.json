@@ -17,6 +17,9 @@
       "ANDROID_SUPPORT_V13_VERSION": "27.+",
       "FCM_VERSION": "11.8.0",
       "PACKAGE_NAME": "com.swoopit.android"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.swoopit.android"
     }
   },
   "dependent_plugins": {}

@@ -24,5 +24,13 @@
     "variables": {
       "FCM_VERSION": "11.8.0"
     }
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@2.4.2"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

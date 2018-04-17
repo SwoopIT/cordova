@@ -15,6 +15,14 @@ module.exports = [
     "clobbers": [
       "PushNotification"
     ]
+  },
+  {
+    "id": "cordova-plugin-statusbar.statusbar",
+    "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+    "pluginId": "cordova-plugin-statusbar",
+    "clobbers": [
+      "window.StatusBar"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -22,7 +30,8 @@ module.exports.metadata =
 {
   "cordova-plugin-googleplus": "5.2.3",
   "cordova-plugin-whitelist": "1.3.3",
-  "phonegap-plugin-push": "2.2.2"
+  "phonegap-plugin-push": "2.2.2",
+  "cordova-plugin-statusbar": "2.4.2"
 };
 // BOTTOM OF METADATA
 });

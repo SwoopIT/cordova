@@ -36,6 +36,7 @@ function stores(id) {
 		$('#container').html(storesHTML);
 		$('#header').html('SwoopIt').addClass('blue-text').removeClass('black-text');
 		$('#button').remove();
+		$('#menu').html('<a href="#" data-target="slide-out" class="sidenav-trigger blue-text"><i class="material-icons">menu</i></a>');
 		$('.cont-store').click(function (data) {
 			console.log(data.currentTarget.id);
 			stores(data.currentTarget.id)
@@ -50,9 +51,9 @@ function stores(id) {
 
 
 function category(id) {
-	$('#menu').html('<a href="#" data-target="slide-out"\n' +
+	$('#menu').html('<a onclick="stores();" \n' +
 		'                   class="blue-text"><i\n' +
-		'                        class="material-icons">back_arrow</i></a>');
+		'                        class="material-icons">arrow_back</i></a>');
 	$('#container').html(categoryHTML);
 	for (var i = 0; i < categoriesDB.length; i++) {
 		if (categoriesDB[i].store === id) {
@@ -63,6 +64,9 @@ function category(id) {
 
 function loadItems(categoryName, storeId) {
 	$('#container').html(storePageHTML);
+	$('#menu').html('<a onclick="stores(\'' + storeId + '\');" \n' +
+		'                   class="blue-text"><i\n' +
+		'                        class="material-icons">arrow_back</i></a>');
 	var storeName = storeNames[storeId];
 	for (var i = 0; i < itemsDB.length; i++) {
 		if (itemsDB[i].category === categoryName) {
@@ -300,22 +304,38 @@ var paymentHTML = '<div class="container">' +
 	'</div>' +
 	'            ';
 
-var ordersHTML = ' <ul class="collapsible">\n' +
+var ordersHTML = ' <ul class="collapsible" style="margin-top: -5px">\n' +
 	'    <li>\n' +
-	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Today<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;"> Lost</span></div>\n' +
-	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>2 Hours ago</div>\n' +
+	'      <div class="collapsible-body"><span style="font-weight: bold"> <i class="material-icons left">info</i> Status: </span>' +
+	'	   <span >Awaiting Driver</span>' +
+	'	   <br>' +
+	'	   <br>' +
+	'      <a onclick="cancelOrder()" class="btn red waves-effect waves-ripple waves-light" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a> </div>\n' +
 	'    </li>' +
 	'    <li>\n' +
-	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>5 hours Ago<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;"> Delivered</span></div>\n' +
-	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Today</div>\n' +
+	'      <div class="collapsible-body"><span style="font-weight: bold"> <i class="material-icons left">info</i> Status: </span>' +
+	'	   <span >In Transit</span>' +
+	'	   <br>' +
+	'	   <br>' +
+	'      <a onclick="cancelOrder()" class="btn red waves-effect waves-ripple waves-light" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a> </div>\n' +
 	'    </li>' +
 	'    <li>\n' +
-	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>1-1-11<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;">Found</span></div>\n' +
-	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>11-12-08</div>\n' +
+	'      <div class="collapsible-body"><span style="font-weight: bold"> <i class="material-icons left">info</i> Status: </span>' +
+	'	   <span >Canceled</span>' +
+	'	   <br>' +
+	'	   <br>' +
+	'      <a onclick="cancelOrder()" class="btn red waves-effect waves-ripple waves-light disabled" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a> </div>\n' +
 	'    </li>' +
 	'    <li>\n' +
-	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Tomorrow<span class="grey-text darken-2" style="font-style: italic; margin-left: 15px;"> In the Future</span></div>\n' +
-	'      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>\n' +
+	'      <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>Yesterday</div>\n' +
+	'      <div class="collapsible-body"><span style="font-weight: bold"> <i class="material-icons left">info</i> Status: </span>' +
+	'	   <span >Delivered</span>' +
+	'	   <br>' +
+	'	   <br>' +
+	'      <a onclick="cancelOrder()" class="btn red waves-effect waves-ripple waves-light disabled" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a> </div>\n' +
 	'    </li>' +
 	'</ul>';
 
