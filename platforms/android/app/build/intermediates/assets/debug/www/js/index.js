@@ -38,6 +38,13 @@ var app = {
 			console.log("push error = " + e.message);
 		});
 		isAvailable();
+		userSettings.preferredPay = localStorage.getItem("preferredPay");
+		if (!userSettings.preferedPay) {
+			userSettings = {
+				preferredPay: 2
+			};
+			localStorage.setItem('preferredPay', '2')
+		}
 	},
 
 	// Update DOM on a Received Event
