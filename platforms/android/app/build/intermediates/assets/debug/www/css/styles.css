@@ -7,6 +7,16 @@
 .blue {
     background-color: #1cafef !important;
 }
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 
 .blue-text {
     color: #1cafef !important;

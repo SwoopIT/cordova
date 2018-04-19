@@ -170,9 +170,11 @@ function cart() {
 }
 
 function loadCartFooter() {
-	var currentItems = [];
+	var currentItems = [], subtotal = 0;
 	$('#cart-footer-items').html('');
 	for (var i = 0; i < shoppingCart.length; i++) {
+		subtotal += shoppingCart[i].price;
+		console.log(subtotal);
 		if (currentItems.indexOf(shoppingCart[i].id) == -1) {
 			currentItems.push(shoppingCart[i].id);
 
@@ -185,6 +187,7 @@ function loadCartFooter() {
 				'</a>')
 		}
 	}
+	$('#footer-subtotal').html('Subtotal: $' + subtotal.toFixed(2));
 }
 
 function orders() {
