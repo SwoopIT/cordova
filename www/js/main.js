@@ -15,11 +15,13 @@ var storeNames = {
 	longs: 'Longs Drugs'
 };
 // Cache
-var storesDB, itemsDB, categoriesDB;
+var storesDB, itemsDB, categoriesDB, confirmModal, modal;
 
 $(document).ready(function () {
 	elem = document.querySelector('.sidenav');
 	instance = M.Sidenav.init(elem, {draggable: true});
+	modal = document.querySelector('.modal');
+	confirmModal = M.Modal.init(modal, {});
 	$('.cont-store').click(function (data) {
 		stores(data.currentTarget.id)
 	});
@@ -59,6 +61,7 @@ function submitOrder(paymentMethod) {
 }
 
 function stores(id) {
+	$('#cart-footer').hide();
 	$('#navbar').show();
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
@@ -80,6 +83,7 @@ function stores(id) {
 
 
 function category(id) {
+
 	$('#menu').html('<a onclick="stores();" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_back</i></a>');
@@ -100,20 +104,29 @@ function loadItems(categoryName, storeId) {
 	for (var i = 0; i < itemsDB.length; i++) {
 		if (itemsDB[i].category === categoryName) {
 			$('#store-items').append('<a class="collection-item avatar black-text nohover" id="' + itemsDB[i].id + '">' +
-			'               <img src="' + itemsDB[i].img + '" alt="' + itemsDB[i].name + '" style="margin-top:10px" class="circle">' +
-			'                <span class="title black-text" style="font-weight: bold;">' + itemsDB[i].name + '</span>' +
-			'            <p id="' + itemsDB[i].id + '-data">' +
-			'               <text>$' + itemsDB[i].price + '</text>' +
-			'                  <br>' +
-			'                 <text style="font-weight: lighter;">' + 'Put something here' + '</text>' +
-			'				  <text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this)">Add to Cart</text>' +
-			'              </p>' +
-			'          </a>')
+				'               <img src="' + itemsDB[i].img + '" alt="' + itemsDB[i].name + '" style="margin-top:10px" class="circle">' +
+				'                <span class="title black-text" style="font-weight: bold;">' + itemsDB[i].name + '</span>' +
+				'            <p id="' + itemsDB[i].id + '-data">' +
+				'               <text>$' + itemsDB[i].price + '</text>' +
+				'                  <br>' +
+				'                 <text style="font-weight: lighter;">' + 'Put something here' + '</text>' +
+				'				  <text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this, true)">Add to Cart</text>' +
+				'              </p>' +
+				'          </a>');
+			var cartItems = shoppingCart.filter(function (x) {
+				return itemsDB[i].id == x.id
+			}).length;
+			if (cartItems > 0) {
+				addItem($('#' + itemsDB[i].id + '-quantity'), false);
+				$('#' + itemsDB[i].id + '-quantity').attr('data-item-count', cartItems);
+				$('#input-' + itemsDB[i].id).val(cartItems)
+			}
 		}
 	}
 }
 
 function cart() {
+	$('#cart-footer').hide();
 	$('#navbar').show();
 	$('#button').remove();
 	$(document.body).removeClass('blue');
@@ -121,8 +134,10 @@ function cart() {
 	$('#container').html(cartHTML);
 	var shoppingElement = $('#shopping-cart');
 	if (shoppingCart[0]) {
+		var subtotal = 0;
 		for (var i = 0; i < shoppingCart.length; i++) {
-			shoppingElement.append('<a class="collection-item black-text nohover" style="height: 60px">' + shoppingCart[i].name + '<p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + shoppingCart[i].price + '</p></a>');
+			shoppingElement.append('<a class="collection-item black-text avatar nohover" style="min-height: 65px;"><img src="' + shoppingCart[i].img + '" alt="' + shoppingCart[i].name + '" class="circle">' + shoppingCart[i].name + '<i class="material-icons right" onclick="openModal(' + i + ')">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + shoppingCart[i].price + '</p></a>');
+			subtotal += shoppingCart[i].price;
 		}
 		$('#nav').append('<ul class="right" id="button">\n' +
 			'            <li>\n' +
@@ -131,8 +146,12 @@ function cart() {
 			'                        class="material-icons">shopping_basket</i></a>\n' +
 			'            </li>\n' +
 			'        </ul>');
+
 		$('#container').append('<br><div class="center"><a onclick="payment()" style="font-weight: bold; font-size: large" class="center center-align blue-text">Checkout</a></div>');
+		$('#subtotal').show();
+		$('#subtotal').html('Subtotal: $' + subtotal);
 	} else {
+		$('#subtotal').hide();
 		shoppingElement.html('<div class="center"><h6 style="font-weight: 300">You have nothing in your Cart.</h6></div>')
 		$('#nav').append('<ul class="right" id="button">\n' +
 			'            <li>\n' +
@@ -147,12 +166,29 @@ function cart() {
 	$('#menu').html('<a href="#" data-target="slide-out"\n' +
 		'                   class="sidenav-trigger blue-text"><i\n' +
 		'                        class="material-icons">menu</i></a>');
-
 	sideClose();
 }
 
+function loadCartFooter() {
+	var currentItems = [];
+	$('#cart-footer-items').html('');
+	for (var i = 0; i < shoppingCart.length; i++) {
+		if (currentItems.indexOf(shoppingCart[i].id) == -1) {
+			currentItems.push(shoppingCart[i].id);
+
+			var matching = shoppingCart.filter(function (x) {
+				return shoppingCart[i].id == x.id
+			}).length;
+			$('#cart-footer-items').append('<a class="collection-item black-text nohover">' + shoppingCart[i].name +
+				' <span>(' + matching + ')</span> ' +
+				'<span class="right">' + (shoppingCart[i].price * matching).toFixed(2) + '</span> ' +
+				'</a>')
+		}
+	}
+}
 
 function orders() {
+	$('#cart-footer').hide();
 	$('#button').remove();
 	$('#navbar').show();
 	$(document.body).removeClass('blue');
@@ -163,8 +199,8 @@ function orders() {
 		url: 'https://swoop-it.herokuapp.com/api/myorders',
 		success: function (data) {
 			data = data.reverse();
-			for (var i = 0; i < data.length; i ++) {
-				$('#orders-list').append('<li>\n '+
+			for (var i = 0; i < data.length; i++) {
+				$('#orders-list').append('<li>\n ' +
 					'     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>' + calcDateString(data[i].date) + '</div>\n' +
 					'     <div class="collapsible-body">\n' +
 					'         <span style="font-weight: bold">' + data[i].progress.statusName + '</span>\n' +
@@ -194,6 +230,7 @@ function orders() {
 }
 
 function settings() {
+	$('#cart-footer').hide();
 	$('#button').remove();
 	$('#navbar').show();
 	$(document.body).removeClass('blue');
@@ -209,7 +246,7 @@ function payment() {
 	$('#header').html('Payment').addClass('black-text').removeClass('blue-text');
 	$('#nav').append('<ul class="right" id="button">\n' +
 		'            <li>\n' +
-		'                <a href="#" onclick="confirmOrder()"\n' +
+		'                <a href="#" onclick="confirmOrder(getInputVal(\'pay-group\'))"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_forward</i></a>\n' +
 		'            </li>\n' +
@@ -220,13 +257,13 @@ function payment() {
 	sideClose();
 }
 
-function confirmOrder() {
+function confirmOrder(paymentMethod) {
 	$('#container').html(confirmHTML);
 	$('#button').remove();
 	$('#header').html('Confirm').addClass('black-text').removeClass('blue-text');
 	$('#nav').append('<ul class="right" id="button">\n' +
 		'            <li>\n' +
-		'                <a href="#" onclick="submitOrder(userSettings.preferredPay)"\n' +
+		'                <a href="#" onclick="submitOrder(paymentMethod)"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">check</i></a>\n' +
 		'            </li>\n' +
@@ -234,10 +271,43 @@ function confirmOrder() {
 	$('#menu').html('<a href="#" onclick="payment()" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_backwards</i></a>');
+	var subtotal = 0, delivery, tax, total, deliveryPercent = .20;
+	for (var i = 0; i < shoppingCart.length; i++) {
+		$('#confirm-items').append('<a class="collection-item black-text">' + shoppingCart[i].name + '<i onclick="openModal(' + i + ', ' + paymentMethod + ')" class="material-icons right">delete</i> </a>');
+		subtotal += shoppingCart[i].price;
+	}
+	if (!subtotal) subtotal = 0;
+	if (paymentMethod == 2) deliveryPercent = .23;
+	$('#subtotal').html('$' + subtotal.toFixed(2));
+	delivery = 10 + subtotal * deliveryPercent;
+	$('#delivery').html('$' + delivery.toFixed(2));
+	tax = subtotal * .04;
+	$('#tax').html('$' + tax.toFixed(2));
+	total = delivery + tax + subtotal;
+	$('#total').html('$' + total.toFixed(2))
+
+}
+
+function openModal(id, payment) {
+	confirmModal.open();
+	$('#modal-footer').html('<a class="modal-action modal-close waves-effect waves-light btn-flat">No</a><a onclick="removeFromCart(' + id + ', ' + payment + ')" class="modal-action modal-close waves-effect waves-light red white-text btn-flat">Remove</a>')
+}
+
+function removeFromCart(id, payment) {
+	shoppingCart.splice(id, 1);
+	if (shoppingCart.length > 0) {
+		if (payment) confirmOrder(payment);
+		else cart();
+	} else {
+		if (payment) stores();
+		else cart();
+	}
 }
 
 function search() {
+	$('#cart-footer').hide();
 	$('#navbar').show();
+	$('#button').remove();
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
 	$('#container').html(searchHTML);
@@ -268,26 +338,48 @@ function searchItems(query) {
 				'               <text>$' + itemsDB[i].price + '</text>' +
 				'                  <br>' +
 				'                 <text style="font-weight: lighter;">' + 'Put something here' + '</text>' +
-				'				  <text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this)">Add to Cart</text>' +
+				'				  <text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this, true)">Add to Cart</text>' +
 				'              </p>' +
 				'          </a>')
+			var cartItems = shoppingCart.filter(function (x) {
+				return itemsDB[i].id == x.id
+			}).length;
+			if (cartItems > 0) {
+				addItem($('#' + itemsDB[i].id + '-quantity'), false);
+				$('#' + itemsDB[i].id + '-quantity').attr('data-item-count', cartItems);
+				$('#input-' + itemsDB[i].id).val(cartItems)
+			}
 		}
 	}
 }
 
-function addItem(element) {
+function addItem(element, focus) {
 	var parent = $(element).closest("a");
 	var parentId = parent.prop('id');
 	var quantityElement = $('#' + parentId + '-quantity');
 	var quantity = parseInt(quantityElement.attr('data-item-count'));
+	loadCartFooter();
+	$('#cart-footer').show();
 	quantityElement.remove();
 	$('#' + parentId + '-data').append('<text class="right blue-text" data-item-count="0" id="' + parentId + '-quantity" style="position: relative;transform: translateX(-3px); margin-top: 3px" onclick="removeItem(this)">Remove</text>');
-	$('#' + parent.prop('id') + '-data').prepend('<input min="1" max="20" id="input-' + parentId + '" oninput="addItemToCart(' + parentId + ', $(this).val()); $(\'#' + parentId + '-quantity\').attr(\'data-item-count\', $(this).val());" class="browser-default input right" style= "width: 55px;" type="number">');
+	$('#' + parent.prop('id') + '-data').prepend('<input min="1" max="20" id="input-' + parentId + '" onclick="showItemSelector(' + parentId + ')" oninput="addItemToCart(' + parentId + ', $(this).val()); $(\'#' + parentId + '-quantity\').attr(\'data-item-count\', $(this).val());" class="browser-default input right" style= "width: 55px;" type="number">');
 	quantityElement.attr('data-item-count', quantity);
-	$('#input-' + parentId).focus();
+	if (focus === true) {
+		$('#input-' + parentId).focus();
+	}
+}
+
+function showItemSelector(id) {
+	$('#cart-footer').show();
+	loadCartFooter();
+	$('#' + id + '-quantity').val($('#' + id + '-quantity').attr('data-item-count'));
 }
 
 function addItemToCart(id, amount) {
+	shoppingCart = shoppingCart.filter(function (x) {
+		return x.id !== id
+	});
+	$('#' + id + '-quantity').attr('data-item-count', amount);
 	for (var i = 0; i < itemsDB.length; i++) {
 		if (itemsDB[i].id === id) {
 			for (var k = 0; k < amount; k++) {
@@ -295,16 +387,26 @@ function addItemToCart(id, amount) {
 			}
 		}
 	}
+	loadCartFooter();
+	$('#cart-footer').show();
+}
+
+function getInputVal(name) {
+	return $('input:radio[name="' + name + '"]:checked').val()
 }
 
 function removeItem(element) {
 	var parent = $(element).closest("a");
 	var parentId = parent.prop('id');
 	var quantityElement = $('#' + parentId + '-quantity');
+	$('#cart-footer').hide();
 	quantityElement.remove();
 	$('#input-' + parentId).remove();
 	$('#' + parent.prop('id') + '-data').append('<text class="right blue-text" data-item-count="0" id="' + parentId + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this)">Add to Cart</text>');
 	quantityElement.attr('data-item-count', 0);
+	shoppingCart = shoppingCart.filter(function (x) {
+		return x.id != parentId
+	});
 }
 
 var storePageHTML = '<div class="row">\n' +
@@ -322,33 +424,24 @@ var storePageHTML = '<div class="row">\n' +
 
 var confirmHTML = '<div class="container">\n' +
 	'        <div class="container"><br>\n' +
-	'            <div class="collection black-text" style="margin-top: -5px; overflow: scroll; height: 319px">\n' +
-	'                <a class="collection-item black-text">Mac Big<i class="material-icons right grey-text">delete</i></a>\n' +
-	'                <a class="collection-item black-text">Fireworks - Blue Fire</a>\n' +
-	'                <a class="collection-item black-text">Mint Oreo\'s</a>\n' +
-	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison</a>\n' +
-	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
-	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
-	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
-	'                <a class="collection-item black-text">Gordon Ramsey\'s Rat Poison 2.0</a>' +
-
+	'            <div class="collection black-text" id="confirm-items" style="margin-top: -5px; overflow: scroll; max-height: 319px">\n' +
 	'            </div>\n' +
 	'        </div>\n' +
 	'        <div class="row center">\n' +
 	'            <div class="container">\n' +
 	'            <div class="container">\n' +
 	'                <b class="left">Subtotal:</b>\n' +
-	'                <unicorn class="right">$50.00</unicorn>\n' +
+	'                <span id="subtotal" class="right"></span>\n' +
 	'                <br>\n' +
 	'                <b class="left">Delivery:</b>\n' +
-	'                <unicorn class="right">$8.50</unicorn>\n' +
+	'                <span id="delivery" class="right"></span>\n' +
 	'                <br>\n' +
 	'                <b class="left">Tax:</b>\n' +
-	'                <unicorn class="right">$4.50</unicorn>\n' +
+	'                <span id="tax" class="right"></span>\n' +
 	'                <br>\n' +
 	'                <hr>\n' +
 	'                <h5 class="left" style="font-weight: bold">Total:</h5>\n' +
-	'                <h5 class="right" style="font-weight: bold;">$63.00</h5>\n' +
+	'                <h5 class="right" id="total" style="font-weight: bold;"></h5>\n' +
 	'            </div>\n' +
 	'            </div>\n' +
 	'        </div>\n' +
@@ -356,10 +449,27 @@ var confirmHTML = '<div class="container">\n' +
 
 var paymentHTML = '<div class="container">' +
 	'  <label>Payment Method</label>\n' +
-	'  <select class="browser-default">\n' +
-	'    <option value="0">Cash on Pickup (17% fee)</option>\n' +
-	'    <option value="1">PayPal/Credit Card (15% fee)</option>\n' +
-	'  </select>\n' +
+	'<div class="center">' +
+	'  <p>\n' +
+	'      <label>\n' +
+	'        <input value="0" name="pay-group" type="radio" checked />\n' +
+	'        <span>PayPal/Credit Card (20% fee)</span>\n' +
+	'      </label>\n' +
+	'    </p>\n' +
+	'    <p>\n' +
+	'      <label>\n' +
+	'        <input value="1" name="pay-group" class="disabled" disabled type="radio" />\n' +
+	'        <span>SwoopIt Cred</span>\n' +
+	'      </label>\n' +
+	'    </p>' +
+	'    <p>\n' +
+	'      <label>\n' +
+	'        <input value="2" name="pay-group" type="radio" />\n' +
+	'        <span>Cash on Pickup (23% fee)</span>\n' +
+	'      </label>\n' +
+	'    </p>' +
+	'<a onclick="confirmOrder(getInputVal(\'pay-group\'))" class="btn blue waves-effect waves-ripple waves-light">Continue</a>' +
+	'</div>' +
 	'</div>' +
 	'            ';
 
@@ -372,7 +482,12 @@ var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">
 	'    </div>';
 
 
-var cartHTML = '<div class="container" style="border: none"><h6 style="font-weight: bold">Items</h6><br><div class="collection black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: scroll; max-height: 250px;"></div></div> ';
+var cartHTML = '<div class="container" style="border: none">' +
+	'<br>' +
+	'<div class="collection black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: scroll; max-height: 250px;">' +
+	'</div>' +
+	'<h6 style="font-weight: bold" id="subtotal">Subtotal: $0</h6>' +
+	'</div> ';
 
 var categoryHTML = '<div class="row">\n' +
 	'        <form style="height: 85px;" onsubmit="searchStoreItems(); return false" class="col s12">\n' +
@@ -487,7 +602,10 @@ function logout() {
 			alert('There was an error disconnecting your account - Please check your internet connection or update your device. Code: ' + err)
 		}
 	);
-	//todo: go to loginHTML
+	$('#container').html('<div class="center" style="display: inline-block; vertical-align: middle;">\n' +
+		'        <img style="width: 100%;display: inline-block; vertical-align: middle; position: relative;" src="img/swoop_trans.png">\n' +
+		'        <a onclick="stores();" class="white-text" style="font-weight: bold; font-family: \'Futura-Bold\', sans-serif; font-size: 4.4rem">SwoopIt</a>\n' +
+		'    </div>')
 }
 
 function regDevice(registrationID, oldRegId) {
