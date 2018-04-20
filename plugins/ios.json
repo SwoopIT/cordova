@@ -1,0 +1,16 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.396697495271-8j9q2va5brpq7ot55n23bs15nsgmvfbf",
+      "PACKAGE_NAME": "com.swoopit.android"
+    }
+  },
+  "dependent_plugins": {}
+}

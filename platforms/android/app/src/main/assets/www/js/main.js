@@ -147,7 +147,7 @@ function cart() {
 			'            </li>\n' +
 			'        </ul>');
 
-		$('#container').append('<br><div class="center"><a onclick="payment()" style="font-weight: bold; font-size: large" class="center center-align blue-text">Checkout</a></div>');
+		$('.container').append('<a onclick="payment()" style="font-weight: bold; font-size: large" class="right right-align blue-text">Checkout</a>');
 		$('#subtotal').show();
 		$('#subtotal').html('Subtotal: $' + subtotal);
 	} else {
@@ -489,7 +489,7 @@ var cartHTML = '<div class="container" style="border: none">' +
 	'<br>' +
 	'<div class="collection black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: scroll; max-height: 250px;">' +
 	'</div>' +
-	'<h6 style="font-weight: bold" id="subtotal">Subtotal: $0</h6>' +
+	'<h6 style="font-weight: bold; display: inline" id="subtotal">Subtotal: $0</h6>' +
 	'</div> ';
 
 var categoryHTML = '<div class="row">\n' +

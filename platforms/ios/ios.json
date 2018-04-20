@@ -1,0 +1,54 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"GooglePlus\"><param name=\"ios-package\" value=\"GooglePlus\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<access origin=\"https://accounts.google.com/*\" />",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "CFBundleURLTypes": [
+            {
+              "xml": "<array><dict><key>CFBundleTypeRole</key><string>Editor</string><key>CFBundleURLName</key><string>REVERSED_CLIENT_ID</string><key>CFBundleURLSchemes</key><array><string>com.googleusercontent.apps.396697495271-8j9q2va5brpq7ot55n23bs15nsgmvfbf</string></array></dict></array>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.396697495271-8j9q2va5brpq7ot55n23bs15nsgmvfbf",
+      "PACKAGE_NAME": "com.swoopit.android"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-googleplus.GooglePlus",
+      "file": "plugins/cordova-plugin-googleplus/www/GooglePlus.js",
+      "pluginId": "cordova-plugin-googleplus",
+      "clobbers": [
+        "window.plugins.googleplus"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-googleplus": "5.2.3"
+  }
+}
