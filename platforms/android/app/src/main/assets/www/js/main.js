@@ -125,6 +125,13 @@ function loadItems(categoryName, storeId) {
 	}
 }
 
+function getCategory(id) {
+	for (var i = 0; i < categoriesDB.length; i++)
+		if (categoriesDB[i].id == id)
+			return categoriesDB[i];
+	return null;
+}
+
 function cart() {
 	$('#cart-footer').hide();
 	$('#navbar').show();
@@ -135,10 +142,62 @@ function cart() {
 	var shoppingElement = $('#shopping-cart');
 	if (shoppingCart[0]) {
 		var subtotal = 0;
+
+		var stores = {};
 		for (var i = 0; i < shoppingCart.length; i++) {
-			shoppingElement.append('<a class="collection-item black-text avatar nohover" style="min-height: 65px;"><img src="' + shoppingCart[i].img + '" alt="' + shoppingCart[i].name + '" class="circle">' + shoppingCart[i].name + '<i class="material-icons right" onclick="openModal(' + i + ')">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + shoppingCart[i].price + '</p></a>');
-			subtotal += shoppingCart[i].price;
+			var store = getCategory(shoppingCart[i].category).store;
+			if (!stores[store]) {
+				stores[store] = [];
+			}
+
+			stores[store].push(shoppingCart[i]);
 		}
+
+		/*
+
+		var stores = {
+			mcd: [
+				0: {
+				 //item object
+				},
+				1: {
+				 //item object
+				},
+				2: {
+				 //item object
+				}
+			]
+		};
+
+		 */
+
+		for(store in stores) {
+			//console.log(store); // mcd
+			/* console.log(stores[store]) /*
+			[0: {
+				 //item object
+				},
+				1: {
+				 //item object
+				},
+				2: {
+				 //item object
+				}
+				]
+			console.log(stores[store][0]); */
+
+
+
+			shoppingElement.prepend('<div id="' + store + '" style="margin-bottom: -10px; overflow: none; max-height: 100px"> ' +
+				'<h6 style="font-weight: 300; margin-bottom: 15px;">' + storeNames[store] + '<span class="right blue-text" onclick="payment()">Checkout</span> </h6>\ ' +
+				'<div class="collection black-text" id="shopping-cart-' + store + '" style="margin-top: -5px; border: none; overflow: scroll;   max-height: 140px; margin-bottom: 86px;"></div></div>');
+			var localCart = stores[store];
+			for (i = 0; i < localCart.length; i++) {
+				$("#shopping-cart-" + store).append('<a class="collection-item black-text avatar nohover dismissable" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" style="margin-top: 10px" onclick="openModal(' + i + ')">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
+				subtotal += localCart[i].price;
+			}
+		}
+
 		$('#nav').append('<ul class="right" id="button">\n' +
 			'            <li>\n' +
 			'                <a href="#" onclick="payment()"\n' +
@@ -147,9 +206,13 @@ function cart() {
 			'            </li>\n' +
 			'        </ul>');
 
-		$('.container').append('<a onclick="payment()" style="font-weight: bold; font-size: large" class="right right-align blue-text">Checkout</a>');
 		$('#subtotal').show();
-		$('#subtotal').html('Subtotal: $' + subtotal);
+		$('#subtotal').html('Subtotal: $' + subtotal.toFixed(2));
+		var hammertime = new Hammer(document.querySelector('.collection-item'), {});
+		hammertime.on('swipe', function(ev) {
+			alert(ev);
+		});
+
 	} else {
 		$('#subtotal').hide();
 		shoppingElement.html('<div class="center"><h6 style="font-weight: 300">You have nothing in your Cart.</h6></div>')
@@ -160,7 +223,6 @@ function cart() {
 			'                        class="material-icons">shopping_basket</i></a>\n' +
 			'            </li>\n' +
 			'        </ul>');
-		$('#container').append('<br><div class="center"><a style="font-weight: bold; font-size: large" class="center center-align grey-text">Checkout</a></div>');
 	}
 	$('#header').html('Cart').addClass('black-text').removeClass('blue-text');
 	$('#menu').html('<a href="#" data-target="slide-out"\n' +
@@ -174,7 +236,6 @@ function loadCartFooter() {
 	$('#cart-footer-items').html('');
 	for (var i = 0; i < shoppingCart.length; i++) {
 		subtotal += shoppingCart[i].price;
-		console.log(subtotal);
 		if (currentItems.indexOf(shoppingCart[i].id) == -1) {
 			currentItems.push(shoppingCart[i].id);
 
@@ -487,9 +548,9 @@ var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">
 
 var cartHTML = '<div class="container" style="border: none">' +
 	'<br>' +
-	'<div class="collection black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: scroll; max-height: 250px;">' +
+	'<div class="black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: none;">' +
 	'</div>' +
-	'<h6 style="font-weight: bold; display: inline" id="subtotal">Subtotal: $0</h6>' +
+	'<h6 style="font-weight: bold; display: inline; font-size: large; margin-top: " id="subtotal">Subtotal: $0</h6>' +
 	'</div> ';
 
 var categoryHTML = '<div class="row">\n' +
@@ -658,7 +719,7 @@ function calcDateString(milliseconds) {
 	var minutesSince = Math.floor(new Date().getTime() / minutes) - Math.floor(milliseconds / minutes);
 	var hoursSince = Math.floor(new Date().getTime() / hours) - Math.floor(milliseconds / hours);
 	var daysSince = Math.floor(new Date().getTime() / days) - Math.floor(milliseconds / days);
-	if (daysSince >= 1) return daysSince + 'Days Ago';
+	if (daysSince >= 1) return daysSince + ' Days Ago';
 	if (hoursSince >= 1) return hoursSince + ' Hours Ago';
 	if (minutesSince >= 1) return minutesSince + ' Minutes Ago';
 	if (secondsSince >= 1) return minutesSince + ' Seconds Ago';

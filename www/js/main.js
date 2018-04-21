@@ -7,7 +7,7 @@ $.ajaxSetup({
 });
 var userSettings = [];
 var storeNames = {
-	mcd: 'McDonalds',
+	mcd: 'McDonald\'s',
 	fdl: 'Foodland',
 	kta: 'KTA',
 	lnl: 'L&L Barbecue',
@@ -172,8 +172,8 @@ function cart() {
 		 */
 
 		for(store in stores) {
-			console.log(store); // mcd
-			console.log(stores[store]) /*
+			//console.log(store); // mcd
+			/* console.log(stores[store]) /*
 			[0: {
 				 //item object
 				},
@@ -183,18 +183,17 @@ function cart() {
 				2: {
 				 //item object
 				}
-				]*/
-			console.log(stores[store][0]);
+				]
+			console.log(stores[store][0]); */
 
 
 
-			shoppingElement.append('<div id="' + storeNames[store] + '" style="margin-bottom: -10px; overflow: scroll; max-height: 100px"> ' +
+			shoppingElement.prepend('<div id="' + store + '" style="margin-bottom: -10px; overflow: none; max-height: 100px"> ' +
 				'<h6 style="font-weight: 300; margin-bottom: 15px;">' + storeNames[store] + '<span class="right blue-text" onclick="payment()">Checkout</span> </h6>\ ' +
-				'<div class="collection black-text" id="shopping-cart-' + storeNames[store] + '" style="margin-top: -5px; border: none; overflow: none;"></div>');
-			var nameStore = storeNames[store];
+				'<div class="collection black-text" id="shopping-cart-' + store + '" style="margin-top: -5px; border: none; overflow: scroll;   max-height: 140px; margin-bottom: 86px;"></div></div>');
 			var localCart = stores[store];
 			for (i = 0; i < localCart.length; i++) {
-				$("#shopping-cart-" + nameStore).append('<a class="collection-item black-text avatar nohover" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" onclick="openModal(' + i + ')">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
+				$("#shopping-cart-" + store).append('<a class="collection-item black-text avatar nohover dismissable" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" style="margin-top: 10px" onclick="openModal(' + i + ')">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
 				subtotal += localCart[i].price;
 			}
 		}
@@ -207,9 +206,13 @@ function cart() {
 			'            </li>\n' +
 			'        </ul>');
 
-		$('.container').append('<a onclick="payment()" style="font-weight: bold; font-size: large" class="right right-align blue-text">Checkout</a>');
 		$('#subtotal').show();
-		$('#subtotal').html('Subtotal: $' + subtotal);
+		$('#subtotal').html('Subtotal: $' + subtotal.toFixed(2));
+		var hammertime = new Hammer(document.querySelector('.blue-text'), {});
+		hammertime.on('swipe', function(ev) {
+			alert(ev);
+		});
+
 	} else {
 		$('#subtotal').hide();
 		shoppingElement.html('<div class="center"><h6 style="font-weight: 300">You have nothing in your Cart.</h6></div>')
@@ -220,7 +223,6 @@ function cart() {
 			'                        class="material-icons">shopping_basket</i></a>\n' +
 			'            </li>\n' +
 			'        </ul>');
-		$('#container').append('<br><div class="center"><a style="font-weight: bold; font-size: large" class="center center-align grey-text">Checkout</a></div>');
 	}
 	$('#header').html('Cart').addClass('black-text').removeClass('blue-text');
 	$('#menu').html('<a href="#" data-target="slide-out"\n' +
@@ -234,7 +236,6 @@ function loadCartFooter() {
 	$('#cart-footer-items').html('');
 	for (var i = 0; i < shoppingCart.length; i++) {
 		subtotal += shoppingCart[i].price;
-		console.log(subtotal);
 		if (currentItems.indexOf(shoppingCart[i].id) == -1) {
 			currentItems.push(shoppingCart[i].id);
 
@@ -547,9 +548,9 @@ var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">
 
 var cartHTML = '<div class="container" style="border: none">' +
 	'<br>' +
-	'<div class="collection black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: none;>' +
+	'<div class="black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: none;">' +
 	'</div>' +
-	'<h6 style="font-weight: bold; display: inline" id="subtotal">Subtotal: $0</h6>' +
+	'<h6 style="font-weight: bold; display: inline; font-size: large; margin-top: " id="subtotal">Subtotal: $0</h6>' +
 	'</div> ';
 
 var categoryHTML = '<div class="row">\n' +
