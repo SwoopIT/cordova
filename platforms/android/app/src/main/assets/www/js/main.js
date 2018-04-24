@@ -1,5 +1,5 @@
 // Globals
-var instance, elem, deviceId, shoppingCart = [];
+var instance, elem, deviceId, shoppingCart = [], storesShoppingCart;
 $.ajaxSetup({
 	beforeSend: function (xhr) {
 		xhr.setRequestHeader("authentication", 0);
@@ -28,6 +28,7 @@ $(document).ready(function () {
 	$('#navbar').hide();
 	$(document.body).addClass('blue');
 	$(document.body).removeClass('grey lighten-4');
+	$('#nav').append('<ul class="right" id="button"></ul>')
 	cache();
 });
 
@@ -35,12 +36,20 @@ function sideClose() {
 	instance.close();
 }
 
-function submitOrder(paymentMethod) {
+function submitOrder(paymentMethod, store) {
 	var itemsArray = [];
 	if (!shoppingCart[0]) return M.toast({html: 'LOL You have nothing in your cart! xD'});
-	for (var i = 0; i < shoppingCart.length; i++) {
-		itemsArray.push(shoppingCart[i].id);
+	if (store) {
+		console.log(storesShoppingCart[store]);
+		for (var k = 0; k < storesShoppingCart[store].length; k++) {
+			itemsArray.push(storesShoppingCart[store][k].id);
+		}
+	} else {
+		for (var i = 0; i < shoppingCart.length; i++) {
+			itemsArray.push(shoppingCart[i].id);
+		}
 	}
+	$('.disableitems').hide();
 	$.ajax({
 		method: 'post',
 		dataType: 'json',
@@ -52,9 +61,12 @@ function submitOrder(paymentMethod) {
 		url: 'https://swoop-it.herokuapp.com/api/order',
 		success: function (data) {
 			if (data) {
-				M.toast({html: 'Successfully submitted order! Check the status on the <a onclick="orders()" class="toast-action">Orders Page</a>.'})
+				$('#button').hide();
+				M.toast({html: '<span>Successfully submitted order! Check the status on the <a onclick="orders()" class="blue-text" style="font-weight: bold;" ">Orders Page</a>.</span>'});
+				setTimeout(orders, 750);
 			} else {
-				M.toast({html: 'Order failed. Are you <a onclick="login()" class="toast-action">logged in</a>?'})
+				M.toast({html: '<span>Order fail. Are you <a onclick="login()" class="blue-text" style="font-weight: bold;" ">signed in</a> with a hpa.edu account?</span>'});
+				$('.disableitems').show();
 			}
 		}
 	})
@@ -68,7 +80,7 @@ function stores(id) {
 	if (!id) {
 		$('#container').html(storesHTML);
 		$('#header').html('SwoopIt').addClass('blue-text').removeClass('black-text');
-		$('#button').remove();
+		$('#button').hide();
 		$('#menu').html('<a href="#" data-target="slide-out" class="sidenav-trigger blue-text"><i class="material-icons">menu</i></a>');
 		$('.cont-store').click(function (data) {
 			stores(data.currentTarget.id)
@@ -76,6 +88,12 @@ function stores(id) {
 
 	} else {
 		$('#header').html(storeNames[id]).addClass('black-text').removeClass('blue-text');
+		$('#button').show();
+		$('#button').html('<li>\n' +
+			'                <a href="#" onclick="loadCartFooter()"\n' +
+			'                   class="blue-text"><i\n' +
+			'                        class="material-icons">shopping_basket</i></a>\n' +
+			'            </li>\n');
 		category(id);
 	}
 	sideClose();
@@ -88,6 +106,12 @@ function category(id) {
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_back</i></a>');
 	$('#container').html(categoryHTML);
+	$('#button').html('<li>\n' +
+		'                <a href="#" onclick="loadCartFooter()"\n' +
+		'                   class="blue-text"><i\n' +
+		'                        class="material-icons">shopping_basket</i></a>\n' +
+		'            </li>\n' +
+		'        </ul>');
 	for (var i = 0; i < categoriesDB.length; i++) {
 		if (categoriesDB[i].store === id) {
 			$('#categories').append('<a onclick="loadItems(\'' + categoriesDB[i].id + '\', \'' + id + '\')" class="collection-item black-text">' + categoriesDB[i].name + '<i class="material-icons right">arrow_forward</i></a>');
@@ -97,6 +121,12 @@ function category(id) {
 
 function loadItems(categoryName, storeId) {
 	$('#container').html(storePageHTML);
+	$('#button').html('<li>\n' +
+		'                <a href="#" onclick="loadCartFooter()"\n' +
+		'                   class="blue-text"><i\n' +
+		'                        class="material-icons">shopping_basket</i></a>\n' +
+		'            </li>\n' +
+		'        </ul>');
 	$('#menu').html('<a onclick="stores(\'' + storeId + '\');" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_back</i></a>');
@@ -135,7 +165,7 @@ function getCategory(id) {
 function cart() {
 	$('#cart-footer').hide();
 	$('#navbar').show();
-	$('#button').remove();
+	$('#button').show();
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
 	$('#container').html(cartHTML);
@@ -171,7 +201,7 @@ function cart() {
 
 		 */
 
-		for(store in stores) {
+		for (store in stores) {
 			//console.log(store); // mcd
 			/* console.log(stores[store]) /*
 			[0: {
@@ -186,41 +216,39 @@ function cart() {
 				]
 			console.log(stores[store][0]); */
 
-
-
-			shoppingElement.prepend('<div id="' + store + '" style="margin-bottom: -10px; overflow: none; max-height: 100px"> ' +
-				'<h6 style="font-weight: 300; margin-bottom: 15px;">' + storeNames[store] + '<span class="right blue-text" onclick="payment()">Checkout</span> </h6>\ ' +
+			var blamo = store;
+			shoppingElement.prepend('<div id="' + store + '" style="margin-bottom: -10px; overflow: none; max-height: 100px">' +
+				'<h6 style="font-weight: 300; margin-bottom: 15px;">' + storeNames[store] + '<span class="right blue-text" onclick="payment(\'' + store + '\')">Checkout</span> </h6>' +
 				'<div class="collection black-text" id="shopping-cart-' + store + '" style="margin-top: -5px; border: none; overflow: scroll;   max-height: 140px; margin-bottom: 86px;"></div></div>');
 			var localCart = stores[store];
 			for (i = 0; i < localCart.length; i++) {
-				$("#shopping-cart-" + store).append('<a class="collection-item black-text avatar nohover dismissable" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" style="margin-top: 10px" onclick="openModal(' + i + ')">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
+				$("#shopping-cart-" + store).append('<a class="collection-item black-text avatar nohover dismissable" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" style="margin-top: 10px" onclick="openModal(null,' + i + ', getInputVal(\'pay-group\'))">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
 				subtotal += localCart[i].price;
 			}
 		}
+		storesShoppingCart = stores;
 
-		$('#nav').append('<ul class="right" id="button">\n' +
-			'            <li>\n' +
+		$('#button').html('<li>\n' +
 			'                <a href="#" onclick="payment()"\n' +
 			'                   class="blue-text"><i\n' +
-			'                        class="material-icons">shopping_basket</i></a>\n' +
+			'                        class="material-icons">payment</i></a>\n' +
 			'            </li>\n' +
 			'        </ul>');
 
 		$('#subtotal').show();
 		$('#subtotal').html('Subtotal: $' + subtotal.toFixed(2));
-		var hammertime = new Hammer(document.querySelector('.collection-item'), {});
-		hammertime.on('swipe', function(ev) {
+		var hammertime = new Hammer(document.querySelector('.blue-text'), {});
+		hammertime.on('swipe', function (ev) {
 			alert(ev);
 		});
 
 	} else {
 		$('#subtotal').hide();
 		shoppingElement.html('<div class="center"><h6 style="font-weight: 300">You have nothing in your Cart.</h6></div>')
-		$('#nav').append('<ul class="right" id="button">\n' +
-			'            <li>\n' +
+		$('#button').html('<li>\n' +
 			'                <a href="#"\n' +
 			'                   class="grey-text"><i\n' +
-			'                        class="material-icons">shopping_basket</i></a>\n' +
+			'                        class="material-icons">payment</i></a>\n' +
 			'            </li>\n' +
 			'        </ul>');
 	}
@@ -249,11 +277,12 @@ function loadCartFooter() {
 		}
 	}
 	$('#footer-subtotal').html('Subtotal: $' + subtotal.toFixed(2));
+	$('#cart-footer').toggle();
 }
 
 function orders() {
 	$('#cart-footer').hide();
-	$('#button').remove();
+	$('#button').hide();
 	$('#navbar').show();
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
@@ -273,29 +302,49 @@ function orders() {
 					'             <div class="determinate blue" style="width: ' + data[i].progress.status + '%"></div>\n' +
 					'         </div>\n' +
 					'     <br>\n' +
-					'     <a onclick="cancelOrder(' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
+					'     <a onclick="openModal(\'hi\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
 					'     </div>\n' +
 					'</li>');
+				if (data[i].progress.status <= 0) {
+					$('#cancel-' + data[i].id).addClass('disabled')
+				}
 			}
 		}
 	});
 	var elemy = document.querySelector('.collapsible');
 	var collapse = new M.Collapsible(elemy, {});
-	$('#button').remove();
+	$('#button').hide();
 	$('#header').html('Orders').addClass('black-text').removeClass('blue-text');
-	$('#nav').append('<ul class="right" id="button">\n' +
-		'            <li>\n' +
+	$('#button').html('<li>\n' +
 		'                <a href="#" onclick="editOrders()"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">edit</i></a>\n' +
-		'            </li>\n' +
-		'        </ul>');
+		'            </li>\n');
 	sideClose();
+}
+
+function cancelOrder(id) {
+	$.ajax({
+		method: 'delete',
+		url: 'https://swoop-it.herokuapp.com/api/order',
+		data: {
+			id: id
+		},
+		success: function (data) {
+			if (data) {
+				M.toast({html: 'Successfully Canceled the Order.'});
+				setTimeout(orders, 1500);
+			} else {
+				M.toast({html: 'Something went wrong. Please try canceling again.'});
+				setTimeout(orders, 1500);
+			}
+		}
+	})
 }
 
 function settings() {
 	$('#cart-footer').hide();
-	$('#button').remove();
+	$('#button').hide();
 	$('#navbar').show();
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
@@ -304,40 +353,66 @@ function settings() {
 	sideClose();
 }
 
-function payment() {
+function payment(store) {
+	if (store) store = store.toString();
 	$('#container').html(paymentHTML);
-	$('#button').remove();
+	if (store) {
+		$('#center').append('<a onclick="confirmOrder(getInputVal(\'pay-group\'), \'' + store + '\')" class="btn blue waves-effect waves-ripple waves-light">Continue</a>');
+	} else {
+		$('#center').append('<a onclick="confirmOrder(getInputVal(\'pay-group\'))" class="btn blue waves-effect waves-ripple waves-light">Continue</a>');
+	}
+	$('#button').hide();
 	$('#header').html('Payment').addClass('black-text').removeClass('blue-text');
-	$('#nav').append('<ul class="right" id="button">\n' +
-		'            <li>\n' +
-		'                <a href="#" onclick="confirmOrder(getInputVal(\'pay-group\'))"\n' +
-		'                   class="blue-text"><i\n' +
-		'                        class="material-icons">arrow_forward</i></a>\n' +
-		'            </li>\n' +
-		'        </ul>');
+	if (store) {
+		$('#button').html('<li>\n' +
+			'                <a href="#" onclick="confirmOrder(getInputVal(\'pay-group\'), \'' + store + '\')"\n' +
+			'                   class="blue-text"><i\n' +
+			'                        class="material-icons">arrow_forward</i></a>\n' +
+			'            </li>\n');
+	} else {
+		$('#button').html('<li>\n' +
+			'                <a href="#" onclick="confirmOrder(getInputVal(\'pay-group\'))"\n' +
+			'                   class="blue-text"><i\n' +
+			'                        class="material-icons">arrow_forward</i></a>\n' +
+			'            </li>\n');
+	}
 	$('#menu').html('<a href="#" onclick="cart()" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_backwards</i></a>');
 	sideClose();
 }
 
-function confirmOrder(paymentMethod) {
+function confirmOrder(paymentMethod, store) {
+	console.log(getInputVal('pay-group'));
+	paymentMethod = getInputVal('pay-group');
 	$('#container').html(confirmHTML);
-	$('#button').remove();
+	$('#button').show();
 	$('#header').html('Confirm').addClass('black-text').removeClass('blue-text');
-	$('#nav').append('<ul class="right" id="button">\n' +
-		'            <li>\n' +
-		'                <a href="#" onclick="submitOrder(paymentMethod)"\n' +
-		'                   class="blue-text"><i\n' +
-		'                        class="material-icons">check</i></a>\n' +
-		'            </li>\n' +
-		'        </ul>');
-	$('#menu').html('<a href="#" onclick="payment()" \n' +
+	if (store) {
+		$('#button').html('<li>\n' +
+			'                <a href="#" onclick="submitOrder(' + paymentMethod + ', \'' + store + '\')"\n' +
+			'                   class="blue-text"><i\n' +
+			'                        class="material-icons disableitems">check</i></a>\n' +
+			'            </li>\n' +
+			'        </ul>');
+	} else {
+		$('#button').html('<li>\n' +
+			'                <a href="#" onclick="submitOrder(' + paymentMethod + ')"\n' +
+			'                   class="blue-text"><i\n' +
+			'                        class="material-icons disableitems">check</i></a>\n' +
+			'            </li>\n' +
+			'        </ul>');
+	}
+	$('#menu').html('<a href="#" onclick="payment(\'' + store + '\')" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_backwards</i></a>');
 	var subtotal = 0, delivery, tax, total, deliveryPercent = .20;
 	for (var i = 0; i < shoppingCart.length; i++) {
-		$('#confirm-items').append('<a class="collection-item black-text">' + shoppingCart[i].name + '<i onclick="openModal(' + i + ', ' + paymentMethod + ')" class="material-icons right">delete</i> </a>');
+		if (store) {
+			$('#confirm-items').append('<a class="collection-item black-text">' + shoppingCart[i].name + '<i onclick="openModal(null, ' + i + ', ' + paymentMethod + ', \'' + store + '\')" class="material-icons right">delete</i> </a>');
+		} else {
+			$('#confirm-items').append('<a class="collection-item black-text">' + shoppingCart[i].name + '<i onclick="openModal(null, ' + i + ', ' + paymentMethod + ')" class="material-icons right">delete</i> </a>');
+		}
 		subtotal += shoppingCart[i].price;
 	}
 	if (!subtotal) subtotal = 0;
@@ -352,15 +427,19 @@ function confirmOrder(paymentMethod) {
 
 }
 
-function openModal(id, payment) {
+function openModal(type, id, payment, store) {
 	confirmModal.open();
-	$('#modal-footer').html('<a class="modal-action modal-close waves-effect waves-light btn-flat">No</a><a onclick="removeFromCart(' + id + ', ' + payment + ')" class="modal-action modal-close waves-effect waves-light red white-text btn-flat">Remove</a>')
+	if (type) { // type is only defined if its confirming to delete an order
+		$('#modal-footer').html('<a class="modal-action modal-close waves-effect waves-light btn-flat">No</a><a onclick="cancelOrder(' + id + ')" class="modal-action modal-close waves-effect waves-light red white-text btn-flat">Cancel</a>')
+	} else {
+		$('#modal-footer').html('<a class="modal-action modal-close waves-effect waves-light btn-flat">No</a><a onclick="removeFromCart(' + id + ', ' + payment + ', ' + store + ')" class="modal-action modal-close waves-effect waves-light red white-text btn-flat">Remove</a>');
+	}
 }
 
-function removeFromCart(id, payment) {
+function removeFromCart(id, payment, store) {
 	shoppingCart.splice(id, 1);
 	if (shoppingCart.length > 0) {
-		if (payment) confirmOrder(payment);
+		if (payment) confirmOrder(payment, store);
 		else cart();
 	} else {
 		if (payment) stores();
@@ -371,7 +450,12 @@ function removeFromCart(id, payment) {
 function search() {
 	$('#cart-footer').hide();
 	$('#navbar').show();
-	$('#button').remove();
+	$('#button').show();
+	$('#button').html('<li>\n' +
+		'                <a href="#" onclick="loadCartFooter()"\n' +
+		'                   class="blue-text"><i\n' +
+		'                        class="material-icons">shopping_basket</i></a>\n' +
+		'            </li>\n');
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
 	$('#container').html(searchHTML);
@@ -422,8 +506,6 @@ function addItem(element, focus) {
 	var parentId = parent.prop('id');
 	var quantityElement = $('#' + parentId + '-quantity');
 	var quantity = parseInt(quantityElement.attr('data-item-count'));
-	loadCartFooter();
-	$('#cart-footer').show();
 	quantityElement.remove();
 	$('#' + parentId + '-data').append('<text class="right blue-text" data-item-count="0" id="' + parentId + '-quantity" style="position: relative;transform: translateX(-3px); margin-top: 3px" onclick="removeItem(this)">Remove</text>');
 	$('#' + parent.prop('id') + '-data').prepend('<input min="1" max="20" id="input-' + parentId + '" onclick="showItemSelector(' + parentId + ')" oninput="addItemToCart(' + parentId + ', $(this).val()); $(\'#' + parentId + '-quantity\').attr(\'data-item-count\', $(this).val());" class="browser-default input right" style= "width: 55px;" type="number">');
@@ -434,8 +516,6 @@ function addItem(element, focus) {
 }
 
 function showItemSelector(id) {
-	$('#cart-footer').show();
-	loadCartFooter();
 	$('#' + id + '-quantity').val($('#' + id + '-quantity').attr('data-item-count'));
 }
 
@@ -451,8 +531,6 @@ function addItemToCart(id, amount) {
 			}
 		}
 	}
-	loadCartFooter();
-	$('#cart-footer').show();
 }
 
 function getInputVal(name) {
@@ -513,7 +591,7 @@ var confirmHTML = '<div class="container">\n' +
 
 var paymentHTML = '<div class="container">' +
 	'  <label>Payment Method</label>\n' +
-	'<div class="center">' +
+	'<div class="center" id="center">' +
 	'  <p>\n' +
 	'      <label>\n' +
 	'        <input value="0" name="pay-group" type="radio" checked />\n' +
@@ -532,7 +610,6 @@ var paymentHTML = '<div class="container">' +
 	'        <span>Cash on Pickup (23% fee)</span>\n' +
 	'      </label>\n' +
 	'    </p>' +
-	'<a onclick="confirmOrder(getInputVal(\'pay-group\'))" class="btn blue waves-effect waves-ripple waves-light">Continue</a>' +
 	'</div>' +
 	'</div>' +
 	'            ';
@@ -715,13 +792,13 @@ function calcDateString(milliseconds) {
 	var hours = minutes * 60;
 	var days = hours * 24;
 	//var years = days * 365;
-	var secondsSince = Math.floor(new Date().getTime() / seconds) - Math.floor(milliseconds / seconds);
-	var minutesSince = Math.floor(new Date().getTime() / minutes) - Math.floor(milliseconds / minutes);
-	var hoursSince = Math.floor(new Date().getTime() / hours) - Math.floor(milliseconds / hours);
-	var daysSince = Math.floor(new Date().getTime() / days) - Math.floor(milliseconds / days);
-	if (daysSince >= 1) return daysSince + ' Days Ago';
-	if (hoursSince >= 1) return hoursSince + ' Hours Ago';
-	if (minutesSince >= 1) return minutesSince + ' Minutes Ago';
-	if (secondsSince >= 1) return minutesSince + ' Seconds Ago';
-	return 'Are You a Time Traveler????'
+	var secondsSince = Math.floor(new Date().getTime() / seconds) - (milliseconds / seconds);
+	var minutesSince = Math.floor(new Date().getTime() / minutes) - (milliseconds / minutes);
+	var hoursSince = Math.floor(new Date().getTime() / hours) - (milliseconds / hours);
+	var daysSince = Math.floor(new Date().getTime() / days) - (milliseconds / days);
+	if (daysSince >= 1) return daysSince.toFixed(0) + ' Days Ago';
+	if (hoursSince >= 1) return hoursSince.toFixed(0) + ' Hours Ago';
+	if (minutesSince >= 1) return minutesSince.toFixed(0) + ' Minutes Ago';
+	if (secondsSince >= 1) return secondsSince.toFixed(0) + ' Seconds Ago';
+	return 'Are You a Time Traveler??? this order hasn\'t been placed yet. \n (Or been around for less than 0 seconds - its one of the two)'
 }
