@@ -28,6 +28,7 @@
     <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
     <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
     <preference name="StatusBarBackgroundColor" value="#1cafef" />
+    <preference name="orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="StatusBarBackgroundColor" value="#1cafef" />

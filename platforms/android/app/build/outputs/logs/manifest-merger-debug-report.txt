@@ -1,530 +1,532 @@
 -- Merging decision tree log ---
 activity#com.adobe.phonegap.push.PushHandlerActivity
-INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:11:9-173
+INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:11:9-173
 	android:exported
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:11:19-42
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:11:19-42
 	android:permission
-		INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:11:102-170
+		INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:11:102-170
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:11:43-101
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:11:43-101
 manifest
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-32:12
-MERGED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:17:1-39:12
-MERGED from [com.google.android.gms:play-services-identity:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.8.0.aar/1c58b332cb58157a4e9eab45eab2d68a/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:17:1-37:12
-MERGED from [com.android.support:support-v13:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-v13-27.1.1.aar/2bd49ce7b319520728c19d47c195c9bc/AndroidManifest.xml:17:1-22:12
-MERGED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:2:1-52:12
-MERGED from [com.google.firebase:firebase-core:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/ae492160e08176b3d8f20a4b92bd9748/AndroidManifest.xml:2:1-6:12
-MERGED from [com.android.support:multidex:1.0.2] /home/unicorn/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/b616339905840fa16a4ecb56de3849de/AndroidManifest.xml:17:1-22:12
-MERGED from [:CordovaLib] /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:20:1-27:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-11.8.0.aar/8ba05623d1b08e6cddaa70bea1b887a9/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-auth-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.8.0.aar/f5d0cd2c30aabd56f8361f0b89e37674/AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:17:1-54:12
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:17:1-40:12
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:17:1-59:12
-MERGED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:2:1-15:12
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/4ab69d3ff3cef8bc6a0139d3b7dc360f/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:17:1-28:12
-MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-license-11.8.0.aar/50a806cbad5af1a9d1d9fee97d2b7712/AndroidManifest.xml:2:1-6:12
-MERGED from [com.android.support:support-v4:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d6954db5b42165b72f1c55bf363d6af1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0baf433b4d0cf7cee6df0ffa8e14b526/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5be6826c5a143edd7793e7eb3b133bf9/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/e1c23d45237ca42d4f71ef44f199b3e5/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/c1dcde093284414cf53a2b008f041971/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b20f61666f651872b1a30479c0723e41/AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-license-11.8.0.aar/60fe20ab41cee232485a67d9cf609a31/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-license-11.8.0.aar/252ca73130869f6f0452e28440dd1be1/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6aec11f3558c9c7cec5a49a01ce929de/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9ddf7a2b1f1f58a7770e3e196f0bed23/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1bbad50f9ff78fa9a33e8f2b72ecc68d/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/1f2c6fc99669fa9f9bb88dd2990cd0a9/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/78b9b11d0e2fb2df85498ad557ecefcd/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/ab98a9d1c9ab5a760b5c8cfdc85f3e57/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/8f0b06ec1aa38271257b124ff250d736/AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/15f1684f1ee0c9e4b72b3ec8b9a0045d/AndroidManifest.xml:2:1-6:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/02d484b17f003c3e653a073adcb1b1ec/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/097086acc65aa908b42ae235aff1590a/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/70fa03d21d4a04c0100c4c0f680e6613/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3d0e6e2da1cf59508a258593c9a547a5/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-32:12
-INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+MERGED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-identity:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.8.0.aar\80260dbc7cf33bc6a51f76280d04ecf2\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:17:1-37:12
+MERGED from [com.android.support:support-v13:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-v13-27.1.1.aar\0b8de9787998180857c16299dc2392c4\AndroidManifest.xml:17:1-22:12
+MERGED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:2:1-52:12
+MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\cfc6ff6eeb723e135912126b90ce257e\AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\09b5f085ff316d9a25f5039c99909736\AndroidManifest.xml:17:1-22:12
+MERGED from [:CordovaLib] C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-11.8.0.aar\3d35755ac9756ed7bbaf85f6af1f81c6\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.8.0.aar\ffb56e9e57398bbcd3d275ed4a4e2372\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:17:1-54:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:17:1-59:12
+MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:2:1-15:12
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\e1a2d79c5b5bb396ecf57da91a6734c9\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-license-11.8.0.aar\df1dbc30c4caddd7811cd9ecc78ccf68\AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\7f7a0993611384b1f425c18a38d55ac0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\24c0bb95e8c936954a1efbf2ab428849\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f9c9eb73ed9e83bc682d02279151fbe9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2c169b0ae25185c46cbb839014ca3b45\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d59387512f4597ad2271e8d31132e94b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\060fe214d8f44519be6c626f027b121b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-11.8.0.aar\7bb686ef01e30d786a25fb95c9ccf02b\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-11.8.0.aar\0f6da16e13519a467bbb9269a528aeab\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\9461a519098dbd6de18804d33320e3e4\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\a9cfc22cc27f6ab8df57df51e093e2be\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\31a2cf57bfeda74cedd089c69ad5fe3e\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\9936d42f4f0a26f93884d2b3b77ff651\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\41d66cd3498859a77e39a203567f0703\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\95e488c208dfe0d9a9d187153ff8a941\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\2e9cee7715d4659f9ccfa9e331077e10\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\8251419200f4da6b8085bb82d1185bcd\AndroidManifest.xml:2:1-6:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8afb22bef48cb58e4390d7d9079fe206\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\fbf7752d202701b40b5230508784e593\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\c9d909b32c3cae22b88739dc524ba577\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\10cb27a4cf6371fe5edb02b5e8a209b7\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:102-131
-		INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:102-131
+		INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:74-101
-		INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:74-101
+		INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml
 	android:hardwareAccelerated
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:11-45
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:11-45
 	xmlns:android
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:132-190
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:132-190
 	android:versionCode
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:2:46-73
-		INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:2:46-73
+		INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml
 supports-screens
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:3:5-191
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:3:5-191
 	android:largeScreens
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:3:49-76
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:3:49-76
 	android:smallScreens
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:3:132-159
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:3:132-159
 	android:normalScreens
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:3:77-105
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:3:77-105
 	android:xlargeScreens
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:3:160-188
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:3:160-188
 	android:resizeable
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:3:106-131
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:3:106-131
 	android:anyDensity
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:3:23-48
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:3:23-48
 application
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:4:5-24:19
-MERGED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:22:5-37:19
-MERGED from [com.google.android.gms:play-services-identity:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.8.0.aar/1c58b332cb58157a4e9eab45eab2d68a/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-identity:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.8.0.aar/1c58b332cb58157a4e9eab45eab2d68a/AndroidManifest.xml:22:5-20
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:22:5-35:19
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:22:5-35:19
-MERGED from [com.google.firebase:firebase-core:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/ae492160e08176b3d8f20a4b92bd9748/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-core:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/ae492160e08176b3d8f20a4b92bd9748/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:27:5-52:19
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:27:5-52:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:27:5-38:19
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:27:5-38:19
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:34:5-57:19
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:34:5-57:19
-MERGED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:7:5-13:19
-MERGED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:7:5-13:19
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/4ab69d3ff3cef8bc6a0139d3b7dc360f/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/4ab69d3ff3cef8bc6a0139d3b7dc360f/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-license-11.8.0.aar/50a806cbad5af1a9d1d9fee97d2b7712/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-license-11.8.0.aar/50a806cbad5af1a9d1d9fee97d2b7712/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-license-11.8.0.aar/60fe20ab41cee232485a67d9cf609a31/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-license-11.8.0.aar/60fe20ab41cee232485a67d9cf609a31/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-license-11.8.0.aar/252ca73130869f6f0452e28440dd1be1/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-license-11.8.0.aar/252ca73130869f6f0452e28440dd1be1/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6aec11f3558c9c7cec5a49a01ce929de/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6aec11f3558c9c7cec5a49a01ce929de/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9ddf7a2b1f1f58a7770e3e196f0bed23/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9ddf7a2b1f1f58a7770e3e196f0bed23/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1bbad50f9ff78fa9a33e8f2b72ecc68d/AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1bbad50f9ff78fa9a33e8f2b72ecc68d/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/1f2c6fc99669fa9f9bb88dd2990cd0a9/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/1f2c6fc99669fa9f9bb88dd2990cd0a9/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/78b9b11d0e2fb2df85498ad557ecefcd/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/78b9b11d0e2fb2df85498ad557ecefcd/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/ab98a9d1c9ab5a760b5c8cfdc85f3e57/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/ab98a9d1c9ab5a760b5c8cfdc85f3e57/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/8f0b06ec1aa38271257b124ff250d736/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/8f0b06ec1aa38271257b124ff250d736/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/15f1684f1ee0c9e4b72b3ec8b9a0045d/AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/15f1684f1ee0c9e4b72b3ec8b9a0045d/AndroidManifest.xml:5:5-20
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:4:5-24:19
+MERGED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-identity:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.8.0.aar\80260dbc7cf33bc6a51f76280d04ecf2\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-identity:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.8.0.aar\80260dbc7cf33bc6a51f76280d04ecf2\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\cfc6ff6eeb723e135912126b90ce257e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\cfc6ff6eeb723e135912126b90ce257e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:27:5-52:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:27:5-38:19
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:34:5-57:19
+MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:7:5-13:19
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\e1a2d79c5b5bb396ecf57da91a6734c9\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\e1a2d79c5b5bb396ecf57da91a6734c9\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-license-11.8.0.aar\df1dbc30c4caddd7811cd9ecc78ccf68\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-license-11.8.0.aar\df1dbc30c4caddd7811cd9ecc78ccf68\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-11.8.0.aar\7bb686ef01e30d786a25fb95c9ccf02b\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-11.8.0.aar\7bb686ef01e30d786a25fb95c9ccf02b\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-11.8.0.aar\0f6da16e13519a467bbb9269a528aeab\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-11.8.0.aar\0f6da16e13519a467bbb9269a528aeab\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\9461a519098dbd6de18804d33320e3e4\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\9461a519098dbd6de18804d33320e3e4\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\a9cfc22cc27f6ab8df57df51e093e2be\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\a9cfc22cc27f6ab8df57df51e093e2be\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\31a2cf57bfeda74cedd089c69ad5fe3e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\31a2cf57bfeda74cedd089c69ad5fe3e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\9936d42f4f0a26f93884d2b3b77ff651\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\9936d42f4f0a26f93884d2b3b77ff651\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\41d66cd3498859a77e39a203567f0703\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\41d66cd3498859a77e39a203567f0703\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\95e488c208dfe0d9a9d187153ff8a941\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\95e488c208dfe0d9a9d187153ff8a941\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\2e9cee7715d4659f9ccfa9e331077e10\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\2e9cee7715d4659f9ccfa9e331077e10\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\8251419200f4da6b8085bb82d1185bcd\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\8251419200f4da6b8085bb82d1185bcd\AndroidManifest.xml:5:5-20
 	android:supportsRtl
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:4:114-140
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:4:114-140
 	android:label
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:4:81-113
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:4:81-113
 	android:hardwareAccelerated
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:4:18-52
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:4:18-52
 	android:icon
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:4:53-80
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:4:53-80
 activity#com.swoopit.android.MainActivity
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:5:9-10:20
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:9-10:20
+	android:screenOrientation
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:194-230
 	android:label
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:5:97-134
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:97-134
 	android:launchMode
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:5:135-165
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:135-165
 	android:windowSoftInputMode
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:5:257-299
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:294-336
 	android:configChanges
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:5:19-96
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:19-96
 	android:theme
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:5:194-256
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:231-293
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:5:166-193
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:5:166-193
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:6:13-9:29
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:6:13-9:29
 	android:label
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:6:28-65
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:6:28-65
 action#android.intent.action.MAIN
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:7:17-69
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:7:17-69
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:7:25-66
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:7:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:8:17-77
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:8:17-77
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:8:27-74
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:8:27-74
 receiver#com.adobe.phonegap.push.BackgroundActionButtonHandler
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:12:9-90
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:12:9-90
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:12:19-87
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:12:19-87
 receiver#com.adobe.phonegap.push.PushDismissedHandler
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:13:9-81
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:13:9-81
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:13:19-78
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:13:19-78
 service#com.adobe.phonegap.push.FCMService
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:14:9-18:19
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:14:9-18:19
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:14:18-67
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:14:18-67
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:15:13-17:29
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:15:13-17:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:16:17-78
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:16:17-78
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:16:25-75
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:16:25-75
 service#com.adobe.phonegap.push.PushInstanceIDListenerService
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:19:9-23:19
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:19:9-23:19
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:19:18-86
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:19:18-86
 intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:20:13-22:29
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:20:13-22:29
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:21:17-80
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:21:17-80
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:21:25-77
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:21:25-77
 uses-sdk
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:25:5-74
-MERGED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-identity:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.8.0.aar/1c58b332cb58157a4e9eab45eab2d68a/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-identity:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.8.0.aar/1c58b332cb58157a4e9eab45eab2d68a/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v13:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-v13-27.1.1.aar/2bd49ce7b319520728c19d47c195c9bc/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v13:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-v13-27.1.1.aar/2bd49ce7b319520728c19d47c195c9bc/AndroidManifest.xml:20:5-44
-MERGED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:7:5-9:41
-MERGED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:firebase-core:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/ae492160e08176b3d8f20a4b92bd9748/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-core:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-core-11.8.0.aar/ae492160e08176b3d8f20a4b92bd9748/AndroidManifest.xml:4:5-43
-MERGED from [com.android.support:multidex:1.0.2] /home/unicorn/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/b616339905840fa16a4ecb56de3849de/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:multidex:1.0.2] /home/unicorn/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/b616339905840fa16a4ecb56de3849de/AndroidManifest.xml:20:5-43
-MERGED from [:CordovaLib] /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
-MERGED from [:CordovaLib] /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/CordovaLib/build/intermediates/manifests/full/debug/AndroidManifest.xml:25:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-11.8.0.aar/8ba05623d1b08e6cddaa70bea1b887a9/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-11.8.0.aar/8ba05623d1b08e6cddaa70bea1b887a9/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.8.0.aar/f5d0cd2c30aabd56f8361f0b89e37674/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-auth-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.8.0.aar/f5d0cd2c30aabd56f8361f0b89e37674/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:20:5-44
-MERGED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/4ab69d3ff3cef8bc6a0139d3b7dc360f/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.8.0.aar/4ab69d3ff3cef8bc6a0139d3b7dc360f/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-license-11.8.0.aar/50a806cbad5af1a9d1d9fee97d2b7712/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-identity-license-11.8.0.aar/50a806cbad5af1a9d1d9fee97d2b7712/AndroidManifest.xml:4:5-43
-MERGED from [com.android.support:support-v4:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d6954db5b42165b72f1c55bf363d6af1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/d6954db5b42165b72f1c55bf363d6af1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0baf433b4d0cf7cee6df0ffa8e14b526/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/0baf433b4d0cf7cee6df0ffa8e14b526/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5be6826c5a143edd7793e7eb3b133bf9/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5be6826c5a143edd7793e7eb3b133bf9/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/e1c23d45237ca42d4f71ef44f199b3e5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/e1c23d45237ca42d4f71ef44f199b3e5/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/c1dcde093284414cf53a2b008f041971/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/c1dcde093284414cf53a2b008f041971/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b20f61666f651872b1a30479c0723e41/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /home/unicorn/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b20f61666f651872b1a30479c0723e41/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-license-11.8.0.aar/60fe20ab41cee232485a67d9cf609a31/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-api-phone-license-11.8.0.aar/60fe20ab41cee232485a67d9cf609a31/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-license-11.8.0.aar/252ca73130869f6f0452e28440dd1be1/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-license-11.8.0.aar/252ca73130869f6f0452e28440dd1be1/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6aec11f3558c9c7cec5a49a01ce929de/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-license-11.8.0.aar/6aec11f3558c9c7cec5a49a01ce929de/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9ddf7a2b1f1f58a7770e3e196f0bed23/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-license-11.8.0.aar/9ddf7a2b1f1f58a7770e3e196f0bed23/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1bbad50f9ff78fa9a33e8f2b72ecc68d/AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-tasks-license-11.8.0.aar/1bbad50f9ff78fa9a33e8f2b72ecc68d/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/1f2c6fc99669fa9f9bb88dd2990cd0a9/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-license-11.8.0.aar/1f2c6fc99669fa9f9bb88dd2990cd0a9/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/78b9b11d0e2fb2df85498ad557ecefcd/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-common-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-license-11.8.0.aar/78b9b11d0e2fb2df85498ad557ecefcd/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/ab98a9d1c9ab5a760b5c8cfdc85f3e57/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-license-11.8.0.aar/ab98a9d1c9ab5a760b5c8cfdc85f3e57/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/8f0b06ec1aa38271257b124ff250d736/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-iid-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-license-11.8.0.aar/8f0b06ec1aa38271257b124ff250d736/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/15f1684f1ee0c9e4b72b3ec8b9a0045d/AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-license-11.8.0.aar/15f1684f1ee0c9e4b72b3ec8b9a0045d/AndroidManifest.xml:4:5-43
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/02d484b17f003c3e653a073adcb1b1ec/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/02d484b17f003c3e653a073adcb1b1ec/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/097086acc65aa908b42ae235aff1590a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/097086acc65aa908b42ae235aff1590a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/70fa03d21d4a04c0100c4c0f680e6613/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/70fa03d21d4a04c0100c4c0f680e6613/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3d0e6e2da1cf59508a258593c9a547a5/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/3d0e6e2da1cf59508a258593c9a547a5/AndroidManifest.xml:20:5-44
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:25:5-74
+MERGED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-identity:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.8.0.aar\80260dbc7cf33bc6a51f76280d04ecf2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-identity:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.8.0.aar\80260dbc7cf33bc6a51f76280d04ecf2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-v13-27.1.1.aar\0b8de9787998180857c16299dc2392c4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-v13-27.1.1.aar\0b8de9787998180857c16299dc2392c4\AndroidManifest.xml:20:5-44
+MERGED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:7:5-9:41
+MERGED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\cfc6ff6eeb723e135912126b90ce257e\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-core-11.8.0.aar\cfc6ff6eeb723e135912126b90ce257e\AndroidManifest.xml:4:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\09b5f085ff316d9a25f5039c99909736\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\09b5f085ff316d9a25f5039c99909736\AndroidManifest.xml:20:5-43
+MERGED from [:CordovaLib] C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-11.8.0.aar\3d35755ac9756ed7bbaf85f6af1f81c6\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-11.8.0.aar\3d35755ac9756ed7bbaf85f6af1f81c6\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.8.0.aar\ffb56e9e57398bbcd3d275ed4a4e2372\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.8.0.aar\ffb56e9e57398bbcd3d275ed4a4e2372\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\e1a2d79c5b5bb396ecf57da91a6734c9\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.8.0.aar\e1a2d79c5b5bb396ecf57da91a6734c9\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-license-11.8.0.aar\df1dbc30c4caddd7811cd9ecc78ccf68\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-identity-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-identity-license-11.8.0.aar\df1dbc30c4caddd7811cd9ecc78ccf68\AndroidManifest.xml:4:5-43
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\7f7a0993611384b1f425c18a38d55ac0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\7f7a0993611384b1f425c18a38d55ac0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\24c0bb95e8c936954a1efbf2ab428849\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\24c0bb95e8c936954a1efbf2ab428849\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f9c9eb73ed9e83bc682d02279151fbe9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\f9c9eb73ed9e83bc682d02279151fbe9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2c169b0ae25185c46cbb839014ca3b45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\2c169b0ae25185c46cbb839014ca3b45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d59387512f4597ad2271e8d31132e94b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d59387512f4597ad2271e8d31132e94b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\060fe214d8f44519be6c626f027b121b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\060fe214d8f44519be6c626f027b121b\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-11.8.0.aar\7bb686ef01e30d786a25fb95c9ccf02b\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-auth-api-phone-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-license-11.8.0.aar\7bb686ef01e30d786a25fb95c9ccf02b\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-11.8.0.aar\0f6da16e13519a467bbb9269a528aeab\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-auth-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-license-11.8.0.aar\0f6da16e13519a467bbb9269a528aeab\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\9461a519098dbd6de18804d33320e3e4\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.8.0.aar\9461a519098dbd6de18804d33320e3e4\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\a9cfc22cc27f6ab8df57df51e093e2be\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.8.0.aar\a9cfc22cc27f6ab8df57df51e093e2be\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\31a2cf57bfeda74cedd089c69ad5fe3e\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.8.0.aar\31a2cf57bfeda74cedd089c69ad5fe3e\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\9936d42f4f0a26f93884d2b3b77ff651\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-license-11.8.0.aar\9936d42f4f0a26f93884d2b3b77ff651\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\41d66cd3498859a77e39a203567f0703\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-license-11.8.0.aar\41d66cd3498859a77e39a203567f0703\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\95e488c208dfe0d9a9d187153ff8a941\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-license-11.8.0.aar\95e488c208dfe0d9a9d187153ff8a941\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\2e9cee7715d4659f9ccfa9e331077e10\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-iid-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-license-11.8.0.aar\2e9cee7715d4659f9ccfa9e331077e10\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\8251419200f4da6b8085bb82d1185bcd\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-messaging-license:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-license-11.8.0.aar\8251419200f4da6b8085bb82d1185bcd\AndroidManifest.xml:4:5-43
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8afb22bef48cb58e4390d7d9079fe206\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\8afb22bef48cb58e4390d7d9079fe206\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\fbf7752d202701b40b5230508784e593\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\fbf7752d202701b40b5230508784e593\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\c9d909b32c3cae22b88739dc524ba577\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\c9d909b32c3cae22b88739dc524ba577\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\10cb27a4cf6371fe5edb02b5e8a209b7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\10cb27a4cf6371fe5edb02b5e8a209b7\AndroidManifest.xml:20:5-44
 	android:targetSdkVersion
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:25:42-71
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:25:42-71
 	android:minSdkVersion
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:25:15-41
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:25:15-41
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:26:5-71
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:26:5-71
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:26:22-68
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:26:22-68
 uses-permission#android.permission.USE_CREDENTIALS
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:27:5-74
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:27:5-74
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:27:22-71
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:27:22-71
 uses-permission#android.permission.INTERNET
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:28:5-67
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:23:5-67
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:23:5-67
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:28:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:28:22-64
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:28:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:29:5-79
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:22:5-79
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:29:5-79
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:29:22-76
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:29:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:30:5-68
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:25:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:24:5-68
-MERGED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:24:5-68
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:30:5-68
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:25:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:24:5-68
+MERGED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:24:5-68
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:30:22-65
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:30:22-65
 uses-permission#android.permission.VIBRATE
-ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:31:5-66
+ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:31:5-66
 	android:name
-		ADDED from /home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/src/main/AndroidManifest.xml:31:22-63
+		ADDED from C:\Users\hocke\Dropbox\WebstormProjects\swoopit_cordova\platforms\android\app\src\main\AndroidManifest.xml:31:22-63
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:23:9-27:75
+ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:25:13-46
+		ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:25:13-46
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:26:13-37
+		ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:26:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:27:13-72
+		ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:27:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:24:13-93
+		ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:24:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:33:9-36:110
+ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:33:9-36:110
 	android:exported
-		ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:35:13-36
+		ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:35:13-36
 	android:permission
-		ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:36:13-107
+		ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:36:13-107
 	android:name
-		ADDED from [com.google.android.gms:play-services-auth:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/AndroidManifest.xml:34:13-89
+		ADDED from [com.google.android.gms:play-services-auth:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.8.0.aar\fac004005773640bcae274a03d918cc3\AndroidManifest.xml:34:13-89
 service#com.google.firebase.messaging.FirebaseMessagingService
-ADDED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:28:9-34:19
+ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:28:9-34:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:30:13-36
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-messaging:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/AndroidManifest.xml:29:13-82
+		ADDED from [com.google.firebase:firebase-messaging:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.8.0.aar\f54f522c0168011217a8217acf7988a4\AndroidManifest.xml:29:13-82
 uses-permission#com.sec.android.provider.badge.permission.READ
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:19:5-86
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:19:5-86
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:19:22-83
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:19:22-83
 uses-permission#com.sec.android.provider.badge.permission.WRITE
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:20:5-87
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:20:5-87
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:20:22-84
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:20:22-84
 uses-permission#com.htc.launcher.permission.READ_SETTINGS
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:23:5-81
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:23:5-81
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:23:22-78
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:23:22-78
 uses-permission#com.htc.launcher.permission.UPDATE_SHORTCUT
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:24:5-83
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:24:5-83
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:24:22-80
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:24:22-80
 uses-permission#com.sonyericsson.home.permission.BROADCAST_BADGE
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:27:5-88
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:27:5-88
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:27:22-85
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:27:22-85
 uses-permission#com.sonymobile.home.permission.PROVIDER_INSERT_BADGE
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:28:5-92
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:28:5-92
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:28:22-89
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:28:22-89
 uses-permission#com.anddoes.launcher.permission.UPDATE_COUNT
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:31:5-84
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:31:5-84
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:31:22-81
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:31:22-81
 uses-permission#com.majeur.launcher.permission.UPDATE_BADGE
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:34:5-83
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:34:5-83
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:34:22-80
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:34:22-80
 uses-permission#com.huawei.android.launcher.permission.CHANGE_BADGE
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:37:5-91
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:37:5-91
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:37:22-88
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:37:22-88
 uses-permission#com.huawei.android.launcher.permission.READ_SETTINGS
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:38:5-92
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:38:5-92
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:38:22-89
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:38:22-89
 uses-permission#com.huawei.android.launcher.permission.WRITE_SETTINGS
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:39:5-93
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:39:5-93
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:39:22-90
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:39:22-90
 uses-permission#android.permission.READ_APP_BADGE
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:42:5-73
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:42:5-73
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:42:22-70
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:42:22-70
 uses-permission#com.oppo.launcher.permission.READ_SETTINGS
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:45:5-82
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:45:5-82
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:45:22-79
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:45:22-79
 uses-permission#com.oppo.launcher.permission.WRITE_SETTINGS
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:46:5-83
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:46:5-83
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:46:22-80
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:46:22-80
 uses-permission#me.everything.badger.permission.BADGE_COUNT_READ
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:49:5-88
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:49:5-88
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:49:22-85
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:49:22-85
 uses-permission#me.everything.badger.permission.BADGE_COUNT_WRITE
-ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:50:5-89
+ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:50:5-89
 	android:name
-		ADDED from [me.leolin:ShortcutBadger:1.1.17] /home/unicorn/.gradle/caches/transforms-1/files-1.1/ShortcutBadger-1.1.17.aar/7214e2f8d309b204d77b808c624d3baa/AndroidManifest.xml:50:22-86
+		ADDED from [me.leolin:ShortcutBadger:1.1.17] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\ShortcutBadger-1.1.17.aar\7dabc9f0cc88cec5eef7b280f4b856aa\AndroidManifest.xml:50:22-86
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-base-11.8.0.aar\14fffbfcf5e4b04727580fcb9c5ed0d0\AndroidManifest.xml:24:13-79
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:28:9-32:20
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:28:9-32:20
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:28:9-32:20
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:28:9-32:20
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:28:9-32:20
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:30:13-35
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:30:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:31:13-37
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:29:13-85
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:29:13-85
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:33:9-41:20
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:33:9-41:20
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:35:13-35
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:35:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:36:13-36
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:36:13-36
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:37:13-69
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:37:13-69
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:34:13-100
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:34:13-100
 intent-filter#action:name:com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:38:13-40:29
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:38:13-40:29
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:39:17-79
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:39:17-79
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:39:25-76
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:39:25-76
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:43:9-46:40
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:34:9-37:40
-MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.8.0.aar/944a23cb5da3c042c34e1584ec669f98/AndroidManifest.xml:34:9-37:40
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:43:9-46:40
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:34:9-37:40
+MERGED from [com.google.firebase:firebase-analytics-impl:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.8.0.aar\b024b407f5aa2cd7d1d80bf67d06a443\AndroidManifest.xml:34:9-37:40
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:45:13-35
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:45:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:46:13-37
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:44:13-84
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:44:13-84
 service#com.google.android.gms.measurement.AppMeasurementJobService
-ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:47:9-51:72
+ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:47:9-51:72
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:49:13-35
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:49:13-35
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:50:13-37
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:50:13-37
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:51:13-69
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:51:13-69
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.8.0.aar/8903fa89f7f948bd18bb9559d44b3ac2/AndroidManifest.xml:48:13-87
+		ADDED from [com.google.firebase:firebase-analytics:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.8.0.aar\98940d38c27c0001cbf0bcdab28c3aab\AndroidManifest.xml:48:13-87
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:26:5-82
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:26:5-82
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:26:22-79
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:26:22-79
 permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:28:5-30:47
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:28:5-30:47
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:30:9-44
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:30:9-44
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:29:9-63
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:29:9-63
 permission#com.swoopit.android.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:28:5-30:47
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:28:5-30:47
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:30:9-44
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:30:9-44
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:29:9-63
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:29:9-63
 uses-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:32:5-79
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:32:5-79
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:32:22-76
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:32:22-76
 uses-permission#com.swoopit.android.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:32:5-79
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:32:5-79
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:32:22-76
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:32:22-76
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:35:9-44:20
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:35:9-44:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:37:13-36
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:37:13-36
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:38:13-73
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:38:13-73
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:36:13-78
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:36:13-78
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:${applicationId}
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:39:13-43:29
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:39:13-43:29
 intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+category:name:com.swoopit.android
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:39:13-43:29
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:39:13-43:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:40:17-81
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:40:17-81
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:40:25-78
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:40:25-78
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:42:17-61
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:42:17-61
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:42:27-58
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:42:27-58
 category#com.swoopit.android
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:42:17-61
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:42:17-61
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:42:27-58
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:42:27-58
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:50:9-56:19
+ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:50:9-56:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:52:13-36
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:52:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.8.0.aar/d3fc4e2722d835a40b86cedc47a7324e/AndroidManifest.xml:51:13-77
+		ADDED from [com.google.firebase:firebase-iid:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.8.0.aar\114824f06b56b20bda7d28125493ff23\AndroidManifest.xml:51:13-77
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:8:9-12:39
+ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:8:9-12:39
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:10:13-72
+		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:10:13-72
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:11:13-37
+		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:11:13-37
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:12:13-36
+		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:12:13-36
 	android:name
-		ADDED from [com.google.firebase:firebase-common:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-common-11.8.0.aar/2be4514ffdf00051418dac942dfc60e0/AndroidManifest.xml:9:13-77
+		ADDED from [com.google.firebase:firebase-common:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\firebase-common-11.8.0.aar\c13d78cf306b1ed36b163b090dd1f461\AndroidManifest.xml:9:13-77
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:11.8.0] /home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:11.8.0] C:\Users\hocke\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.8.0.aar\da7cb683a2b4e4f14c7cdae111d2b8bd\AndroidManifest.xml:24:13-58

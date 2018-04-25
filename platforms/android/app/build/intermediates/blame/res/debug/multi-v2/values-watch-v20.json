@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "C:\\Users\\hocke\\Dropbox\\WebstormProjects\\swoopit_cordova\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-auth-11.8.0.aar/17cc660aa3603e1af23efdfac67da6a0/res/values-watch-v20/values.xml",
+                    "source": "C:\\Users\\hocke\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-auth-11.8.0.aar\\fac004005773640bcae274a03d918cc3\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

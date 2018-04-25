@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
+            "outputFile": "C:\\Users\\hocke\\Dropbox\\WebstormProjects\\swoopit_cordova\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hu\\values-hu.xml",
             "map": [
                 {
-                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b20f61666f651872b1a30479c0723e41/res/values-hu/values-hu.xml",
+                    "source": "C:\\Users\\hocke\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.8.0.aar\\da7cb683a2b4e4f14c7cdae111d2b8bd\\res\\values-hu\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "283",
+                        "endColumns": "235",
+                        "endOffsets": "518"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1343",
+                        "endColumns": "235",
+                        "endOffsets": "1574"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\hocke\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\060fe214d8f44519be6c626f027b121b\\res\\values-hu\\values-hu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-base-11.8.0.aar/a734dae4d7e794ce9e8e0b97779d7978/res/values-hu/values.xml",
+                    "source": "C:\\Users\\hocke\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.8.0.aar\\14fffbfcf5e4b04727580fcb9c5ed0d0\\res\\values-hu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/firebase-messaging-11.8.0.aar/e77882dbba5d0343b6e219356b01e775/res/values-hu/values.xml",
+                    "source": "C:\\Users\\hocke\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-11.8.0.aar\\f54f522c0168011217a8217acf7988a4\\res\\values-hu\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,23 +69,6 @@
                         "startOffsets": "3022",
                         "endColumns": "103",
                         "endOffsets": "3121"
-                    }
-                },
-                {
-                    "source": "/home/unicorn/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.8.0.aar/52b46efe76f5f17c5237c319d0005b4b/res/values-hu/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "283",
-                        "endColumns": "235",
-                        "endOffsets": "518"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1343",
-                        "endColumns": "235",
-                        "endOffsets": "1574"
                     }
                 }
             ]

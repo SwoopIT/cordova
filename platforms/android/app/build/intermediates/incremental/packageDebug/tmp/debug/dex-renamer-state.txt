@@ -1,7 +1,7 @@
-#Tue Apr 24 17:08:03 HST 2018
-base.0=/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Tue Apr 24 21:56:32 HST 2018
+base.0=C\:\\Users\\hocke\\Dropbox\\WebstormProjects\\swoopit_cordova\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.1=classes2.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+base.1=C\:\\Users\\hocke\\Dropbox\\WebstormProjects\\swoopit_cordova\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0

@@ -252,7 +252,7 @@ function cart() {
 				'<div class="collection black-text" id="shopping-cart-' + store + '" style="margin-top: -5px; border: none; overflow: scroll;   max-height: 140px; margin-bottom: 86px;"></div></div>');
 			var localCart = stores[store];
 			for (i = 0; i < localCart.length; i++) {
-				$("#shopping-cart-" + store).append('<a class="collection-item black-text avatar nohover dismissable" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" style="margin-top: 10px" onclick="openModal(null,' + i + ', getInputVal(\'pay-group\'))">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
+				$("#shopping-cart-" + store).append('<a class="collection-item black-text avatar nohover" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" style="margin-top: 10px" onclick="openModal(null,' + i + ', getInputVal(\'pay-group\'))">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
 				subtotal += localCart[i].price;
 			}
 		}
@@ -330,12 +330,14 @@ function orders() {
 					'     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>' + calcDateString(data[i].date) + '</div>\n' +
 					'     <div class="collapsible-body">\n' +
 					'         <span style="font-weight: bold">' + data[i].progress.statusName + '</span>\n' +
+					'         <span style="font-weight: 300" class="right">Order #' + data[i].id + '</span>\n' +
 					'         <br>\n' +
 					'         <div class="progress grey lighten-2">\n' +
 					'             <div class="determinate blue" style="width: ' + data[i].progress.status + '%"></div>\n' +
 					'         </div>\n' +
 					'     <br>\n' +
 					'     <a onclick="openModal(\'hi\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
+					'     <a onclick="ordersFooter()" class="btn blue waves-effect waves-ripple waves-light left" id="orders-' + data[i].id + '">Items</a>' +
 					'     </div>\n' +
 					'</li>');
 				if (data[i].progress.status <= 0) {
@@ -807,7 +809,7 @@ function login() {
 function logout() {
 	window.plugins.googleplus.disconnect(
 		function () {
-			M.toast({html: 'Successfully Logged out.'});
+			M.toast({html: 'Successfully logged out.'});
 			login();
 		},
 		function (err) {
@@ -846,7 +848,10 @@ function cache(notif) {
 			storesDB = res.stores;
 			itemsDB = res.items;
 			categoriesDB = res.categories;
-			if (notif) M.toast({html: 'Successfully Refreshed Cache.'})
+			if (notif) {
+				M.toast({html: 'Successfully Refreshed Cache.'})
+				settings();
+			}
 		}
 	})
 }

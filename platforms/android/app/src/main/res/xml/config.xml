@@ -38,6 +38,7 @@
     <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="StatusBarBackgroundColor" value="#1cafef" />

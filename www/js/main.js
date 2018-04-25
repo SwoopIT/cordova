@@ -330,12 +330,14 @@ function orders() {
 					'     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>' + calcDateString(data[i].date) + '</div>\n' +
 					'     <div class="collapsible-body">\n' +
 					'         <span style="font-weight: bold">' + data[i].progress.statusName + '</span>\n' +
+					'         <span style="font-weight: 300" class="right">Order #' + data[i].id + '</span>\n' +
 					'         <br>\n' +
 					'         <div class="progress grey lighten-2">\n' +
 					'             <div class="determinate blue" style="width: ' + data[i].progress.status + '%"></div>\n' +
 					'         </div>\n' +
 					'     <br>\n' +
 					'     <a onclick="openModal(\'hi\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
+					'     <a onclick="ordersFooter()" class="btn blue waves-effect waves-ripple waves-light right" id="orders-' + data[i].id + '">Items</a>' +
 					'     </div>\n' +
 					'</li>');
 				if (data[i].progress.status <= 0) {
