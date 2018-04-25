@@ -17,6 +17,9 @@ main {
     flex: 1 0 auto;
 }
 
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #1cafef !important;
+}
 
 .blue-text {
     color: #1cafef !important;

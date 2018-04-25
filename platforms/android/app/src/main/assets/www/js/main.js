@@ -58,7 +58,7 @@ function submitOrder(paymentMethod, store) {
 			items: itemsArray,
 			paymentMethod: parseInt(paymentMethod)
 		}),
-		url: 'https://swoop-it.herokuapp.com/api/order',
+		url: 'https://api.swoopit.xyz/api/order',
 		success: function (data) {
 			if (data) {
 				$('#button').hide();
@@ -70,6 +70,36 @@ function submitOrder(paymentMethod, store) {
 			}
 		}
 	})
+}
+
+function searchStores() {
+	var query = $('#store-search').val();
+	$('.store-block').hide();
+	for (var i = 0; i < $('.store-block').length; i++) {
+		if ($('.store-block').children()[i].innerHTML.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+			$($('.store-block')[i]).show();
+		}
+	}
+}
+
+function searchCategories() {
+	var query = $('#category-search').val();
+	$('.category').hide();
+	for (var i = 0; i < $('.category').length; i++) {
+		if ($($('.category')[i]).children()[0].innerHTML.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+			$($('.category')[i]).show();
+		}
+	}
+}
+
+function searchStoreItems() {
+	var query = $('#store-search').val();
+	$('.store-items').parent().hide();
+	for (var i = 0; i < $('.store-items').length; i++) {
+		if ($('.store-items')[i].innerHTML.toLowerCase().indexOf(query.toLowerCase()) >= 0) {
+			$($('.store-items')[i]).parent().show();
+		}
+	}
 }
 
 function stores(id) {
@@ -114,7 +144,7 @@ function category(id) {
 		'        </ul>');
 	for (var i = 0; i < categoriesDB.length; i++) {
 		if (categoriesDB[i].store === id) {
-			$('#categories').append('<a onclick="loadItems(\'' + categoriesDB[i].id + '\', \'' + id + '\')" class="collection-item black-text">' + categoriesDB[i].name + '<i class="material-icons right">arrow_forward</i></a>');
+			$('#categories').append('<a onclick="loadItems(\'' + categoriesDB[i].id + '\', \'' + id + '\')" class="collection-item black-text category "><span>' + categoriesDB[i].name + '</span><i class="material-icons right">arrow_forward</i></a>');
 		}
 	}
 }
@@ -135,7 +165,7 @@ function loadItems(categoryName, storeId) {
 		if (itemsDB[i].category === categoryName) {
 			$('#store-items').append('<a class="collection-item avatar black-text nohover" id="' + itemsDB[i].id + '">' +
 				'               <img src="' + itemsDB[i].img + '" alt="' + itemsDB[i].name + '" style="margin-top:10px" class="circle">' +
-				'                <span class="title black-text" style="font-weight: bold;">' + itemsDB[i].name + '</span>' +
+				'                <span class="title black-text store-items" style="font-weight: bold;">' + itemsDB[i].name + '</span>' +
 				'            <p id="' + itemsDB[i].id + '-data">' +
 				'               <text>$' + itemsDB[i].price + '</text>' +
 				'                  <br>' +
@@ -283,13 +313,16 @@ function loadCartFooter() {
 function orders() {
 	$('#cart-footer').hide();
 	$('#button').hide();
+	$('#menu').html('<a href="#" data-target="slide-out"\n' +
+		'                   class="sidenav-trigger blue-text"><i\n' +
+		'                        class="material-icons">menu</i></a>');
 	$('#navbar').show();
 	$(document.body).removeClass('blue');
 	$(document.body).addClass('grey lighten-4');
 	$('#container').html(ordersHTML);
 	$.ajax({
 		method: 'get',
-		url: 'https://swoop-it.herokuapp.com/api/myorders',
+		url: 'https://api.swoopit.xyz/api/myorders',
 		success: function (data) {
 			data = data.reverse();
 			for (var i = 0; i < data.length; i++) {
@@ -326,7 +359,7 @@ function orders() {
 function cancelOrder(id) {
 	$.ajax({
 		method: 'delete',
-		url: 'https://swoop-it.herokuapp.com/api/order',
+		url: 'https://api.swoopit.xyz/api/order',
 		data: {
 			id: id
 		},
@@ -361,7 +394,6 @@ function payment(store) {
 	} else {
 		$('#center').append('<a onclick="confirmOrder(getInputVal(\'pay-group\'))" class="btn blue waves-effect waves-ripple waves-light">Continue</a>');
 	}
-	$('#button').hide();
 	$('#header').html('Payment').addClass('black-text').removeClass('blue-text');
 	if (store) {
 		$('#button').html('<li>\n' +
@@ -376,6 +408,7 @@ function payment(store) {
 			'                        class="material-icons">arrow_forward</i></a>\n' +
 			'            </li>\n');
 	}
+	$('#button').show();
 	$('#menu').html('<a href="#" onclick="cart()" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_backwards</i></a>');
@@ -469,7 +502,7 @@ function search() {
 	var complete = M.Autocomplete.init(auto, {
 		data: data,
 		onAutocomplete: function () {
-			$('#search-form').submit();
+			searchItems($('#item-search').val());
 		}
 	});
 	sideClose()
@@ -552,15 +585,15 @@ function removeItem(element) {
 }
 
 var storePageHTML = '<div class="row">\n' +
-	'        <form onsubmit="searchStoreItems(); return false" class="col s12" style="height: 76px;">\n' +
+	'        <div class="col s12" style="height: 76px;">\n' +
 	'            <div class="row">\n' +
 	'                <div class="input-field col s12">\n' +
 	'                    <i class="material-icons prefix blue-text">search</i>\n' +
-	'                    <input id="store-search" type="text" class="validate">\n' +
+	'                    <input oninput="searchStoreItems()" id="store-search" type="text">\n' +
 	'                    <label for="store-search">Search</label>\n' +
 	'                </div>\n' +
 	'            </div>\n' +
-	'        </form>\n' +
+	'        </div>\n' +
 	'    </div>' +
 	'<div class="collection black-text" id="store-items"></div> ';
 
@@ -619,7 +652,7 @@ var ordersHTML = ' <ul class="collapsible" id="orders-list" style="margin-top: -
 
 var settingsHTML = '<div class="collection black-text" style="margin-top: -5px">\n' +
 	'        <a href="#" onclick="logout()" class="collection-item black-text">Logout</a>\n' +
-	'       <a href="#" onclick="cache()" class="collection-item black-text">Refresh Cache</a>\n' +
+	'       <a href="#" onclick="cache(true)" class="collection-item black-text">Refresh Cache</a>\n' +
 	'    </div>';
 
 
@@ -631,30 +664,30 @@ var cartHTML = '<div class="container" style="border: none">' +
 	'</div> ';
 
 var categoryHTML = '<div class="row">\n' +
-	'        <form style="height: 85px;" onsubmit="searchStoreItems(); return false" class="col s12">\n' +
+	'        <div style="height: 85px;" class="col s12">\n' +
 	'            <div class="row">\n' +
 	'                <div class="input-field col s12">\n' +
 	'                    <i class="material-icons prefix blue-text">search</i>\n' +
-	'                    <input id="store-search" type="text" class="validate">\n' +
-	'                    <label for="store-search">Search</label>\n' +
+	'                    <input id="category-search" oninput="searchCategories()" type="text">\n' +
+	'                    <label for="category-search">Search</label>\n' +
 	'                </div>\n' +
 	'            </div>\n' +
-	'        </form>\n' +
+	'        </div>\n' +
 	'    </div>\n' +
 	'    <div class="collection black-text" id="categories" style="margin: -20px 0 0 0;">\n' +
 	'    </div>';
 
 
 var storesHTML = ' <div class="row">\n' +
-	'        <form onsubmit="searchStores(); return false" class="col s12" style="height: 76px;">\n' +
+	'        <div class="col s12" style="height: 76px;">\n' +
 	'            <div class="row">\n' +
 	'                <div class="input-field col s12">\n' +
 	'                    <i class="material-icons prefix blue-text">search</i>\n' +
-	'                    <input id="store-search" type="text" class="validate">\n' +
+	'                    <input oninput="searchStores();" id="store-search" type="text">\n' +
 	'                    <label for="store-search">Search</label>\n' +
 	'                </div>\n' +
 	'            </div>\n' +
-	'        </form>\n' +
+	'        </div>\n' +
 	'    </div>\n' +
 	'    <div class="store-container white white-text">\n' +
 	'        <div class="center cont-store store-block" id="mcd" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/mcd.jpg)">\n' +
@@ -675,15 +708,15 @@ var storesHTML = ' <div class="row">\n' +
 	'    </div>';
 
 var searchHTML = '<div class="row">\n' +
-	'        <form id="search-form" onsubmit="searchItems($(\'#item-search\').val()); return false" class="col s12" style="height: 76px;">\n' +
+	'        <div id="search-form" class="col s12" style="height: 76px;">\n' +
 	'            <div class="row">\n' +
 	'                <div class="input-field col s12">\n' +
 	'                    <i class="material-icons prefix blue-text">search</i>\n' +
-	'                    <input id="item-search" type="text" class="autocomplete">\n' +
+	'                    <input oninput="searchItems($(\'#item-search\').val())" id="item-search" type="text" class="autocomplete">\n' +
 	'                    <label for="item-search">Search</label>\n' +
 	'                </div>\n' +
 	'            </div>\n' +
-	'        </form>\n' +
+	'        </div>\n' +
 	'    </div>' +
 	'	<div class="collection black-text" id="search-coll" style="margin: -20px 0 0 0;">' +
 	'   </div>';
@@ -694,9 +727,47 @@ function isAvailable() {
 		if (!avail) {
 			alert('There was an error connecting to Google - Please check your internet connection.')
 		} else {
-			login();
+			silentLogin();
 		}
 	});
+}
+
+function silentLogin() {
+	window.plugins.googleplus.trySilentLogin(
+		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'},
+		function (user) {
+			$.ajaxSetup({
+				beforeSend: function (xhr) {
+					xhr.setRequestHeader("authentication", user.idToken);
+				}
+			});
+			$.ajax({
+				method: 'post',
+				url: 'https://api.swoopit.xyz/api/auth',
+				data: {
+					googleAuthToken: user.idToken,
+					androidId: deviceId,
+					iosId: null
+				},
+				success: function (data) {
+					console.log(data);
+				}
+			});
+			M.toast({html: 'User ' + user.displayName + ' has logged in.'});
+			$('#account').html('<i class="material-icons">person</i>' + user.displayName);
+			$('#navbar').show();
+			$(document.body).removeClass('blue');
+			$(document.body).addClass('grey lighten-4');
+			stores();
+		},
+		function (err) {
+			console.log(err);
+			M.toast({
+				html: "There was an error logging silently. Attempting basic Login."
+			});
+			login();
+		}
+	);
 }
 
 
@@ -710,7 +781,7 @@ function login() {
 			});
 			$.ajax({
 				method: 'post',
-				url: 'https://swoop-it.herokuapp.com/api/auth',
+				url: 'https://api.swoopit.xyz/api/auth',
 				data: {
 					googleAuthToken: user.idToken,
 					androidId: deviceId,
@@ -735,14 +806,17 @@ function login() {
 
 function logout() {
 	window.plugins.googleplus.disconnect(
-		function (msg) {
-			alert(msg)
+		function () {
+			M.toast({html: 'Successfully Logged out.'});
 			login();
 		},
 		function (err) {
-			alert('There was an error disconnecting your account - Please check your internet connection or update your device. Code: ' + err)
+			M.toast({html: 'There was an error disconnecting your account - Please check your internet connection or update your device. Code: ' + err})
 		}
 	);
+	$('#navbar').hide();
+	$(document.body).addClass('blue');
+	$(document.body).removeClass('grey lighten-4');
 	$('#container').html('<div class="center" style="display: inline-block; vertical-align: middle;">\n' +
 		'        <img style="width: 100%;display: inline-block; vertical-align: middle; position: relative;" src="img/swoop_trans.png">\n' +
 		'        <a onclick="stores();" class="white-text" style="font-weight: bold; font-family: \'Futura-Bold\', sans-serif; font-size: 4.4rem">SwoopIt</a>\n' +
@@ -763,7 +837,7 @@ function regDevice(registrationID, oldRegId) {
 	})
 }
 
-function cache() {
+function cache(notif) {
 	// Get Everything for cache
 	$.ajax({
 		method: 'get',
@@ -772,7 +846,7 @@ function cache() {
 			storesDB = res.stores;
 			itemsDB = res.items;
 			categoriesDB = res.categories;
-
+			if (notif) M.toast({html: 'Successfully Refreshed Cache.'})
 		}
 	})
 }
