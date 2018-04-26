@@ -27,7 +27,7 @@ var app = {
 				// Post registrationId to your app server as the value has changed
 			}
 			deviceId = data.registrationId;
-			regDevice(data.registrationId, oldRegId);
+			//regDevice(data.registrationId, oldRegId);
 		});
 		app.push.on('notification', function(data) {
 			console.log('notification event');

@@ -120,7 +120,7 @@ function stores(id) {
 		$('#header').html(storeNames[id]).addClass('black-text').removeClass('blue-text');
 		$('#button').show();
 		$('#button').html('<li>\n' +
-			'                <a href="#" onclick="loadCartFooter()"\n' +
+			'                <a href="#" onclick="loadCartFooter(); $(\'#cart-footer\').toggle();"\n' +
 			'                   class="blue-text"><i\n' +
 			'                        class="material-icons">shopping_basket</i></a>\n' +
 			'            </li>\n');
@@ -137,7 +137,7 @@ function category(id) {
 		'                        class="material-icons">arrow_back</i></a>');
 	$('#container').html(categoryHTML);
 	$('#button').html('<li>\n' +
-		'                <a href="#" onclick="loadCartFooter()"\n' +
+		'                <a href="#" onclick="loadCartFooter(); $(\'#cart-footer\').toggle();"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">shopping_basket</i></a>\n' +
 		'            </li>\n' +
@@ -152,7 +152,7 @@ function category(id) {
 function loadItems(categoryName, storeId) {
 	$('#container').html(storePageHTML);
 	$('#button').html('<li>\n' +
-		'                <a href="#" onclick="loadCartFooter()"\n' +
+		'                <a href="#" onclick="loadCartFooter(); $(\'#cart-footer\').toggle();"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">shopping_basket</i></a>\n' +
 		'            </li>\n' +
@@ -202,7 +202,6 @@ function cart() {
 	var shoppingElement = $('#shopping-cart');
 	if (shoppingCart[0]) {
 		var subtotal = 0;
-
 		var stores = {};
 		for (var i = 0; i < shoppingCart.length; i++) {
 			var store = getCategory(shoppingCart[i].category).store;
@@ -212,44 +211,13 @@ function cart() {
 
 			stores[store].push(shoppingCart[i]);
 		}
-
-		/*
-
-		var stores = {
-			mcd: [
-				0: {
-				 //item object
-				},
-				1: {
-				 //item object
-				},
-				2: {
-				 //item object
-				}
-			]
-		};
-
-		 */
-
 		for (store in stores) {
-			//console.log(store); // mcd
-			/* console.log(stores[store]) /*
-			[0: {
-				 //item object
-				},
-				1: {
-				 //item object
-				},
-				2: {
-				 //item object
-				}
-				]
-			console.log(stores[store][0]); */
-
-			var blamo = store;
-			shoppingElement.prepend('<div id="' + store + '" style="margin-bottom: -10px; overflow: none; max-height: 100px">' +
+			shoppingElement.prepend('<div id="' + store + '" style="margin-bottom: -5px;">' +
 				'<h6 style="font-weight: 300; margin-bottom: 15px;">' + storeNames[store] + '<span class="right blue-text" onclick="payment(\'' + store + '\')">Checkout</span> </h6>' +
-				'<div class="collection black-text" id="shopping-cart-' + store + '" style="margin-top: -5px; border: none; overflow: scroll;   max-height: 140px; margin-bottom: 86px;"></div></div>');
+				'<div class="collection black-text" id="shopping-cart-' + store + '" style="margin-top: -5px; border: none; overflow: scroll; max-height: 200px;"></div>' +
+				'<span onclick="removeAllFromCart(\'' + store + '\');" style="margin-top: -10px" class="right red-text">Remove All</span> ' +
+				'<br>' +
+				'</div>');
 			var localCart = stores[store];
 			for (i = 0; i < localCart.length; i++) {
 				$("#shopping-cart-" + store).append('<a class="collection-item black-text avatar nohover" style="min-height: 65px;"><img src="' + localCart[i].img + '" alt="' + localCart[i].name + '" class="circle">' + localCart[i].name + '<i class="material-icons right" style="margin-top: 10px" onclick="openModal(null,' + i + ', getInputVal(\'pay-group\'))">delete</i> <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$' + localCart[i].price + '</p></a>');
@@ -289,6 +257,21 @@ function cart() {
 	sideClose();
 }
 
+function removeAllFromCart(store) {
+	if (store) {
+		openModal('cart', null, null, store)
+	} else {
+		shoppingCart = []
+	}
+}
+
+function removeStore(store) {
+	shoppingCart = shoppingCart.filter(function (x) {
+		return getCategory(x.category).store != store
+	});
+	cart();
+}
+
 function loadCartFooter() {
 	var currentItems = [], subtotal = 0;
 	$('#cart-footer-items').html('');
@@ -307,7 +290,6 @@ function loadCartFooter() {
 		}
 	}
 	$('#footer-subtotal').html('Subtotal: $' + subtotal.toFixed(2));
-	$('#cart-footer').toggle();
 }
 
 function orders() {
@@ -335,9 +317,11 @@ function orders() {
 					'         <div class="progress grey lighten-2">\n' +
 					'             <div class="determinate blue" style="width: ' + data[i].progress.status + '%"></div>\n' +
 					'         </div>\n' +
+					'         <span style="font-weight: bold;">' + getPayment(data[i].paymentMethod) + '</span>\n' +
 					'     <br>\n' +
-					'     <a onclick="openModal(\'hi\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
-					'     <a onclick="ordersFooter()" class="btn blue waves-effect waves-ripple waves-light left" id="orders-' + data[i].id + '">Items</a>' +
+					'<br>' +
+					'     <a onclick="openModal(\'order\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
+					'     <a onclick="ordersFooter(' + data[i] + ')" class="btn blue waves-effect waves-ripple waves-light right" id="orders-' + data[i].id + '">Items</a>' +
 					'     </div>\n' +
 					'</li>');
 				if (data[i].progress.status <= 0) {
@@ -350,15 +334,39 @@ function orders() {
 	var collapse = new M.Collapsible(elemy, {});
 	$('#button').hide();
 	$('#header').html('Orders').addClass('black-text').removeClass('blue-text');
-	$('#button').html('<li>\n' +
+	/*$('#button').html('<li>\n' +
 		'                <a href="#" onclick="editOrders()"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">edit</i></a>\n' +
-		'            </li>\n');
+		'            </li>\n');*/
 	sideClose();
 }
 
+function ordersFooter(data) {
+	console.log(data);
+	$('#order-footer').show();
+	var item = [];
+	var length;
+	for (var i = 0; i < data.items.length; i++) {
+		if (itemsDB.indexOf(data.items[i]) > -1) {
+			$('#order-footer-items').append('<a class="collection-item black-text nohover"' + itemsDB[itemsDB.indexOf(data.items[i])].name + '<span>(' + length + ')</span> <span class="right">12.57</span> </a>')
+		}
+	}
+}
+
+
+function getPayment(method) {
+	if (method == 0) {
+		return 'PayPal'
+	} else if (method = 1) {
+		return 'SwoopIt Cred'
+	} else {
+		return 'Cash'
+	}
+}
+
 function cancelOrder(id) {
+	$('#container').html('<div class="center"><h1 class="blue-text">...</h1></div>');
 	$.ajax({
 		method: 'delete',
 		url: 'https://api.swoopit.xyz/api/order',
@@ -368,10 +376,10 @@ function cancelOrder(id) {
 		success: function (data) {
 			if (data) {
 				M.toast({html: 'Successfully Canceled the Order.'});
-				setTimeout(orders, 1500);
+				orders()
 			} else {
-				M.toast({html: 'Something went wrong. Please try canceling again.'});
-				setTimeout(orders, 1500);
+				M.toast({html: 'Something went wrong. Please try canceling again, or contact your local Swoopit developer.'});
+				orders()
 			}
 		}
 	})
@@ -464,8 +472,10 @@ function confirmOrder(paymentMethod, store) {
 
 function openModal(type, id, payment, store) {
 	confirmModal.open();
-	if (type) { // type is only defined if its confirming to delete an order
+	if (type == 'order') {
 		$('#modal-footer').html('<a class="modal-action modal-close waves-effect waves-light btn-flat">No</a><a onclick="cancelOrder(' + id + ')" class="modal-action modal-close waves-effect waves-light red white-text btn-flat">Cancel</a>')
+	} else if (type == 'cart') {
+		$('#modal-footer').html('<a class="modal-action modal-close waves-effect waves-light btn-flat">No</a><a onclick="removeStore(\'' + store + '\');" class="modal-action modal-close waves-effect waves-light red white-text btn-flat">Remove</a>')
 	} else {
 		$('#modal-footer').html('<a class="modal-action modal-close waves-effect waves-light btn-flat">No</a><a onclick="removeFromCart(' + id + ', ' + payment + ', ' + store + ')" class="modal-action modal-close waves-effect waves-light red white-text btn-flat">Remove</a>');
 	}
@@ -487,7 +497,7 @@ function search() {
 	$('#navbar').show();
 	$('#button').show();
 	$('#button').html('<li>\n' +
-		'                <a href="#" onclick="loadCartFooter()"\n' +
+		'                <a href="#" onclick="loadCartFooter(); $(\'#cart-footer\').toggle();"\n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">shopping_basket</i></a>\n' +
 		'            </li>\n');
@@ -555,6 +565,11 @@ function showItemSelector(id) {
 }
 
 function addItemToCart(id, amount) {
+	if (amount > 1000) {
+		$('#input-' + id).val(amount.toString().substr(0, amount.toString().length - 1));
+		return;
+	}
+	console.log(amount);
 	shoppingCart = shoppingCart.filter(function (x) {
 		return x.id !== id
 	});
@@ -566,6 +581,7 @@ function addItemToCart(id, amount) {
 			}
 		}
 	}
+	loadCartFooter();
 }
 
 function getInputVal(name) {
@@ -662,7 +678,7 @@ var cartHTML = '<div class="container" style="border: none">' +
 	'<br>' +
 	'<div class="black-text" id="shopping-cart" style="margin-top: -5px; border: none; overflow: none;">' +
 	'</div>' +
-	'<h6 style="font-weight: bold; display: inline; font-size: large; margin-top: " id="subtotal">Subtotal: $0</h6>' +
+	'<h6 style="font-weight: bold; display: inline; font-size: large; position: fixed; bottom: 0;" id="subtotal">Subtotal: $0</h6>' +
 	'</div> ';
 
 var categoryHTML = '<div class="row">\n' +

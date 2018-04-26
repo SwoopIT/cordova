@@ -93,6 +93,27 @@
     </div>
 </footer>
 
+<footer id="order-footer" class="page-footer white" style="position: fixed; bottom: 0; width: 100%; display: none;">
+    <div class="container black-text">
+        <div class="row">
+            <div class="col l6 s12">
+                <h6 style="margin-top: -5px">Order Items <i style="margin-top: -3px"
+                                                             onclick="$('#cart-footer').hide();"
+                                                             class="material-icons right black-text">arrow_drop_down_circle</i>
+                </h6>
+                <div class="row" style="margin-bottom: -10px">
+                    <div class="col s12">
+                        <div id="order-footer-items" class="collection" style="overflow: scroll; max-height: 90px"></div>
+                        <a style="margin-top: -2px"
+                           class="btn blue white-text right waves-effect waves-light waves-ripple disabled"
+                           onclick="">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <div id="confirm-modal" class="modal">
     <div class="modal-content">
         <h4>Are you sure?</h4>
