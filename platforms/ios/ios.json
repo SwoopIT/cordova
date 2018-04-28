@@ -15,6 +15,10 @@
             {
               "xml": "<access origin=\"https://accounts.google.com/*\" />",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"CDVKeyboard\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -35,6 +39,9 @@
     "cordova-plugin-googleplus": {
       "REVERSED_CLIENT_ID": "com.googleusercontent.apps.396697495271-8j9q2va5brpq7ot55n23bs15nsgmvfbf",
       "PACKAGE_NAME": "com.swoopit.android"
+    },
+    "cordova-plugin-keyboard": {
+      "PACKAGE_NAME": "com.swoopit.android"
     }
   },
   "dependent_plugins": {},
@@ -46,9 +53,18 @@
       "clobbers": [
         "window.plugins.googleplus"
       ]
+    },
+    {
+      "id": "cordova-plugin-keyboard.keyboard",
+      "file": "plugins/cordova-plugin-keyboard/www/keyboard.js",
+      "pluginId": "cordova-plugin-keyboard",
+      "clobbers": [
+        "window.Keyboard"
+      ]
     }
   ],
   "plugin_metadata": {
-    "cordova-plugin-googleplus": "5.2.3"
+    "cordova-plugin-googleplus": "5.2.3",
+    "cordova-plugin-keyboard": "1.2.0"
   }
 }

@@ -1,5 +1,6 @@
 // Globals
-var instance, elem, deviceId, shoppingCart = [], storesShoppingCart;
+var instance, elem, deviceId, shoppingCart = [], storesShoppingCart, order = [], local = 'http://localhost:3001',
+	external = 'https://api.swoopit.xyz';
 $.ajaxSetup({
 	beforeSend: function (xhr) {
 		xhr.setRequestHeader("authentication", 0);
@@ -28,7 +29,7 @@ $(document).ready(function () {
 	$('#navbar').hide();
 	$(document.body).addClass('blue');
 	$(document.body).removeClass('grey lighten-4');
-	$('#nav').append('<ul class="right" id="button"></ul>')
+	$('#nav').append('<ul class="right" id="button"></ul>');
 	cache();
 });
 
@@ -58,7 +59,7 @@ function submitOrder(paymentMethod, store) {
 			items: itemsArray,
 			paymentMethod: parseInt(paymentMethod)
 		}),
-		url: 'https://api.swoopit.xyz/api/order',
+		url: external + '/api/order',
 		success: function (data) {
 			if (data) {
 				$('#button').hide();
@@ -128,7 +129,6 @@ function stores(id) {
 	}
 	sideClose();
 }
-
 
 function category(id) {
 
@@ -304,7 +304,7 @@ function orders() {
 	$('#container').html(ordersHTML);
 	$.ajax({
 		method: 'get',
-		url: 'https://api.swoopit.xyz/api/myorders',
+		url: external + '/api/myorders',
 		success: function (data) {
 			data = data.reverse();
 			for (var i = 0; i < data.length; i++) {
@@ -321,12 +321,16 @@ function orders() {
 					'     <br>\n' +
 					'<br>' +
 					'     <a onclick="openModal(\'order\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
-					'     <a onclick="ordersFooter(' + data[i] + ')" class="btn blue waves-effect waves-ripple waves-light right" id="orders-' + data[i].id + '">Items</a>' +
+					'     <a onclick="orderFooter(' + i + ')" class="btn blue waves-effect waves-ripple waves-light right" id="order-items-' + data[i].id + '">Items</a>' +
 					'     </div>\n' +
 					'</li>');
 				if (data[i].progress.status <= 0) {
 					$('#cancel-' + data[i].id).addClass('disabled')
 				}
+				order.push(data[i]);
+				$('#order-items-' + data[i].id).click(function () {
+
+				});
 			}
 		}
 	});
@@ -342,16 +346,28 @@ function orders() {
 	sideClose();
 }
 
-function ordersFooter(data) {
-	console.log(data);
+function orderFooter(id) {
 	$('#order-footer').show();
+	var length = 0;
 	var item = [];
-	var length;
-	for (var i = 0; i < data.items.length; i++) {
-		if (itemsDB.indexOf(data.items[i]) > -1) {
-			$('#order-footer-items').append('<a class="collection-item black-text nohover"' + itemsDB[itemsDB.indexOf(data.items[i])].name + '<span>(' + length + ')</span> <span class="right">12.57</span> </a>')
+	var itemsStuff = [];
+	var subItem = 0;
+	$('#order-footer-items').html('');
+	for (var k = 0; k < order[id].items.length; k++) {
+		console.log(order[id].items[k], itemsStuff);
+		if (itemsStuff.indexOf(order[id].items[k]) == -1) {
+			itemsStuff.push(order[id].items[k]);
+			length = order[id].items.filter(function (x) {
+				return order[id].items[k] ==x;
+			}).length;
+			item = itemsDB.filter(function (x) {
+				return x.id == order[id].items[k]
+			});
+			subItem += (item[0].price * length);
+			$('#order-footer-items').append('<a class="collection-item black-text nohover">' + item[0].name + '<span> (' + (item[0].price * length).toFixed(2) + ')</span> <span class="right">' + item[0].price + '</span> </a>')
 		}
 	}
+	$('#orders-subtitle').html('Subtotal: $' + subItem.toFixed(2));
 }
 
 
@@ -369,7 +385,7 @@ function cancelOrder(id) {
 	$('#container').html('<div class="center"><h1 class="blue-text">...</h1></div>');
 	$.ajax({
 		method: 'delete',
-		url: 'https://api.swoopit.xyz/api/order',
+		url: external + '/api/order',
 		data: {
 			id: id
 		},
@@ -459,9 +475,9 @@ function confirmOrder(paymentMethod, store) {
 		subtotal += shoppingCart[i].price;
 	}
 	if (!subtotal) subtotal = 0;
-	if (paymentMethod == 2) deliveryPercent = .23;
+	if (paymentMethod == 2) deliveryPercent = .20;
 	$('#subtotal').html('$' + subtotal.toFixed(2));
-	delivery = 10 + subtotal * deliveryPercent;
+	delivery = subtotal * deliveryPercent;
 	$('#delivery').html('$' + delivery.toFixed(2));
 	tax = subtotal * .04;
 	$('#tax').html('$' + tax.toFixed(2));
@@ -553,11 +569,14 @@ function addItem(element, focus) {
 	var quantity = parseInt(quantityElement.attr('data-item-count'));
 	quantityElement.remove();
 	$('#' + parentId + '-data').append('<text class="right blue-text" data-item-count="0" id="' + parentId + '-quantity" style="position: relative;transform: translateX(-3px); margin-top: 3px" onclick="removeItem(this)">Remove</text>');
-	$('#' + parent.prop('id') + '-data').prepend('<input min="1" max="20" id="input-' + parentId + '" onclick="showItemSelector(' + parentId + ')" oninput="addItemToCart(' + parentId + ', $(this).val()); $(\'#' + parentId + '-quantity\').attr(\'data-item-count\', $(this).val());" class="browser-default input right" style= "width: 55px;" type="number">');
+	$('#' + parent.prop('id') + '-data').prepend('<form class="form" onsubmit="Keyboard.hide(); return false;"><input min="1" max="30" id="input-' + parentId + '" onclick="showItemSelector(' + parentId + ')" oninput="addItemToCart(' + parentId + ', $(this).val()); $(\'#' + parentId + '-quantity\').attr(\'data-item-count\', $(this).val());" class="browser-default input right" style= "width: 55px;" type="number"></form>');
 	quantityElement.attr('data-item-count', quantity);
 	if (focus === true) {
 		$('#input-' + parentId).focus();
 	}
+	$(".form").submit(function (e) {
+		e.preventDefault();
+	});
 }
 
 function showItemSelector(id) {
@@ -761,7 +780,7 @@ function silentLogin() {
 			});
 			$.ajax({
 				method: 'post',
-				url: 'https://api.swoopit.xyz/api/auth',
+				url: external + '/api/auth',
 				data: {
 					googleAuthToken: user.idToken,
 					androidId: deviceId,
@@ -799,7 +818,7 @@ function login() {
 			});
 			$.ajax({
 				method: 'post',
-				url: 'https://api.swoopit.xyz/api/auth',
+				url: external + '/api/auth',
 				data: {
 					googleAuthToken: user.idToken,
 					androidId: deviceId,
@@ -844,7 +863,7 @@ function logout() {
 function regDevice(registrationID, oldRegId) {
 	$.ajax({
 		method: 'post',
-		url: 'http://swoop-it.herokuapp.com/api/reg-android',
+		url: external + '/api/reg-android',
 		data: {
 			id: registrationID,
 			oldIdL: oldRegId
@@ -859,13 +878,13 @@ function cache(notif) {
 	// Get Everything for cache
 	$.ajax({
 		method: 'get',
-		url: 'http://swoop-it.herokuapp.com/api/everything',
+		url: external + '/api/everything',
 		success: function (res) {
 			storesDB = res.stores;
 			itemsDB = res.items;
 			categoriesDB = res.categories;
 			if (notif) {
-				M.toast({html: 'Successfully Refreshed Cache.'})
+				M.toast({html: 'Successfully Refreshed Cache.'});
 				settings();
 			}
 		}

@@ -16,11 +16,14 @@
         <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Keyboard">
+        <param name="android-package" onload="true" value="org.apache.cordova.labs.keyboard.Keyboard" />
+    </feature>
     <name>SwoopIt</name>
     <description>
-        SwoopIt for Android
+        Food Delivery For Schools.
     </description>
-    <author email="mdean@hpa.edu" href="https://swoopitapp.com">
+    <author email="mdean@hpa.edu" href="https://swoopit.xyz">
         Morgan Dean
     </author>
     <content src="index.html" />
@@ -37,6 +40,7 @@
     <icon density="xxhdpi" src="res/icon/android/xxhdpi.png" />
     <icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png" />
     <allow-intent href="market:*" />
+    <resource-file src="res/swoopit.png" target="res/swoopit.png" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="orientation" value="portrait" />
     <preference name="StatusBarOverlaysWebView" value="false" />

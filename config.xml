@@ -2,21 +2,22 @@
 <widget id="com.swoopit.android" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>SwoopIt</name>
     <description>
-        SwoopIt for Android
+        Food Delivery For Schools.
     </description>
-    <author email="mdean@hpa.edu" href="https://swoopitapp.com">
+    <author email="mdean@hpa.edu" href="https://swoopit.xyz">
         Morgan Dean
     </author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />œ
+    <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <resource-file src="res/swoopit.png" target="res/swoopit.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -40,8 +41,8 @@
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
-
     <plugin name="cordova-plugin-googleplus" spec="^5.2.3">
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.396697495271-8j9q2va5brpq7ot55n23bs15nsgmvfbf" />
     </plugin>
+    <plugin name="cordova-plugin-keyboard" spec="^1.2.0" />
 </widget>

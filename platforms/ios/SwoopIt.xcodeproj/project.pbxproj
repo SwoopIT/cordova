@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		15FBF4C779F74CDEA38560DA /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EBCD62A35554FAFB79A74EA /* GoogleSignIn.framework */; };
@@ -29,6 +28,7 @@
 		DB1D0CFEBBDD423CA9E0F130 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068A95531FDB4E0C9638009E /* GoogleNetworkingUtilities.framework */; };
 		F5A796E267AB4944900CBC26 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB8248BE73740B9B53DF236 /* libz.tbd */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FD22A62D0C314FE29328A695 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5FE7D6612A4DA18ED25CD1 /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		705C45FB36F64ED8A4594A40 /* CDVKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CB87DAFB124689A2C79E49 /* CDVKeyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,8 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = SwoopIt/config.xml; sourceTree = "<group>"; };
+		E4CB87DAFB124689A2C79E49 /* CDVKeyboard.m */ = {isa = PBXFileReference; name = "CDVKeyboard.m"; path = "cordova-plugin-keyboard/CDVKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		FDAE6AE5B50B47EFB8B1D1CF /* CDVKeyboard.h */ = {isa = PBXFileReference; name = "CDVKeyboard.h"; path = "cordova-plugin-keyboard/CDVKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,8 @@
 			children = (
 				4476DDA4414A460194FEEE1B /* GooglePlus.m */,
 				32F36CDB63D54A398125D8ED /* GooglePlus.h */,
+				E4CB87DAFB124689A2C79E49 /* CDVKeyboard.m */,
+				FDAE6AE5B50B47EFB8B1D1CF /* CDVKeyboard.h */,
 			);
 			name = Plugins;
 			path = SwoopIt/Plugins;
@@ -354,6 +358,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				43990F78DCB147E5B64A43E4 /* GooglePlus.m in Sources */,
+				705C45FB36F64ED8A4594A40 /* CDVKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

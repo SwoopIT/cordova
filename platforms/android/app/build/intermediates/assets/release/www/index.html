@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SwoopIt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="google-signin-client_id"
+          content="396697495271-s0ktqgutar94qm63311uev77vkjbipnq.apps.googleusercontent.com">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
+    <link href="http://allfont.net/allfont.css?fonts=futura-bold" rel="stylesheet" type="text/css"/>
+    <link href="css/icons.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body class="blue no-select">
+<main>
+    <ul id="slide-out" class="sidenav" style="width: 75%;">
+        <li>
+            <div class="background blue" style="height: 90px; margin-top: -27px; padding-top: 10px;">
+                <div class="blue center">
+                    <h3 class="white-text" style="font-family: 'Futura-Bold', sans-serif;">SwoopIt</h3>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="nohover"><i class="material-icons">shopping_cart</i>Store</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="stores();">By Store</a>
+            <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="window.search();">By Search</a>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a id="account" class="nohover"><i class="material-icons">person</i>Account</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li>
+            <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="cart();">My Cart</a>
+            <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="orders()">My Orders</a>
+            <a href="#" class="waves-effect waves-ripple waves-dark secondary" onclick="settings()">Settings</a>
+
+        </li>
+    </ul>
+    <div id="navbar" style="display: none;" class="navbar-fixed">
+        <nav class="white z-depth-0">
+            <div class="nav-wrapper" id="nav">
+                <a id="header" class="brand-logo blue-text" style="font-family: 'Futura-Bold', sans-serif;">SwoopIt</a>
+                <ul class="left">
+                    <li id="menu">
+                        <a href="#" data-target="slide-out"
+                           class="sidenav-trigger blue-text"><i
+                                class="material-icons">menu</i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="container" style="padding-top: 5px">
+        <div class="center" style="display: inline-block; vertical-align: middle;">
+            <img style="width: 100%;display: inline-block; vertical-align: middle; position: relative;"
+                 src="img/swoop_trans.png">
+            <a onclick="stores();" class="white-text"
+               style="font-weight: bold; font-family: 'Futura-Bold', sans-serif; font-size: 4.4rem">SwoopIt</a>
+        </div>
+    </div>
+</main>
+<footer id="cart-footer" class="page-footer white" style="position: fixed; bottom: 0; width: 100%; display: none;">
+    <div class="container black-text">
+        <div class="row">
+            <div class="col l6 s12">
+                <h6 style="margin-top: -5px">Cart Preview <i style="margin-top: -3px"
+                                                             onclick="$('#cart-footer').hide();"
+                                                             class="material-icons right black-text">arrow_drop_down_circle</i>
+                </h6>
+                <div class="row" style="margin-bottom: -10px">
+                    <div class="col s12">
+                        <div id="cart-footer-items" class="collection" style="overflow: scroll; max-height: 90px"></div>
+                        <span id="footer-subtotal" style="font-weight: bold; font-size: 17pt;">Subtotal: $0</span>
+                        <a style="margin-top: -2px"
+                           class="btn blue white-text right waves-effect waves-light waves-ripple"
+                           onclick="cart()">Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<footer id="order-footer" class="page-footer white" style="position: fixed; bottom: 0; width: 100%; display: none;">
+    <div class="container black-text">
+        <div class="row">
+            <div class="col l6 s12">
+                <h6 style="margin-top: -5px">Order Items <i style="margin-top: -3px"
+                                                             onclick="$('#order-footer').hide();"
+                                                             class="material-icons right black-text">arrow_drop_down_circle</i>
+                </h6>
+                <div class="row" style="margin-bottom: -10px">
+                    <div class="col s12">
+                        <div id="order-footer-items" class="collection" style="overflow: scroll; max-height: 90px"></div>
+                        <h6 class="left" id="orders-subtitle"></h6>
+                        <a style="margin-top: -2px"
+                           class="btn blue white-text right waves-effect waves-light waves-ripple disabled"
+                           onclick="">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="confirm-modal" class="modal">
+    <div class="modal-content">
+        <h4>Are you sure?</h4>
+    </div>
+    <div class="modal-footer" id="modal-footer">
+        <a class="modal-action modal-close waves-effect waves-light btn-flat">No</a>
+
+    </div>
+</div>
+
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/jq.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -26,7 +26,7 @@
         <li>
             <div class="divider"></div>
         </li>
-        <li><a><i class="material-icons">shopping_cart</i>Store</a></li>
+        <li><a class="nohover"><i class="material-icons">shopping_cart</i>Store</a></li>
         <li>
             <div class="divider"></div>
         </li>
@@ -37,7 +37,7 @@
         <li>
             <div class="divider"></div>
         </li>
-        <li><a id="account"><i class="material-icons">person</i>Account</a></li>
+        <li><a id="account" class="nohover"><i class="material-icons">person</i>Account</a></li>
         <li>
             <div class="divider"></div>
         </li>
@@ -48,44 +48,27 @@
 
         </li>
     </ul>
-    <nav id="navbar" style="display: none;" class="white z-depth-0">
-        <div class="nav-wrapper" id="nav">
-            <a id="header" class="brand-logo blue-text" style="font-family: 'Futura-Bold', sans-serif;">SwoopIt</a>
-            <ul class="left">
-                <li id="menu">
-                    <a href="#" data-target="slide-out"
-                       class="sidenav-trigger blue-text"><i
-                            class="material-icons">menu</i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="navbar" style="display: none;" class="navbar-fixed">
+        <nav class="white z-depth-0">
+            <div class="nav-wrapper" id="nav">
+                <a id="header" class="brand-logo blue-text" style="font-family: 'Futura-Bold', sans-serif;">SwoopIt</a>
+                <ul class="left">
+                    <li id="menu">
+                        <a href="#" data-target="slide-out"
+                           class="sidenav-trigger blue-text"><i
+                                class="material-icons">menu</i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <div id="container" style="padding-top: 5px">
-        <div class="container" style="border: none"><br>
-            <div id="mcd" style="margin-bottom: 20px">
-                <h6 style="font-weight: 300; margin-bottom: 15px;">McDonald's <span class="right blue-text" onclick="payment()">Checkout</span> </h6>
-                <div class="collection black-text" id="shopping-cart-mcd" style="margin-top: -5px; border: none; overflow: scroll; max-height: 250px;">
-                    <a class="collection-item black-text avatar nohover" style="min-height: 65px;">
-                        <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nutrition/items/regular/desktop/t-mcdonalds-Egg-McMuffin.png"
-                             alt="Egg McMuffin" class="circle">
-                        Egg McMuffin<i class="material-icons right" onclick="openModal(1)" style="margin-top: 10px;">delete</i>
-                        <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$4.19</p>
-                    </a>
-                </div>
-            </div>
-            <div id="fdl" style="margin-bottom: 20px">
-                <h6 style="font-weight: 300; margin-bottom: 15px;">Foodland <span class="right blue-text" onclick="payment()">Checkout</span></h6>
-                <div class="collection black-text" id="shopping-cart-fdl" style="margin-top: -5px; border: none; overflow: scroll; max-height: 250px;">
-                    <a class="collection-item black-text avatar nohover" style="min-height: 65px;">
-                        <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nutrition/items/regular/desktop/t-mcdonalds-Egg-McMuffin.png"
-                             alt="Egg McMuffin" class="circle">
-                        Egg McMuffin<i class="material-icons right" style="margin-top: 10px;" onclick="openModal(1)">delete</i>
-                        <p style="font-weight: lighter; font-size: 12px; margin-top: 3px">$4.19</p>
-                    </a>
-                </div>
-            </div>
+        <div class="center" style="display: inline-block; vertical-align: middle;">
+            <img style="width: 100%;display: inline-block; vertical-align: middle; position: relative;"
+                 src="img/swoop_trans.png">
+            <a onclick="stores();" class="white-text"
+               style="font-weight: bold; font-family: 'Futura-Bold', sans-serif; font-size: 4.4rem">SwoopIt</a>
         </div>
-
     </div>
 </main>
 <footer id="cart-footer" class="page-footer white" style="position: fixed; bottom: 0; width: 100%; display: none;">
@@ -110,6 +93,28 @@
     </div>
 </footer>
 
+<footer id="order-footer" class="page-footer white" style="position: fixed; bottom: 0; width: 100%; display: none;">
+    <div class="container black-text">
+        <div class="row">
+            <div class="col l6 s12">
+                <h6 style="margin-top: -5px">Order Items <i style="margin-top: -3px"
+                                                             onclick="$('#order-footer').hide();"
+                                                             class="material-icons right black-text">arrow_drop_down_circle</i>
+                </h6>
+                <div class="row" style="margin-bottom: -10px">
+                    <div class="col s12">
+                        <div id="order-footer-items" class="collection" style="overflow: scroll; max-height: 90px"></div>
+                        <h6 class="left" id="orders-subtitle"></h6>
+                        <a style="margin-top: -2px"
+                           class="btn blue white-text right waves-effect waves-light waves-ripple disabled"
+                           onclick="">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <div id="confirm-modal" class="modal">
     <div class="modal-content">
         <h4>Are you sure?</h4>
@@ -124,6 +129,7 @@
 <script src="js/index.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/jq.min.js"></script>
+<script src="js/hammer.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
