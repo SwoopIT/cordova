@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Apr 27 13:11:57 HST 2018
+#Fri Apr 27 22:27:41 HST 2018
 17.baseType=DIRECTORY
 4.path=www/css/icons.css
 25.base=/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/assets/release

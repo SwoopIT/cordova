@@ -14,7 +14,8 @@ var app = {
 		app.push = PushNotification.init({
 			"android": {
 				"senderID": "396697495271",
-				"iconColor": "#1caeee"
+				"iconColor": "#1aceee",
+				"icon": 'swoopit_trans'
 			}
 		});
 

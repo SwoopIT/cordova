@@ -37,6 +37,31 @@ function sideClose() {
 	instance.close();
 }
 
+function sendNotification(all) {
+	$.ajax({
+		method: 'post',
+		url: external + '/api/notify',
+		dataType: 'json',
+		contentType: "application/json",
+		data: JSON.stringify({
+			type: 'android',
+			all: all,
+			payload: {
+				title: 'This is a Notification',
+				body: 'WAKE UP!!!'
+			}
+		}),
+		success: function (data) {
+			if (data) {
+				M.toast({html: 'Successfully Sent Notif.'});
+			} else {
+				console.log(data);
+				M.toast({html: 'Something went wrong. Please try notifying again, or contact your local Swoopit developer.'});
+			}
+		}
+	})
+}
+
 function submitOrder(paymentMethod, store) {
 	var itemsArray = [];
 	if (!shoppingCart[0]) return M.toast({html: 'LOL You have nothing in your cart! xD'});
