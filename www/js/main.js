@@ -80,27 +80,43 @@ function submitOrder(paymentMethod, store) {
 			itemsArray.push(shoppingCart[i].id);
 		}
 	}
+	$('#container').html('<div class="center"> <a class="btn-large blue payment-button">Submit Payment and Confirm</a></div>');
+	$('#container').prepend('<div id="dropin-container"></div>');
+	var button = document.querySelector('.payment-button');
+	braintree.dropin.create({
+		authorization: 'sandbox_chdrkn6m_5nzj28qk4nv4xfd3',
+		container: '#dropin-container'
+	}, function (createErr, instance) {
+		button.addEventListener('click', function () {
+			instance.requestPaymentMethod(function (err, payload) {
+				if (err) return console.log(err);
+				console.log(payload);
+				$.ajax({
+					method: 'post',
+					dataType: 'json',
+					contentType: "application/json",
+					data: JSON.stringify({
+						items: itemsArray,
+						paymentMethod: parseInt(paymentMethod),
+						nonce: payload.nonce
+					}),
+					url: external + '/api/order',
+					success: function (data) {
+						if (data) {
+							$('#button').hide();
+							M.toast({html: '<span>Successfully submitted order! Check the status on the <a onclick="orders()" class="blue-text" style="font-weight: bold;" ">Orders Page</a>.</span>'});
+							setTimeout(orders, 750);
+						} else {
+							M.toast({html: '<span>Order fail. Are you <a onclick="login()" class="blue-text" style="font-weight: bold;" ">signed in</a> with a hpa.edu account?</span>'});
+							$('.disableitems').show();
+						}
+					}
+				})
+			});
+		});
+	});
 	$('.disableitems').hide();
-	$.ajax({
-		method: 'post',
-		dataType: 'json',
-		contentType: "application/json",
-		data: JSON.stringify({
-			items: itemsArray,
-			paymentMethod: parseInt(paymentMethod)
-		}),
-		url: external + '/api/order',
-		success: function (data) {
-			if (data) {
-				$('#button').hide();
-				M.toast({html: '<span>Successfully submitted order! Check the status on the <a onclick="orders()" class="blue-text" style="font-weight: bold;" ">Orders Page</a>.</span>'});
-				setTimeout(orders, 750);
-			} else {
-				M.toast({html: '<span>Order fail. Are you <a onclick="login()" class="blue-text" style="font-weight: bold;" ">signed in</a> with a hpa.edu account?</span>'});
-				$('.disableitems').show();
-			}
-		}
-	})
+
 }
 
 function searchStores() {
@@ -266,10 +282,6 @@ function cart() {
 
 		$('#subtotal').show();
 		$('#subtotal').html('Subtotal: $' + subtotal.toFixed(2));
-		var hammertime = new Hammer(document.querySelector('.blue-text'), {});
-		hammertime.on('swipe', function (ev) {
-			alert(ev);
-		});
 
 	} else {
 		$('#subtotal').hide();

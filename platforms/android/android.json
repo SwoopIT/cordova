@@ -54,7 +54,8 @@
               "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
               "count": 1
             }
-          ]
+          ],
+          "application": []
         }
       },
       "res/xml/config.xml": {

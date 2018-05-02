@@ -31,6 +31,14 @@ module.exports = [
     "clobbers": [
       "window.Keyboard"
     ]
+  },
+  {
+    "id": "cordova-plugin-braintree.BraintreePlugin",
+    "file": "plugins/cordova-plugin-braintree/www/braintree-plugin.js",
+    "pluginId": "cordova-plugin-braintree",
+    "clobbers": [
+      "BraintreePlugin"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -40,7 +48,8 @@ module.exports.metadata =
   "cordova-plugin-whitelist": "1.3.3",
   "phonegap-plugin-push": "2.2.2",
   "cordova-plugin-statusbar": "2.4.2",
-  "cordova-plugin-keyboard": "1.2.0"
+  "cordova-plugin-keyboard": "1.2.0",
+  "cordova-plugin-braintree": "0.5.3"
 };
 // BOTTOM OF METADATA
 });

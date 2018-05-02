@@ -51,8 +51,6 @@ function sendNotification(all) {
 		dataType: 'json',
 		contentType: "application/json",
 		data: JSON.stringify({
-			type: 'android',
-			all: all,
 			payload: {
 				title: 'This is a Notification',
 				body: 'WAKE UP!!!'
@@ -69,7 +67,7 @@ function sendNotification(all) {
 	})
 }
 
-function submitOrder(paymentMethod, store) {
+function submitOrder(paymentMethod, store, nonce) {
 	var itemsArray = [];
 	if (!shoppingCart[0]) return M.toast({html: 'LOL You have nothing in your cart! xD'});
 	if (store) {
@@ -89,7 +87,8 @@ function submitOrder(paymentMethod, store) {
 		contentType: "application/json",
 		data: JSON.stringify({
 			items: itemsArray,
-			paymentMethod: parseInt(paymentMethod)
+			paymentMethod: parseInt(paymentMethod),
+			nonce: nonce
 		}),
 		url: external + '/api/order',
 		success: function (data) {
@@ -485,21 +484,31 @@ function confirmOrder(paymentMethod, store) {
 	$('#container').html(confirmHTML);
 	$('#button').show();
 	$('#header').html('Confirm').addClass('black-text').removeClass('blue-text');
-	if (store) {
-		$('#button').html('<li>\n' +
-			'                <a href="#" onclick="submitOrder(' + paymentMethod + ', \'' + store + '\')"\n' +
-			'                   class="blue-text"><i\n' +
-			'                        class="material-icons disableitems">check</i></a>\n' +
-			'            </li>\n' +
-			'        </ul>');
-	} else {
-		$('#button').html('<li>\n' +
-			'                <a href="#" onclick="submitOrder(' + paymentMethod + ')"\n' +
-			'                   class="blue-text"><i\n' +
-			'                        class="material-icons disableitems">check</i></a>\n' +
-			'            </li>\n' +
-			'        </ul>');
-	}
+	$('#button').html('<li>\n' +
+		'                <a href="#"\n' +
+		'                   class="blue-text payment-button"><i\n' +
+		'                        class="material-icons disableitems">check</i></a>\n' +
+		'            </li>\n' +
+		'        </ul>');
+	$.ajax({
+		method: 'get',
+		url: 'https://api.swoopit.xyz/api/client_token',
+		success: function (data) {
+			var button = document.querySelector('.payment-button');
+			braintree.dropin.create({
+				authorization: data,
+				container: '#dropin-container'
+			}, function (createErr, instance) {
+				button.addEventListener('click', function () {
+					instance.requestPaymentMethod(function (err, payload) {
+						if (err) console.log(err);
+						console.log(payload);
+						submitOrder(paymentMethod, store, payload.nonce)
+					});
+				});
+			});
+		}
+	});
 	$('#menu').html('<a href="#" onclick="payment(\'' + store + '\')" \n' +
 		'                   class="blue-text"><i\n' +
 		'                        class="material-icons">arrow_backwards</i></a>');
@@ -513,7 +522,7 @@ function confirmOrder(paymentMethod, store) {
 		subtotal += shoppingCart[i].price;
 	}
 	if (!subtotal) subtotal = 0;
-	if (paymentMethod == 2) deliveryPercent = .20;
+	if (paymentMethod == 2) deliveryPercent = .22;
 	$('#subtotal').html('$' + subtotal.toFixed(2));
 	delivery = subtotal * deliveryPercent;
 	$('#delivery').html('$' + delivery.toFixed(2));

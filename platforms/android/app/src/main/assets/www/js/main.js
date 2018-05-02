@@ -51,8 +51,6 @@ function sendNotification(all) {
 		dataType: 'json',
 		contentType: "application/json",
 		data: JSON.stringify({
-			type: 'android',
-			all: all,
 			payload: {
 				title: 'This is a Notification',
 				body: 'WAKE UP!!!'
@@ -82,27 +80,49 @@ function submitOrder(paymentMethod, store) {
 			itemsArray.push(shoppingCart[i].id);
 		}
 	}
-	$('.disableitems').hide();
+	$('#container').html('<div class="center"> <a class="btn-large blue payment-button">Submit Payment and Confirm</a></div>');
+	$('#container').prepend('<div id="dropin-container"></div>');
 	$.ajax({
-		method: 'post',
-		dataType: 'json',
-		contentType: "application/json",
-		data: JSON.stringify({
-			items: itemsArray,
-			paymentMethod: parseInt(paymentMethod)
-		}),
-		url: external + '/api/order',
+		method: 'get',
+		url: 'https://api.swoopit.xyz/api/client_token',
 		success: function (data) {
-			if (data) {
-				$('#button').hide();
-				M.toast({html: '<span>Successfully submitted order! Check the status on the <a onclick="orders()" class="blue-text" style="font-weight: bold;" ">Orders Page</a>.</span>'});
-				setTimeout(orders, 750);
-			} else {
-				M.toast({html: '<span>Order fail. Are you <a onclick="login()" class="blue-text" style="font-weight: bold;" ">signed in</a> with a hpa.edu account?</span>'});
-				$('.disableitems').show();
-			}
+			var button = document.querySelector('.payment-button');
+			braintree.dropin.create({
+				authorization: data,
+				container: '#dropin-container'
+			}, function (createErr, instance) {
+				button.addEventListener('click', function () {
+					instance.requestPaymentMethod(function (err, payload) {
+						if (err) return console.log(err);
+						console.log(payload);
+						$.ajax({
+							method: 'post',
+							dataType: 'json',
+							contentType: "application/json",
+							data: JSON.stringify({
+								items: itemsArray,
+								paymentMethod: parseInt(paymentMethod),
+								nonce: payload.nonce
+							}),
+							url: external + '/api/order',
+							success: function (data) {
+								if (data) {
+									$('#button').hide();
+									M.toast({html: '<span>Successfully submitted order! Check the status on the <a onclick="orders()" class="blue-text" style="font-weight: bold;" ">Orders Page</a>.</span>'});
+									setTimeout(orders, 750);
+								} else {
+									M.toast({html: '<span>Order fail. Are you <a onclick="login()" class="blue-text" style="font-weight: bold;" ">signed in</a> with a hpa.edu account?</span>'});
+									$('.disableitems').show();
+								}
+							}
+						})
+					});
+				});
+			});
 		}
-	})
+	});
+	$('.disableitems').hide();
+
 }
 
 function searchStores() {
@@ -268,10 +288,6 @@ function cart() {
 
 		$('#subtotal').show();
 		$('#subtotal').html('Subtotal: $' + subtotal.toFixed(2));
-		var hammertime = new Hammer(document.querySelector('.blue-text'), {});
-		hammertime.on('swipe', function (ev) {
-			alert(ev);
-		});
 
 	} else {
 		$('#subtotal').hide();
@@ -513,7 +529,7 @@ function confirmOrder(paymentMethod, store) {
 		subtotal += shoppingCart[i].price;
 	}
 	if (!subtotal) subtotal = 0;
-	if (paymentMethod == 2) deliveryPercent = .20;
+	if (paymentMethod == 2) deliveryPercent = .22;
 	$('#subtotal').html('$' + subtotal.toFixed(2));
 	delivery = subtotal * deliveryPercent;
 	$('#delivery').html('$' + delivery.toFixed(2));
