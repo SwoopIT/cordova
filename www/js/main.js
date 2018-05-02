@@ -12,8 +12,9 @@ var storeNames = {
 	fdl: 'Foodland',
 	kta: 'KTA',
 	lnl: 'L&L Barbecue',
-	bk: 'Burger King',
-	longs: 'Longs Drugs'
+	bgk: 'Burger King',
+	longs: 'Longs Drugs',
+	csc: 'Costco'
 };
 // Cache
 var storesDB, itemsDB, categoriesDB, confirmModal, modal;
@@ -31,6 +32,12 @@ $(document).ready(function () {
 	$(document.body).removeClass('grey lighten-4');
 	$('#nav').append('<ul class="right" id="button"></ul>');
 	cache();
+	if (new Date().getHours() >= 15 && new Date().getHours() <= 24) {
+		M.toast({
+			html: '<span class="red-text text-lighten-1" style="font-weight: bold">New orders after 3 PM will not be delivered until the next day.</span>',
+			displayLength: 8000
+		})
+	}
 });
 
 function sideClose() {
@@ -44,8 +51,6 @@ function sendNotification(all) {
 		dataType: 'json',
 		contentType: "application/json",
 		data: JSON.stringify({
-			type: 'android',
-			all: all,
 			payload: {
 				title: 'This is a Notification',
 				body: 'WAKE UP!!!'
@@ -188,13 +193,14 @@ function loadItems(categoryName, storeId) {
 	var storeName = storeNames[storeId];
 	for (var i = 0; i < itemsDB.length; i++) {
 		if (itemsDB[i].category === categoryName) {
+			var place = storeNames[getCategory(itemsDB[i].category).store];
 			$('#store-items').append('<a class="collection-item avatar black-text nohover" id="' + itemsDB[i].id + '">' +
 				'               <img src="' + itemsDB[i].img + '" alt="' + itemsDB[i].name + '" style="margin-top:10px" class="circle">' +
 				'                <span class="title black-text store-items" style="font-weight: bold;">' + itemsDB[i].name + '</span>' +
 				'            <p id="' + itemsDB[i].id + '-data">' +
 				'               <text>$' + itemsDB[i].price + '</text>' +
 				'                  <br>' +
-				'                 <text style="font-weight: lighter;">' + 'Put something here' + '</text>' +
+				'                 <text style="font-weight: lighter;">' + place + '</text>' +
 				'				  <text class="right blue-text" data-item-count="0" id="' + itemsDB[i].id + '-quantity" style="position: relative;transform: translateX(5px); margin-top: 3px" onclick="addItem(this, true)">Add to Cart</text>' +
 				'              </p>' +
 				'          </a>');
@@ -331,31 +337,36 @@ function orders() {
 		method: 'get',
 		url: external + '/api/myorders',
 		success: function (data) {
-			data = data.reverse();
-			for (var i = 0; i < data.length; i++) {
-				$('#orders-list').append('<li>\n ' +
-					'     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>' + calcDateString(data[i].date) + '</div>\n' +
-					'     <div class="collapsible-body">\n' +
-					'         <span style="font-weight: bold">' + data[i].progress.statusName + '</span>\n' +
-					'         <span style="font-weight: 300" class="right">Order #' + data[i].id + '</span>\n' +
-					'         <br>\n' +
-					'         <div class="progress grey lighten-2">\n' +
-					'             <div class="determinate blue" style="width: ' + data[i].progress.status + '%"></div>\n' +
-					'         </div>\n' +
-					'         <span style="font-weight: bold;">' + getPayment(data[i].paymentMethod) + '</span>\n' +
-					'     <br>\n' +
-					'<br>' +
-					'     <a onclick="openModal(\'order\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
-					'     <a onclick="orderFooter(' + i + ')" class="btn blue waves-effect waves-ripple waves-light right" id="order-items-' + data[i].id + '">Items</a>' +
-					'     </div>\n' +
-					'</li>');
-				if (data[i].progress.status <= 0) {
-					$('#cancel-' + data[i].id).addClass('disabled')
-				}
-				order.push(data[i]);
-				$('#order-items-' + data[i].id).click(function () {
+			console.log(data);
+			if (data != 0) {
+				data = data.reverse();
+				for (var i = 0; i < data.length; i++) {
+					$('#orders-list').append('<li>\n ' +
+						'     <div class="collapsible-header"><i class="material-icons">arrow_drop_down</i>' + calcDateString(data[i].date) + '</div>\n' +
+						'     <div class="collapsible-body">\n' +
+						'         <span style="font-weight: bold">' + data[i].progress.statusName + '</span>\n' +
+						'         <span style="font-weight: 300" class="right">Order #' + data[i].id + '</span>\n' +
+						'         <br>\n' +
+						'         <div class="progress grey lighten-2">\n' +
+						'             <div class="determinate blue" style="width: ' + data[i].progress.status + '%"></div>\n' +
+						'         </div>\n' +
+						'         <span style="font-weight: bold;">' + getPayment(data[i].paymentMethod) + '</span>\n' +
+						'     <br>\n' +
+						'<br>' +
+						'     <a onclick="openModal(\'order\', ' + data[i].id + ')" class="btn red waves-effect waves-ripple waves-light" id="cancel-' + data[i].id + '" style="font-weight: bold;">Cancel <i style="margin-bottom: 3px" class="material-icons left">delete</i> </a>\n' +
+						'     <a onclick="orderFooter(' + i + ')" class="btn blue waves-effect waves-ripple waves-light right" id="order-items-' + data[i].id + '">Items</a>' +
+						'     </div>\n' +
+						'</li>');
+					if (data[i].progress.status <= 0) {
+						$('#cancel-' + data[i].id).addClass('disabled')
+					}
+					order.push(data[i]);
+					$('#order-items-' + data[i].id).click(function () {
 
-				});
+					});
+				}
+			} else {
+				$('#container').html('<div class="center"><h6 style="font-weight: 300">You have nothing in your Cart.</h6></div>');
 			}
 		}
 	});
@@ -383,7 +394,7 @@ function orderFooter(id) {
 		if (itemsStuff.indexOf(order[id].items[k]) == -1) {
 			itemsStuff.push(order[id].items[k]);
 			length = order[id].items.filter(function (x) {
-				return order[id].items[k] ==x;
+				return order[id].items[k] == x;
 			}).length;
 			item = itemsDB.filter(function (x) {
 				return x.id == order[id].items[k]
@@ -500,7 +511,7 @@ function confirmOrder(paymentMethod, store) {
 		subtotal += shoppingCart[i].price;
 	}
 	if (!subtotal) subtotal = 0;
-	if (paymentMethod == 2) deliveryPercent = .20;
+	if (paymentMethod == 2) deliveryPercent = .22;
 	$('#subtotal').html('$' + subtotal.toFixed(2));
 	delivery = subtotal * deliveryPercent;
 	$('#delivery').html('$' + delivery.toFixed(2));
@@ -755,7 +766,7 @@ var storesHTML = ' <div class="row">\n' +
 	'        <div class="center cont-store store-block" id="mcd" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/mcd.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">McDonald\'s</h4>\n' +
 	'        </div>\n' +
-	'        <div class="center cont-store store-block" id="bk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
+	'        <div class="center cont-store store-block" id="bgk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Burger King</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="fdl" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/food.jpg)">\n' +
@@ -766,6 +777,9 @@ var storesHTML = ' <div class="row">\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="dom" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/dom.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Dominoes</h4>\n' +
+	'        </div>\n' +
+	'        <div class="center cont-store store-block" id="csc" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/csc.jpg)">\n' +
+	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Costco</h4>\n' +
 	'        </div>\n' +
 	'    </div>';
 
@@ -796,7 +810,7 @@ function isAvailable() {
 
 function silentLogin() {
 	window.plugins.googleplus.trySilentLogin(
-		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'},
+		{'webClientId': '396697495271-ol2niqtfo75sbd27mit9d13r74v63ffo.apps.googleusercontent.com\t'},
 		function (user) {
 			$.ajaxSetup({
 				beforeSend: function (xhr) {
@@ -815,7 +829,7 @@ function silentLogin() {
 					console.log(data);
 				}
 			});
-			M.toast({html: 'User ' + user.displayName + ' has logged in.'});
+			//M.toast({html: 'User ' + user.displayName + ' has logged in.'});
 			$('#account').html('<i class="material-icons">person</i>' + user.displayName);
 			$('#navbar').show();
 			$(document.body).removeClass('blue');
@@ -823,10 +837,7 @@ function silentLogin() {
 			stores();
 		},
 		function (err) {
-			console.log(err);
-			M.toast({
-				html: "There was an error logging silently. Attempting basic Login."
-			});
+			console.log('Silent Login Failed:', err);
 			login();
 		}
 	);
@@ -835,7 +846,7 @@ function silentLogin() {
 
 function login() {
 	window.plugins.googleplus.login(
-		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'}, function (user) {
+		{'webClientId': '396697495271-ol2niqtfo75sbd27mit9d13r74v63ffo.apps.googleusercontent.com'}, function (user) {
 			$.ajaxSetup({
 				beforeSend: function (xhr) {
 					xhr.setRequestHeader("authentication", user.idToken);
@@ -853,7 +864,7 @@ function login() {
 					console.log(data);
 				}
 			});
-			M.toast({html: 'User ' + user.displayName + ' has logged in.'});
+			//M.toast({html: 'User ' + user.displayName + ' has logged in.'});
 			$('#account').html('<i class="material-icons">person</i>' + user.displayName);
 			$('#navbar').show();
 			$(document.body).removeClass('blue');

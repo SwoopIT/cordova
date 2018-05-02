@@ -1,4 +1,4 @@
-#Fri Apr 27 22:27:41 HST 2018
+#Tue May 01 15:23:44 HST 2018
 base.0=/home/unicorn/Dropbox/WebstormProjects/swoopit_cordova/platforms/android/app/build/intermediates/transforms/dexMerger/release/0
 path.0=classes.dex
 renamed.0=classes.dex

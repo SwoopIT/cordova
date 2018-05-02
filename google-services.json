@@ -15,21 +15,21 @@
       },
       "oauth_client": [
         {
-          "client_id": "396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "396697495271-47a8nkp1p6u8e05q7fl4badjtnvmhvn0.apps.googleusercontent.com",
+          "client_id": "396697495271-p6i6gqfnt5g3idn2668afnt3d8rs4d3e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.swoopit.android",
             "certificate_hash": "bbe1ed38100e486b084b650d7b73463a7455ff0f"
           }
+        },
+        {
+          "client_id": "396697495271-ol2niqtfo75sbd27mit9d13r74v63ffo.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBIyiQhDKZAGh-QrYbyQBQ980UwvQhEvIQ"
+          "current_key": "AIzaSyBkzydQC2I9Z6A_xhfyceoUio1Bdrb7xpo"
         }
       ],
       "services": {
@@ -47,7 +47,7 @@
               }
             },
             {
-              "client_id": "396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com",
+              "client_id": "396697495271-ol2niqtfo75sbd27mit9d13r74v63ffo.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -12,7 +12,7 @@ var storeNames = {
 	fdl: 'Foodland',
 	kta: 'KTA',
 	lnl: 'L&L Barbecue',
-	bk: 'Burger King',
+	bgk: 'Burger King',
 	longs: 'Longs Drugs'
 };
 // Cache
@@ -755,7 +755,7 @@ var storesHTML = ' <div class="row">\n' +
 	'        <div class="center cont-store store-block" id="mcd" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/mcd.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">McDonald\'s</h4>\n' +
 	'        </div>\n' +
-	'        <div class="center cont-store store-block" id="bk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
+	'        <div class="center cont-store store-block" id="bgk" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/burger.jpg)">\n' +
 	'            <h4 class="" style="z-index: 2; opacity: 1; font-weight: 300">Burger King</h4>\n' +
 	'        </div>\n' +
 	'        <div class="center cont-store store-block" id="fdl" style="background: linear-gradient(rgba(20,20,20, .3),rgba(20,20,20, .3)), url(img/food.jpg)">\n' +
@@ -796,7 +796,7 @@ function isAvailable() {
 
 function silentLogin() {
 	window.plugins.googleplus.trySilentLogin(
-		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'},
+		{'webClientId': '396697495271-ol2niqtfo75sbd27mit9d13r74v63ffo.apps.googleusercontent.com\t'},
 		function (user) {
 			$.ajaxSetup({
 				beforeSend: function (xhr) {
@@ -835,7 +835,7 @@ function silentLogin() {
 
 function login() {
 	window.plugins.googleplus.login(
-		{'webClientId': '396697495271-gg53ci7fv0ject8g8neka71c27bhvsql.apps.googleusercontent.com'}, function (user) {
+		{'webClientId': '396697495271-ol2niqtfo75sbd27mit9d13r74v63ffo.apps.googleusercontent.com'}, function (user) {
 			$.ajaxSetup({
 				beforeSend: function (xhr) {
 					xhr.setRequestHeader("authentication", user.idToken);
